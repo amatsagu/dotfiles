@@ -12,6 +12,8 @@ clear
 
 source ./install-script/common.sh
 
+user=$(whoami)
+
 echo "$(cyan)01000001 01101101 01100001 01110010 01101001$(color_reset)"
 echo
 echo
@@ -27,7 +29,7 @@ echo
 echo "$(purple)NOTE:$(color_reset) Script will notify about all operations & save them in ./installation-log directory."
 echo
 
-read -p "$(cyan)Would you like to start? (y/n): $(color_reset)" proceed
+read -p "$(cyan)Would you like to start installation for $(user) user? (y/n): $(color_reset)" proceed
 
 if [ "$proceed" != "y" ]; then
     echo "Installation aborted."
