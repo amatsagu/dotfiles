@@ -1,0 +1,12 @@
+{
+    "window.titleBarStyle": "custom",
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "window.autoDetectColorScheme": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false
+}

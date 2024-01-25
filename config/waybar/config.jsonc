@@ -1,0 +1,178 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "top",
+	"modules-left": [
+		"custom/launcher",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"sway/workspaces",
+		"custom/right-arrow-dark",
+		"sway/window"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"network",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"backlight",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
+	],
+	"custom/launcher": {
+		"format": "ム",
+		"tooltip": false,
+		"on-click": "exec wlogout -p layer-shell"
+	},
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"enable-bar-scroll": true,
+		"format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+        	"4": "四",
+        	"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十"
+        },
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": []
+		}
+	},
+	"sway/window": {
+		"format": "ア   {}"
+	},
+	"clock#1": {
+		"format": "{:%A}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%d.%m.%Y}",
+		"tooltip": false
+	},
+	"network": {
+		"interval": 5,
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "  Connected",   
+        "format-linked": "  {ifname} (No IP)",
+        "format-disconnected": "  Disconnected",
+        "tooltip-format": "{essid} {ifname}: {ipaddr}/{cidr}",
+		"on-click": "exec nm-connection-editor"
+    },
+	"backlight": {
+		// "device": "acpi_video1",
+        "device": "amdgpu_bl1", // Important
+        "format": "  {percent}%",
+		"on-scroll-up": "exec brightnessctl set 5%+",
+		"on-scroll-down": "exec brightnessctl set 5%-",
+        "tooltip": false
+    },
+	"pulseaudio": {
+		"format": "{icon}  {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}% ",
+		"format-muted": "{icon}  0% (Muted)",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"states": {
+			"warning": 70
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "  {}%",
+		"states": {
+			"warning": 80,
+			"critical": 95
+		},
+		"on-click": "exec foot -T \"htop\" -a \"htop\" sh -c htop"
+	},
+	"cpu": {
+		"interval": 2,
+		"states": {
+			"warning": 70,
+			"critical": 95
+		},
+		"format": "  {usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"warning": 50,
+			"critical": 20
+		},
+		"format": "{icon}  {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"tray": {
+		"icon-size": 16,
+		"spacing": 10
+	}
+}

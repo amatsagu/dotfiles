@@ -1,0 +1,31 @@
+# GLOBAL
+#sort=+time
+layer=overlay
+
+# STYLE
+font=Roboto 13
+width=250
+border-size=2
+progress-color=#e6edf3ff
+text-alignment=left
+anchor=top-right
+
+# CRITERA
+## urgency
+[urgency=low]
+default-timeout=3500
+background-color=#181818bf
+border-color=#e6edf3ff
+text-color=#e6edf3ff
+
+[urgency=normal]
+default-timeout=5000
+background-color=#181818bf
+border-color=#e6edf3ff
+text-color=#e6edf3ff
+
+[urgency=critical]
+default-timeout=0
+background-color=#181818bf
+border-color=#dda456ff
+text-color=#a64433ff

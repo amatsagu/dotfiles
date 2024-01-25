@@ -1,0 +1,78 @@
+window#waybar {
+	font-size: 	16px;
+	font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+	background: rgba(24, 24, 24, 0.75);
+	color: #e6edf3;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: rgba(16, 16, 16, 0.85);
+	font-size: 20px;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: #161e2b;
+	background: rgba(16, 16, 16, 0.85);
+	font-size: 20px;
+}
+
+#custom-launcher,
+#workspaces,
+#clock,
+#network,
+#backlight,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#tray {
+	background: rgba(16, 16, 16, 0.85);
+	min-width: 48px;
+	padding: 2px 5px 0 5px;
+}
+
+#custom-launcher, #workspaces button {
+	color: #e6edf3;
+	font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	padding: 0;
+}
+
+#workspaces button.focused,
+#battery {
+	color: #24c1e0;
+}
+
+#workspaces button:hover {
+	box-shadow: none;
+	text-shadow: none;
+	background: transparent;
+	border: none;
+	border-radius: unset;
+}
+
+#custom-launcher,
+#pulseaudio.warning,
+#memory.warning,
+#cpu.warning,
+#battery.warning {
+	color: #fbbc04;
+}
+
+#network.disconnected,
+#memory.critical,
+#cpu.ciritcal,
+#battery.cirtical {
+	color: #ea4335;
+	animation: wave 750ms linear infinite alternate;
+}
+
+@keyframes wave {
+	from {
+		padding-top: 0px;
+	}
+    to {
+		padding-top: 4px;
+    }
+}
