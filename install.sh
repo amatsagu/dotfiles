@@ -10,7 +10,7 @@ fi
 
 clear
 
-source ./install-script/common.sh
+source ./install-script/00-common.sh
 
 user=$(whoami)
 
@@ -26,8 +26,6 @@ echo "$purple NOTE:$color_reset You will be required to answer some questions du
 echo
 echo "$purple NOTE:$color_reset If you are installing on a VM, ensure to enable 3D acceleration or else Sway wont start!"
 echo
-echo "$purple NOTE:$color_reset Script will notify about all operations & save them in ./installation-log directory."
-echo
 
 read -p "$cyan Would you like to start installation for $user user? (y/n):$color_reset" proceed
 echo
@@ -35,10 +33,6 @@ echo
 if [ "$proceed" != "y" ]; then
     echo "Installation aborted."
     exit 1
-fi
-
-if [ ! -d installation-log ]; then
-    mkdir installation-log
 fi
 
 # Ensure that all in the scripts in directory are made executable.
@@ -73,3 +67,31 @@ if [ "$extra" == "y" ]; then
     multi_choice "Do you want to install latest version of Node/Deno/Bun? [will attempt to run official installation script if available]" "node, deno, bun, none," res_js
     echo
 fi
+
+echo "$cyan That's it! Installation will start in 10 seconds...$color_reset"
+echo
+for i in $(seq 1 10)
+do
+    echo -n "$i.."
+    sleep 1
+done
+clear
+
+source ./install-script/01-core.sh
+source ./install-script/02-browser.sh
+source ./install-script/03-wayland.sh
+source ./install-script/04-session.sh
+
+if [ "$extra" == "y" ]; then
+    source ./install-script/05-extra.sh
+fi
+
+cat << EOF
+# ===========================================================================
+# FINISHED INSTALLATION
+#
+# Warning
+# Please restart your computer for all changes to take effect.
+#
+# ===========================================================================
+EOF
