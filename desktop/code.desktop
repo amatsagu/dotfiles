@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Visual Studio Code
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=/usr/share/code/code --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-gpu --ozone-platform=wayland --no-sandbox --unity-launch %F
+Icon=vscode
+Type=Application
+StartupNotify=false
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=vscode;
+
+[Desktop Action new-empty-window]
+Name=New Empty Window
+Icon=vscode
+Exec=/usr/share/code/code --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-gpu --ozone-platform=wayland --no-sandbox --new-window %F

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Google Chrome
+GenericName=Web Browser
+Type=Application
+Icon=google-chrome
+Categories=Network;WebBrowser;
+MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
+Actions=new-window;new-private-window;
+StartupNotify=true
+Terminal=false
+Exec=/usr/bin/google-chrome-stable --ozone-platform-hint=wayland --enable-features=WaylandWindowDecorations --ignore-gpu-blocklist --enable-gpu-rasterization %U
+
+[Desktop Action new-window]
+Name=New Window
+Exec=/usr/bin/google-chrome-stable --ozone-platform-hint=wayland --enable-features=WaylandWindowDecorations --ignore-gpu-blocklist --enable-gpu-rasterization
+
+[Desktop Action new-private-window]
+Name=New Incognito Window
+Exec=/usr/bin/google-chrome-stable --ozone-platform-hint=wayland --enable-features=WaylandWindowDecorations --ignore-gpu-blocklist --enable-gpu-rasterization --incognito

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify
+GenericName=Music Player
+Icon=spotify-client
+TryExec=spotify --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-gpu --ozone-platform=wayland --no-sandbox
+Exec=spotify --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-gpu --ozone-platform=wayland --no-sandbox %U
+Terminal=false
+MimeType=x-scheme-handler/spotify;
+Categories=Audio;Music;Player;AudioVideo;
