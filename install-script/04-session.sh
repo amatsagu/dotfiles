@@ -16,4 +16,8 @@ if [ "$res_autologin" == "y" ]; then
     fi
 
     EOL
+
+    echo ""  >> /home/$trk/.config/sway/config.d/autostart_applications
+    echo "#Auto start sway with lockscreen"  >> /home/$trk/.config/sway/config.d/autostart_applications
+    echo "swaylock -f -C ~/.config/swaylock/config" >> /home/$trk/.config/sway/config.d/autostart_applications
 fi
