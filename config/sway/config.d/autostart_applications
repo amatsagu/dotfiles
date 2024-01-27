@@ -1,5 +1,2 @@
 # Desktop notifications
 exec mako
-
-# Network Applet
-exec nm-applet --indicator
