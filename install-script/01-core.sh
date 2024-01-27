@@ -20,7 +20,7 @@ fi
 
 # Install essential packages
 sudo apt install htop zip curl wget neofetch network-manager wayland-protocols gpg sway waybar wlogout swaylock swayidle swaybg mako-notifier pipewire pipewire-audio-client-libraries pavucontrol volumeicon-alsa pamixer libglib2.0-0 libglib2.0-bin nemo fuzzel grim slurp imv -y
-sudo apt remove zutty yelp yelp-*
+sudo apt remove zutty yelp yelp-* -y
 sudo apt autoremove --purge -y
 
 # Enable NetworkManager
