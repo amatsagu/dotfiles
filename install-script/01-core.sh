@@ -7,6 +7,8 @@ cat << EOF
 # ===========================================================================
 EOF
 
+sudo apt update && sudo apt upgrade
+
 # Install microcode && drivers to enable hardware acceleration (at least for integrated graphics)
 proc_type=$(lscpu)
 if grep -E "GenuineIntel" <<< ${proc_type}; then
@@ -19,7 +21,7 @@ elif grep -E "AuthenticAMD" <<< ${proc_type}; then
 fi
 
 # Install essential packages
-sudo apt install htop zip curl wget neofetch network-manager wayland-protocols gpg sway waybar wlogout swaylock swayidle swaybg mako-notifier pipewire pipewire-audio-client-libraries pavucontrol volumeicon-alsa pamixer libglib2.0-0 libglib2.0-bin nemo fuzzel grim slurp imv -y
+sudo apt install htop zip curl wget neofetch network-manager wayland-protocols gpg apt-transport-https sway waybar wlogout swaylock swayidle swaybg mako-notifier pipewire pipewire-audio-client-libraries pavucontrol volumeicon-alsa pamixer libglib2.0-0 libglib2.0-bin nemo fuzzel grim slurp imv -y
 sudo apt remove zutty yelp yelp-* -y
 sudo apt autoremove --purge -y
 
