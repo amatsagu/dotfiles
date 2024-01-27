@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=XDG Desktop GTK Portal
+Icon=applications-system-symbolic
+Exec=/usr/libexec/xdg-desktop-portal-gtk
+NoDisplay=true
+Terminal=false

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Disk Image Mounter
+GenericName=Image Mounter
+Comment=Mount Disk Images
+Exec=gnome-disk-image-mounter %U
+Icon=drive-removable-media
+MimeType=application/x-cd-image;application/x-raw-disk-image;
+Terminal=false
+Type=Application
+NoDisplay=true
+X-Purism-FormFactor=Workstation;Mobile;

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nemo
+GenericName=File Explorer
+Comment=Start Nemo desktop at log in
+Type=Application
+Exec=nemo-desktop
+AutostartCondition=GSettings org.nemo.desktop show-desktop-icons
+X-GNOME-AutoRestart=true
+NoDisplay=true
+Terminal=false
