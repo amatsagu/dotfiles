@@ -8,9 +8,8 @@ cat << EOF
 EOF
 
 if [ "$res_spotify" == "y" ]; then
-    curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+    curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
     echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-    sudo apt install apt-transport-https -y
     sudo apt-get update
     sudo apt-get install spotify-client -y
     sudo cp ./desktop/spotify.desktop /usr/share/applications/spotify.desktop
@@ -18,8 +17,7 @@ fi
 
 if [ "$res_code" == "y" ]; then
     curl -sS https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/microsoft.gpg
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
-    sudo apt install apt-transport-https -y
+    echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
     sudo apt update
     sudo apt install code -y
     sudo cp ./desktop/code.desktop /usr/share/applications/code.desktop
