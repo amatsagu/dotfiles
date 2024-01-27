@@ -20,7 +20,7 @@ datestr=%a, %e of %B
 
 # Add an image as a background 
 # In my setup the current wallpaper (requires wallpaper scripts in /scripts)
-image=$HOME/.config/swaybg/locked.png
+image=$HOME/.config/swaybg/default.png
 
 # Fade in time
 fade-in=1
@@ -28,7 +28,7 @@ fade-in=1
 # Effect for background
 # effect-blur=20x6
 # effect-greyscale
-effect-pixelate=5
+effect-blur=20
 
 # Show/Hide indicator circle
 indicator
