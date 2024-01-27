@@ -25,7 +25,7 @@ gaps inner $inner_gaps
 smart_gaps on
 
 ### Background image
-output * scale $scale bg $HOME/.config/swaybg/normal.png fill
+output * scale $scale bg $HOME/.config/swaybg/default.png fill
 
 ### Idle configuration
 #
