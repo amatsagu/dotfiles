@@ -19,7 +19,7 @@ elif grep -E "AuthenticAMD" <<< ${proc_type}; then
 fi
 
 # Install essential packages
-sudo apt install htop zip curl wget neofetch network-manager wayland-protocols gpg sway waybar wlogout swaylock swayidle swaybg mako-notifier pipewire pipewire-audio-client-libraries pavucontrol volumeicon-alsa pamixer libglib2.0-0 libglib2.0-bin nemo fuzzel grim slurp network-manager-gnome imv -y
+sudo apt install htop zip curl wget neofetch network-manager wayland-protocols gpg sway waybar wlogout swaylock swayidle swaybg mako-notifier pipewire pipewire-audio-client-libraries pavucontrol volumeicon-alsa pamixer libglib2.0-0 libglib2.0-bin nemo fuzzel grim slurp imv -y
 sudo apt remove zutty yelp yelp-*
 sudo apt autoremove --purge -y
 
@@ -30,7 +30,8 @@ systemctl enable --now NetworkManager
 sudo apt install materia-gtk-theme breeze-cursor-theme papirus-icon-theme fonts-font-awesome fonts-roboto fonts-roboto-hinted fonts-roboto-unhinted fonts-roboto-fontface fonts-firacode fonts-hack fonts-hack-ttf fonts-hack-web fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted -y
 
 # Copy all config & asset files into /home/$trk/.config
-cp ./config/* /home/$trk/.config/ -r -v
+sudo cp ./config/* /home/$trk/.config/ -r -v
+sudo chown $trk:$trk /home/$trk/.config/
 
 # Force replace app entries (prepare for fuzzel)
 sudo rm /usr/share/applications/*
