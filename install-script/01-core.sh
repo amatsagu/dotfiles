@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat << EOF
 # ===========================================================================
 # STEP 1
@@ -17,21 +19,38 @@ elif grep -E "AuthenticAMD" <<< ${proc_type}; then
 fi
 
 # Install essential packages
-sudo apt install htop zip curl wget neofetch network-manager gpg dirmngr ca-certificates software-properties-common apt-transport-https sway waybar wlogout swaylock swayidle swaybg mako-notifier pipewire pipewire-audio-client-libraries pavucontrol volumeicon-alsa pamixer libglib2.0-0 libglib2.0-bin nemo nemo-fileroller fuzzel grim slurp nm-connection-editor eog imv -y
+sudo apt install htop zip curl wget neofetch network-manager wayland-protocols gpg sway waybar wlogout swaylock swayidle swaybg mako-notifier pipewire pipewire-audio-client-libraries pavucontrol volumeicon-alsa pamixer libglib2.0-0 libglib2.0-bin nemo fuzzel grim slurp network-manager-gnome imv -y
+sudo apt remove zutty yelp yelp-*
 sudo apt autoremove --purge -y
 
-# Enable NetworkManager, audio service
-systemctl --user daemon-reload
+# Enable NetworkManager
 systemctl enable --now NetworkManager
-systemctl --user --now enable pipewire pipewire-pulse
-# xdg-mime default nemo.desktop inode/directory
-# xdg-mime default nemo.desktop application/x-gnome-saved-search
 
 # Install all fonts & themes
-sudo apt install papirus-icon-theme fonts-font-awesome fonts-roboto fonts-roboto-hinted fonts-roboto-unhinted fonts-roboto-fontface fonts-firacode fonts-hack fonts-hack-ttf fonts-hack-web fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted -y
+sudo apt install materia-gtk-theme breeze-cursor-theme papirus-icon-theme fonts-font-awesome fonts-roboto fonts-roboto-hinted fonts-roboto-unhinted fonts-roboto-fontface fonts-firacode fonts-hack fonts-hack-ttf fonts-hack-web fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted -y
 
-# Copy all config & asset files into /home/$user/.config
-cp ./config/* /home/$user/.config/ -r -v
+# Copy all config & asset files into /home/$trk/.config
+cp ./config/* /home/$trk/.config/ -r -v
+
+# Force replace app entries (prepare for fuzzel)
+sudo rm /usr/share/applications/*
+sudo cp ./desktop/base/* /usr/share/applications/ -r -v
+
+# Apply GTK themes & fonts
+gsettings set org.gnome.nm-applet show-applet true
+gsettings set org.gnome.desktop.interface gtk-theme "Materia-dark"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface cursor-theme "breeze_cursors"
+gsettings set org.nemo.desktop font "Roboto 10"
+gsettings set org.gnome.desktop.interface font-name "Roboto 10"
+gsettings set org.gnome.desktop.interface document-font-name "Roboto 10"
+gsettings set org.cinnamon.desktop.wm.preferences titlebar-font "Sans Bold 10"
+gsettings set org.gnome.desktop.wm.preferences titlebar-font "Sans Bold 10"
+gsettings set org.gnome.desktop.interface monospace-font-name "Fira Code 11"
+gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
+gsettings set org.gnome.desktop.interface font-hinting "slight"
+gsettings set org.gnome.desktop.interface font-rgba-order "rgb"
+gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
 
 # [Optional] Add support for bluetooth
 if [ "$res_bluetooth" == "y" ]; then

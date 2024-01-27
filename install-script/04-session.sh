@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat << EOF
 # ===========================================================================
 # STEP 4
@@ -6,11 +8,12 @@ cat << EOF
 EOF
 
 if [ "$res_autologin" == "y" ]; then
-    echo ""  >> /home/$user/.profile
-    echo "#Auto start sway with lockscreen" >> /home/$user/.profile
-    echo "sway" >> /home/$user/.profile
-fi
+    cat >> /home/$trk/.profile << EOL
 
-if [ "$res_xwayland" == "y" ]; then
-    sudo apt install xwayland -y
+    #Auto start sway with lockscreen
+    if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+        exec sway $
+    fi
+
+    EOL
 fi

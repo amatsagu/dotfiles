@@ -12,7 +12,7 @@ clear
 
 source ./install-script/00-common.sh
 
-user=$(whoami)
+trk=$(whoami)
 
 echo "$cyan 01000001 01101101 01100001 01110010 01101001$color_reset"
 echo
@@ -27,7 +27,7 @@ echo
 echo "$purple NOTE:$color_reset If you are installing on a VM, ensure to enable 3D acceleration or else Sway wont start!"
 echo
 
-read -p "$cyan Would you like to start installation for $user user? (y/n):$color_reset" proceed
+read -p "$cyan Would you like to start installation for $trk user? (y/n):$color_reset " proceed
 echo
 
 if [ "$proceed" != "y" ]; then
@@ -52,23 +52,23 @@ echo
 multi_choice "After what time of inactivity would you like to lock your session?" "1m, 3m, 5m, 10m, 15m, never," res_lock_timeout
 echo
 
-read -p "$cyan Finished basic questions. Just before magic happens, would you like to add extra applications? (y/n):$color_reset" extra
+read -p "$cyan Finished basic questions. Just before magic happens, would you like to add extra applications? (y/n):$color_reset " extra
 echo
 
 if [ "$extra" == "y" ]; then
     choice "Do you want to install Spotify?" res_spotify
     echo
-    multi_choice "Do you want to install Visual Studio Code/VSCodium? [will modify ~/.profile]" "vscode, vscodium, none," res_code
+    choice "Do you want to install Visual Studio Code? [will modify ~/.profile]" res_code
     echo
     choice "Do you want to install latest version of Go programming language? [will modify ~/.profile]" res_go
     echo
-    choice "Do you want to install latest version of Rust programming language? [will fetch & run official installation script at the end]" res_rs
-    echo
     multi_choice "Do you want to install latest version of Node/Deno/Bun? [will attempt to run official installation script if available]" "node, deno, bun, none," res_js
+    echo
+    choice "Do you want to install latest version of Rust programming language? [will fetch & run official installation script at the end]" res_rs
     echo
 fi
 
-echo "$cyan That's it! Installation will start in 10 seconds...$color_reset"
+echo "$cyan That's it! Please stay for installation, you'll be asked to provide password for some operations. Script will start in 10 seconds...$color_reset"
 echo
 for i in $(seq 1 10)
 do
@@ -79,7 +79,7 @@ clear
 
 source ./install-script/01-core.sh
 source ./install-script/02-browser.sh
-source ./install-script/03-wayland.sh
+source ./install-script/03-compability.sh
 source ./install-script/04-session.sh
 
 if [ "$extra" == "y" ]; then
@@ -95,3 +95,12 @@ cat << EOF
 #
 # ===========================================================================
 EOF
+
+echo "$cyan Force rebooting computer in 10 seconds...$color_reset"
+echo
+for i in $(seq 1 10)
+do
+    echo -n "$i.."
+    sleep 1
+done
+sudo reboot -f
