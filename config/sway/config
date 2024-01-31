@@ -1,4 +1,4 @@
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=sway XDG_CURRENT_SESSION=sway XDG_SESSION_DESKTOP=sway
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=sway XDG_CURRENT_SESSION=sway XDG_SESSION_DESKTOP=sway
 
 ### Variables
 set $mod Mod4
@@ -28,10 +28,10 @@ smart_gaps on
 output * scale $scale bg $HOME/.config/swaybg/default.png fill
 
 ### Idle configuration
-exec swayidle -w \
-         timeout 300 'swaylock -f -C ~/.config/swaylock/config' \
-         timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -C ~/.config/swaylock/config'
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -C ~/.config/swaylock/config' \
+#          timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -C ~/.config/swaylock/config'
 
 ### Input configuration
 #
