@@ -32,10 +32,10 @@ This document will shortly instruct you how to greatly increase your system secu
 ## Secue boot
 1. Install [sbctl](https://archlinux.org/packages/extra/x86_64/sbctl/) with `yay -S sbctl`.
 2. Enter sudo for next commands and type `sbctl status` - you should see secure bot disabled and setup mode **enabled**. If you're not in setup mode - try again resetting secure bot keys and tpm cache in your bios settings.
-3. Create & enroll new secure key with `sbctl create-keys && sbctl enroll-keys -m` commands.
+3. Create & enroll new secure key with `sudo sbctl create-keys && sbctl enroll-keys -m` commands.
     * You can use `sbctl status` to check new owner GUID.
-4. Sign **UKI** by typing `sbctl sign -s -o /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi`
+4. Sign **UKI** by typing `sudo sbctl sign -s -o /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi`
     * **Warning!** Exact file path may differ if you ignored archinstall and made own, custom installation or made some uncommon partitioning.
-    * Sign any other file used by your systemd-boot. Type `sbctl verify` to display all files and sign them one by one by writing `sbctl sign -s <file>` command.
+    * Sign any other file used by your systemd-boot. Type `sudo sbctl verify` to display all files and sign them one by one by writing `sbctl sign -s <file>` command.
 5. Check `sbctl status` - you should see secure bot enabled and setup mode automatically disabled. Now - restart your machine and enter bios to enable secure boot and you're be done with this part.
     * Some bios vendors may automatically detect new keys and automatically enable secure bot.
