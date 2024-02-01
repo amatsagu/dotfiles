@@ -29,7 +29,7 @@ This document will shortly instruct you how to greatly increase your system secu
 3. Release new **UKI** by typing `sudo mkinitcpio -P` command.
     * **Warning!** Some machines (mostly laptops) may receive warnings about potentially missing firmware. It's usually not a big deal but if you want to fix it - you'll have to manually find and install missing firmware. I've found [mkinitcpio-firmware](https://aur.archlinux.org/packages/mkinitcpio-firmware) to contain a lot of missing firmwares, it might be worth a try to install it on your machine too. After that, repeat first command to rebuild UKI.
 
-## Secue boot
+## Secure boot
 1. Install [sbctl](https://archlinux.org/packages/extra/x86_64/sbctl/) with `yay -S sbctl`.
 2. Enter sudo for next commands and type `sbctl status` - you should see secure bot disabled and setup mode **enabled**. If you're not in setup mode - try again resetting secure bot keys and tpm cache in your bios settings.
 3. Create & enroll new secure key with `sudo sbctl create-keys && sbctl enroll-keys -m` commands.
