@@ -32,4 +32,4 @@ This document will shortly instruct you how to greatly increase your system secu
         * You can use `sbctl status` to check new owner GUID.
     3. Sign **UKI** by typing `sbctl sign -s -o /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi`
         * **Warning!** Exact file path may differ if you ignored archinstall and made own, custom installation or made some uncommon partitioning.
-    4. Sign any other file used by your systemd-boot. Type `sbctl verify` to display all files and sign them one by one by writing `sbctl sign -s <file>` command.
+        * Sign any other file used by your systemd-boot. Type `sbctl verify` to display all files and sign them one by one by writing `sbctl sign -s <file>` command.
