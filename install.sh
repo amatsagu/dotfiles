@@ -8,10 +8,10 @@ fi
 
 # Update keyrings to latest to prevent packages failing to install
 pacman -S archlinux-keyring --noconfirm
-sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
+sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
 # Update system
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 # Install git
 if command -v git &>/dev/null; then
