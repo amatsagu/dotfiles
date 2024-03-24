@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# CONFIG VARIABLES
+#
+# ================
+
 # Check if running as root. If root, script will exit
 if [[ "$(id -u)" -eq 0 ]]; then
     echo "This script should not be executed as root! Exiting..."
@@ -21,7 +25,7 @@ else
     sudo pacman -S git --noconfirm
 fi
 
-# Install yay
+# Select aur helper - prefer yay
 helper="yay"
 if command -v yay &>/dev/null; then
     echo "[INFO] Yay (AUR helper) $(yay -V | cut -d' ' -f2) is already installed in your system."
@@ -41,16 +45,45 @@ else
     fi
 fi
 
-# Warn about pipewire
-echo "[WARN] Skipping installation of pipewire! We trust you've read ./doc/security.md and added pipewire during archinstall."
-echo "  In case you didn't - Type \"yay -S pipewire wireplumber\" and reset your machine."
-
 # Install essential packages
-echo "[INFO] Installing Hyprland + essential packages..."
+echo "[INFO] Installing essential packages..."
+$helper -Syu nano htop curl wget jq dmidecode --noconfirm --needed
+
+# Try to add bluetooth support if supported
+if rfkill list | grep -iq "Bluetooth"; then
+    echo "[INFO] Installing bluetooth support..."
+    $helper -Syu bluez bluez-utils blueman --noconfirm --needed
+    systemctl --user enable --now bluetooth.service
+fi
+
+# Try to add brightnessctl for controlling backlight on supported (laptop) screens
+if [ -d "/sys/class/backlight" ]; then
+    echo "[INFO] Installing screen brightness support (laptop only)..."
+    $helper -Syu brightnessctl --noconfirm --needed
+fi
+
+# Install audio server (pipewire)
+echo "[INFO] Installing audio support (pipewire-pulse)..."
+$helper -Syu pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --noconfirm --needed
+systemctl --user enable --now pipewire.socket pipewire-pulse.socket wireplumber.service
+systemctl --user enable --now pipewire.service
+
+# Install Hyprland itself
+echo "[INFO] Installing Hyprland..."
 $helper -Syu hyprland xdg-desktop-portal-hyprland alacritty --noconfirm --needed
 
-# Disable currently enabled display manager if exists
+# Disable currently enabled display manager if exists (someone could add it from archinstall...)
 if systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm'; then
-  echo "[INFO] Disabling currently enabled display manager"
+  echo "[INFO] Disabling currently enabled display manager (if exists)"
   sudo systemctl disable --now $(systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm' | awk -F ' ' '{print $1}')
 fi
+
+# Install desktop essential packages
+echo "[INFO] Installing desktop packages..."
+$helper -Syu polkit-gnome alacritty --noconfirm --needed
+
+# Install support for QT based applications
+echo "[INFO] Installing QT support libraries."
+$helper -Syu qt5-wayland qt6-wayland --noconfirm --needed
+
+# Install support for GTK based applications
