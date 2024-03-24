@@ -82,8 +82,8 @@ fi
 echo "[INFO] Installing desktop packages..."
 $helper -Syu polkit-gnome alacritty --noconfirm --needed
 
-# Install support for QT based applications
-echo "[INFO] Installing QT support libraries."
-$helper -Syu qt5-wayland qt6-wayland --noconfirm --needed
+# Install support for QT based applications <- Avoid using QT applications, always prefer GTK based apps
+# echo "[INFO] Installing QT support libraries."
+# $helper -Syu qt5-wayland qt6-wayland --noconfirm --needed
 
 # Install support for GTK based applications
