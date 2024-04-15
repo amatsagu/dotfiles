@@ -68,9 +68,9 @@ $helper -Syu pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse --
 systemctl --user enable --now pipewire.socket pipewire-pulse.socket wireplumber.service
 systemctl --user enable --now pipewire.service
 
-# Install Hyprland itself
-echo "[INFO] Installing Hyprland..."
-$helper -Syu hyprland xdg-desktop-portal-hyprland alacritty --noconfirm --needed
+# Install Sway & its core components
+echo "[INFO] Installing Sway & core components..."
+$helper -Syu sway foot swaybg swayidle swaylock --noconfirm --needed
 
 # Disable currently enabled display manager if exists (someone could add it from archinstall...)
 if systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm'; then
@@ -78,9 +78,9 @@ if systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk
   sudo systemctl disable --now $(systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm' | awk -F ' ' '{print $1}')
 fi
 
-# Install desktop essential packages
-echo "[INFO] Installing desktop packages..."
-$helper -Syu polkit-gnome alacritty --noconfirm --needed
+# Install essential QoL packages so Sway can be fully functional out of the box
+echo "[INFO] Installing essential packages..."
+$helper -Syu polkit polkit-gnome gnome-keyring nautilus sushi --noconfirm --needed
 
 # Install support for QT based applications <- Avoid using QT applications, always prefer GTK based apps
 # echo "[INFO] Installing QT support libraries."
