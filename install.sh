@@ -1,7 +1,14 @@
 #!/bin/bash
 
 # CONFIG VARIABLES
-#
+PREFER_WAYLAND=true # Whether it should modify below app desktop entries to force use wayland (most applications still search for xorg server by default).
+INSTALL_FIREFOX=true
+INSTALL_GOOGLE_CHROME=true
+INSTALL_VISUAL_STUDIO_CODE=true # Warning: It uses official, proprietary version of Microsoft VSC. VSCodium and other alternatives struggle with poor ecosystem.
+INSTALL_SPOTIFY=true
+ALLOW_XWAYLAND=false
+ALLOW_FLATPAK=false # Whether it should install flatpak + register flathub repository, even on arch - there are still some apps available only there.
+UI_FRACTIONAL_SCALE=1.0 # It's for Sway's fractional scaling. By default 1.0 = 100% - it's recommended to use 1.1-1.5 for smaller laptop screens.
 # ================
 
 # Check if running as root. If root, script will exit
@@ -46,8 +53,8 @@ else
 fi
 
 # Install essential packages
-echo "[INFO] Installing essential packages..."
-$helper -Syu nano htop curl wget jq dmidecode --noconfirm --needed
+echo "[INFO] Installing QoL packages..."
+$helper -Syu nano htop curl wget jq dmidecode neofetch --noconfirm --needed
 
 # Try to add bluetooth support if supported
 if rfkill list | grep -iq "Bluetooth"; then
@@ -70,7 +77,7 @@ systemctl --user enable --now pipewire.service
 
 # Install Sway & its core components
 echo "[INFO] Installing Sway & core components..."
-$helper -Syu sway foot swaybg swayidle swaylock --noconfirm --needed
+$helper -Syu sway foot swaybg swayidle swaylock waybar --noconfirm --needed
 
 # Disable currently enabled display manager if exists (someone could add it from archinstall...)
 if systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm'; then
@@ -80,10 +87,5 @@ fi
 
 # Install essential QoL packages so Sway can be fully functional out of the box
 echo "[INFO] Installing essential packages..."
-$helper -Syu polkit polkit-gnome gnome-keyring nautilus sushi --noconfirm --needed
+$helper -Syu polkit polkit-gnome gnome-keyring nautilus sushi grim slurp mako --noconfirm --needed
 
-# Install support for QT based applications <- Avoid using QT applications, always prefer GTK based apps
-# echo "[INFO] Installing QT support libraries."
-# $helper -Syu qt5-wayland qt6-wayland --noconfirm --needed
-
-# Install support for GTK based applications
