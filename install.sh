@@ -6,6 +6,7 @@ INSTALL_FIREFOX=true
 INSTALL_GOOGLE_CHROME=true
 INSTALL_VISUAL_STUDIO_CODE=true # Warning: It uses official, proprietary version of Microsoft VSC. VSCodium and other alternatives struggle with poor ecosystem.
 INSTALL_SPOTIFY=true
+INSTALL_DISCORD=true
 ALLOW_XWAYLAND=false
 ALLOW_FLATPAK=false # Whether it should install flatpak + register flathub repository, even on arch - there are still some apps available only there.
 UI_FRACTIONAL_SCALE=1.0 # It's for Sway's fractional scaling. By default 1.0 = 100% - it's recommended to use 1.1-1.5 for smaller laptop screens.
@@ -89,3 +90,7 @@ fi
 echo "[INFO] Installing essential packages..."
 $helper -Syu polkit polkit-gnome gnome-keyring nautilus sushi grim slurp mako --noconfirm --needed
 
+# Instll fonts
+$helper -Syu ttf-font-awesome ttf-roboto-mono-nerd ttf-firacode-nerd ttf-hack-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --noconfirm --needed
+
+# Install themes
