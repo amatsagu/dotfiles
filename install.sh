@@ -12,8 +12,8 @@ fi
 sudo apt update && sudo apt upgrade -y
 
 # Make scripts executable
-chmod +X "./setup/packages.sh"
-chmod +X "./setup/gsettings.sh"
+chmod +x "./setup/packages.sh"
+chmod +x "./setup/gsettings.sh"
 
 # Execute scripts
 bash "./setup/packages.sh"
