@@ -12,9 +12,17 @@ elif grep -E "AuthenticAMD" <<< ${proc_type}; then
 fi
 
 # Install essential packages
-sudo apt install htop zip curl wget network-manager gpg xdg-desktop-portal-wlr -y
+sudo apt install htop zip curl wget network-manager rfkill gpg xdg-desktop-portal-wlr -y
 sudo apt autoremove --purge -y
 systemctl enable --now NetworkManager
+
+# Install backlight control (works only for laptops or some mobile screens)
+sudo apt install brightnessctl -y
+
+# Try to add bluetooth support
+if sudo rfkill list | grep -iq "Bluetooth"; then
+    sudo apt install blueman -y
+fi
 
 # Install Sway + its core components like background image or screen lock functionality
 sudo apt install sway waybar wlogout swaylock swayidle swaybg mako-notifier -y
