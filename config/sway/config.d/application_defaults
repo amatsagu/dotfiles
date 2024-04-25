@@ -2,11 +2,8 @@
 for_window [class="Yad" instance="yad"] floating enable
 for_window [app_id="yad"] floating enable
 for_window [app_id="blueman-manager"] floating enable, resize set width 40 ppt height 30 ppt
-
-# set floating (nontiling) for special apps:
 for_window [app_id="pavucontrol"] floating enable, resize set width 40 ppt height 30 ppt
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-for_window [app_id="nemo"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="Open File"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="Open Files"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="Open Folder"] floating enable, resize set width 50 ppt height 60 ppt
@@ -20,6 +17,7 @@ for_window [app_id="virt-manager"] floating enable
 for_window [app_id="copyq"] floating enable, sticky enable, resize set height 600px width 550px, move position cursor, move down 330
 for_window [class="network-manager-gnome"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="moe.launcher.the-honkers-railway-launcher"] floating enable
 
 # set floating for window roles
 for_window [window_role="pop-up"] floating enable
@@ -35,7 +33,3 @@ for_window [title="Picture in picture"] floating enable, sticky enable
 
 for_window [app_id="xsensors"] floating enable
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
-
-# Inhibit idle
-for_window [app_id="firefox"] inhibit_idle fullscreen
-for_window [app_id="Chromium"] inhibit_idle fullscreen
