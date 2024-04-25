@@ -42,9 +42,10 @@ sudo apt install nemo fuzzel grim slurp -y
 sudo apt install fonts-font-awesome fonts-roboto fonts-roboto-hinted fonts-roboto-unhinted fonts-roboto-fontface fonts-firacode fonts-hack fonts-hack-ttf fonts-hack-web fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted -y
 
 # Download & register custom set of cursors (for current user)
+mkdir ~/.local/share/icons -p
 wget -cO- https://github.com/phisch/phinger-cursors/releases/latest/download/phinger-cursors-variants.tar.bz2 | tar xfj - -C ~/.local/share/icons
 mkdir ~/.icons/default -p
-cp ./setup/cursor-index.theme.desktop ~/.icons/default/index.theme
+cp ./setup/cursor-index.theme ~/.icons/default/index.theme
 
 # Install icons & themes
 sudo apt install papirus-icon-theme libgtk-3-0 -y
