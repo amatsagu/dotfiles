@@ -9,6 +9,7 @@ set $mod Mod4
 set $scale 1.0
 set $gaps 5
 set $border 2
+set $xkb_keyboard_layout pl
 
 ### Theme
 seat * xcursor_theme phinger-cursors-dark 24
@@ -28,7 +29,7 @@ gaps inner $gaps
 
 ### Background image
 exec killall swaybg
-output * scale $scale
+output * scale $scale scale_filter smart subpixel rgb
 bindsym $mod+Shift+b exec $HOME/.config/sway/scripts/background-selector.sh
 exec $HOME/.config/sway/scripts/background-selector.sh
 
@@ -37,9 +38,14 @@ exec $HOME/.config/sway/scripts/background-selector.sh
 
 ### Keyboard layout
 input type:keyboard {
-    xkb_layout pl
+    xkb_layout $xkb_keyboard_layout
 }
 
+input type:touchpad {
+  dwt disabled
+  tap enabled
+  natural_scroll disabled
+}
 
 
 ### Key bindings
@@ -62,7 +68,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym Print exec slurp | grim -g - screenshot.png
+bindsym Print exec slurp | grim -g - $HOME/.config/sway/scripts/.latest-screenshot.png
 
 # Start a terminal
 bindsym $mod+Return exec foot

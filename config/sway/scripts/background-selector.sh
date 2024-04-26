@@ -4,7 +4,7 @@
 IMAGE_DIR="$HOME/.config/sway/wallpapers"
 
 # Environment variable to store the index of the current background
-BACKGROUND_INDEX_FILE="$HOME/.config/sway/wallpapers/.bg-cache"
+BACKGROUND_INDEX_FILE="$HOME/.config/sway/scripts/.bg-cache"
 
 # Ensure the index file exists and initialize it if not
 if [ ! -f "$BACKGROUND_INDEX_FILE" ]; then
