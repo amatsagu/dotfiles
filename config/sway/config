@@ -41,11 +41,11 @@ input type:keyboard {
     xkb_layout $xkb_keyboard_layout
 }
 
-input type:touchpad {
-  dwt disabled
-  tap enabled
-  natural_scroll disabled
-}
+# input type:touchpad {
+#   dwt disabled
+#   tap enabled
+#   natural_scroll disabled
+# }
 
 
 ### Key bindings
