@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Bluetooth Adapter
-GenericName=Bluetooth Adapter
-Comment=Set Bluetooth Adapter Properties
-Icon=blueman-device
-Exec=blueman-adapters
-Terminal=false
-Type=Application
-Categories=Settings;HardwareSettings;GTK;
