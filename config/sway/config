@@ -28,10 +28,7 @@ gaps inner $gaps
 
 
 ### Background image
-exec killall swaybg
-output * scale $scale scale_filter smart subpixel rgb
-bindsym $mod+Shift+b exec $HOME/.config/sway/scripts/background-selector.sh
-exec $HOME/.config/sway/scripts/background-selector.sh
+output * scale $scale scale_filter smart subpixel rgb bg $HOME/.config/sway/wallpaper.jpeg fill
 
 
 
