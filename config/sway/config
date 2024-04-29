@@ -65,7 +65,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym Print exec slurp | grim -g - $HOME/.config/sway/scripts/.latest-screenshot.png
+bindsym Print exec slurp | grim -g - $HOME/.config/sway/.latest-screenshot.png
 
 # Start a terminal
 bindsym $mod+Return exec foot
