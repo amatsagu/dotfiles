@@ -65,7 +65,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym Print exec slurp | grim -g - $HOME/.config/sway/.latest-screenshot.png
+bindsym Print exec grim $HOME/latest-screenshot | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus/24x24/actions/image-crop.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot\n(tip: $mod+Print to crop)"
+bindsym $mod+Print exec slurp | grim -g - $HOME/latest-screenshot | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus/24x24/actions/image-crop.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot"
 
 # Start a terminal
 bindsym $mod+Return exec foot
