@@ -1,24 +1,28 @@
-background-color=#101010e6
+background-color=#101010bf
 border-size=2
 border-color=#4f4f4f
 border-radius=0
 max-icon-size=64
 default-timeout=5000
 font=Fira Code 12
+max-visible=3
+max-history=5
+sort=+priority
+# anchor=top-center
+text-alignment=right
+actions=0
 
 [urgency=low]
 border-color=#4f4f4f
 
 [urgency=normal]
 border-color=#c5b2b2
+default-timeout=10000
 
 [urgency=high]
 border-color=#ea4335
 default-timeout=0
-ignore-timeout=1
 
-[category=mpd]
-default-timeout=2000
-group-by=category
+[urgency=critical]
+border-color=#ea4335
 default-timeout=0
-ignore-timeout=1
