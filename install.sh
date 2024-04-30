@@ -8,7 +8,7 @@ EOF
 
 # Disable currently enabled display manager if exists (someone could add it from archinstall...)
 if systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm'; then
-  echo "[INFO] Disabling currently enabled display manager (if exists)"
+  echo "[INFO] Disabling currently enabled display manager!"
   sudo systemctl disable --now $(systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm' | awk -F ' ' '{print $1}')
 fi
 
