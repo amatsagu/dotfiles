@@ -6,8 +6,8 @@ cat << EOF
 # ===========================================================================
 EOF
 
-curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
-apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash - &&\
+sudo apt install nodejs -y
 
 printf "\n\n\n\n\n\n\n\n\n\n"
 
