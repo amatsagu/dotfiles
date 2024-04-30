@@ -1,5 +1,11 @@
 #!/bin/bash
 
+cat << EOF
+# ===========================================================================
+# AMARI INSTALLATION - INSTALLING ALL CORE PACKAGES
+# ===========================================================================
+EOF
+
 # Install microcode & drivers to enable hardware acceleration (at least for integrated graphics, not tested on dedicated GPU)
 proc_type=$(lscpu)
 if grep -E "GenuineIntel" <<< ${proc_type}; then
@@ -12,7 +18,7 @@ elif grep -E "AuthenticAMD" <<< ${proc_type}; then
 fi
 
 # Install essential packages
-sudo apt install htop zip curl wget network-manager rfkill gpg xdg-desktop-portal-wlr -y
+sudo apt install htop zip curl wget network-manager rfkill neofetch gpg xdg-desktop-portal-wlr -y
 sudo apt autoremove --purge -y
 systemctl enable --now NetworkManager
 
@@ -29,6 +35,13 @@ sudo apt install sway waybar wlogout swaylock swayidle swaybg mako-notifier -y
 
 # Install audio support
 sudo apt install pipewire pipewire-audio-client-libraries pavucontrol pamixer -y
+
+cat << EOF
+# ===========================================================================
+# AMARI INSTALLATION - CONFIGURING AUDIO SERVER
+# ===========================================================================
+EOF
+
 systemctl --user daemon-reload
 systemctl --user --now enable pipewire pipewire-pulse
 

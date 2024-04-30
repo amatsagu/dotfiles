@@ -1,5 +1,11 @@
 #!/bin/bash
 
+cat << EOF
+# ===========================================================================
+# AMARI INSTALLATION - APPLYING ICONS, CURSORS, COLORS & DARK THEME
+# ===========================================================================
+EOF
+
 # Theme, icons, cursors & colors
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
