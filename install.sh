@@ -39,7 +39,7 @@ cat << EOF
 EOF
 
 mkdir ~/.config
-cp -r ./config/* ~/.config
+cp -r -v ./config/* ~/.config
 
 printf "\n\n\n\n\n\n\n\n\n\n"
 

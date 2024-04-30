@@ -63,8 +63,8 @@
 		"interval": 5,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "   {signalStrength}%",
-        "format-ethernet": "  Connected",   
-        "format-linked": "  {ifname} (No IP)",
+        "format-ethernet": "  Connected",   
+        "format-linked": "  {ifname} (No IP)",
         "format-disconnected": "   Disconnected",
         "tooltip-format": "{essid} {ifname}: {ipaddr}/{cidr}",
 		"on-click": "exec nm-connection-editor"
@@ -99,7 +99,7 @@
 				""
 			]
         },
-        "scroll-step": 5,
+        "scroll-step": 1,
 		"on-click": "pamixer -t",
 		"on-click-right": "pavucontrol"
     },
@@ -110,8 +110,8 @@
 			"critical": 20
 		},
 		"format": "{icon}  {capacity}%",
-		"format-charging": "{icon}  {capacity}% ",
-        "format-plugged": "{icon}  {capacity}% ",
+		"format-charging": "{icon}  {capacity}% ",
+        "format-plugged": "{icon}  {capacity}% ",
 		"format-alt": "󰥔  {time} remaining",
 		"format-icons": [
 			"",
