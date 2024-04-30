@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Vesktop
+Comment=All-in-one voice and text chat for gamers - now patched for wayland
+Exec=/opt/Vesktop/vesktop --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-gpu --ozone-platform=wayland %U
+Terminal=false
+Type=Application
+Icon=vesktop
+StartupWMClass=Vesktop
+GenericName=Internet Messenger
+Categories=Network;
+Keywords=discord;vencord;electron;chat;
