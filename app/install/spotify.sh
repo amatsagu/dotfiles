@@ -11,7 +11,7 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt install apt-transport-https -y
 sudo apt-get update
 sudo apt-get install spotify-client -y
-sudo cp ./desktop/spotify.desktop /usr/share/applications/spotify.desktop
+sudo cp ./app/desktop/spotify.desktop /usr/share/applications/spotify.desktop
 
 printf "\n\n\n\n\n\n\n\n\n\n"
 

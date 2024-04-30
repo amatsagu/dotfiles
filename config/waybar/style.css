@@ -103,9 +103,7 @@ window#waybar.hidden {
 
 #workspaces button.urgent,
 #network.disconnected,
-#battery.critical:not(.charging),
-#pulseaudio.muted,
-#wireplumber.muted {
+#battery.critical:not(.charging) {
 	color: #dd5656;
     animation-name: wave;
     animation-duration: 750ms;
@@ -114,7 +112,9 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
+#pulseaudio.muted,
+#wireplumber.muted,
 #battery.charging,
 #battery.plugged {
-    color: #26A65B;
+    color: #4285f4;
 }

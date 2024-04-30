@@ -10,7 +10,7 @@ wget -O ~/FirefoxSetup.tar.bz2 "https://download.mozilla.org/?product=firefox-la
 sudo tar xjf ~/FirefoxSetup.tar.bz2 -C /usr/share/
 sudo ln -s /usr/share/firefox/firefox /usr/bin/firefox
 rm ~/FirefoxSetup.tar.bz2
-sudo cp ./desktop/firefox.desktop /usr/share/applications/firefox.desktop 
+sudo cp ./app/desktop/firefox.desktop /usr/share/applications/firefox.desktop 
 xdg-settings set default-web-browser firefox.desktop
 
 printf "\n\n\n\n\n\n\n\n\n\n"
