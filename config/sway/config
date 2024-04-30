@@ -65,8 +65,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym Print exec grim $HOME/latest-screenshot | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus/24x24/actions/image-crop.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot\n(tip: $mod+Print to crop)"
-bindsym $mod+Print exec slurp | grim -g - $HOME/latest-screenshot | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus/24x24/actions/image-crop.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot"
+bindsym Print exec grim $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus-Dark/24x24/actions/image-crop.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png\n(tip: $mod+Print to crop)"
+bindsym $mod+Print exec slurp | grim -g - $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus/24x24/actions/image-crop.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png"
 
 # Start a terminal
 bindsym $mod+Return exec foot
@@ -154,10 +154,10 @@ mode "resize" {
     bindsym Right resize grow width 10px
 
     # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Return exec swaymsg mode "default" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/24x24/actions/window.svg" -a "Exit resize mode" -c "sway" "Left resize mode"
+    bindsym Escape exec swaymsg mode "default" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/24x24/actions/window.svg" -a "Exit resize mode" -c "sway" "Left resize mode"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r exec swaymsg mode "resize" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/24x24/actions/window.svg" -a "Enter resize mode" -c "sway" "Entered resize mode" "Use arrows to edit windows"
 
 
 
