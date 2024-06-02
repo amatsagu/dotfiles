@@ -110,8 +110,8 @@
 			"critical": 20
 		},
 		"format": "{icon}  {capacity}%",
-		"format-charging": "{icon}  {capacity}% ",
-        "format-plugged": "{icon}  {capacity}% ",
+		"format-charging": "🗲  {capacity}%",
+        "format-plugged": "🗲  {capacity}%",
 		"format-alt": "󰥔  {time} remaining",
 		"format-icons": [
 			"",

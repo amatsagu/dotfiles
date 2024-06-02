@@ -7,10 +7,28 @@ window#waybar {
     background-color: rgba(16, 16, 16, 0.9);
     border-bottom: 2px solid #303030;
     color: #e8eaed;
+    /* transition: background-color 250ms ease-in-out, border-bottom 250ms ease-in-out; */
 }
 
 window#waybar.hidden {
     opacity: 0.2;
+}
+
+window#waybar.empty,
+window#waybar.floating,
+window#waybar:not(.solo) {
+    background-color: rgba(16, 16, 16, 0.6);
+    border-bottom: 2px solid transparent;
+}
+
+tooltip {
+    background-color: rgba(16, 16, 16, 0.9);
+    border: 2px solid #303030;
+    border-radius: 0;
+}
+
+tooltip label {
+    color: #e8eaed;
 }
 
 #custom-launcher, #workspaces button {
@@ -30,7 +48,7 @@ window#waybar.hidden {
 #clock.time,
 #clock.date {
     border-right: 2px solid #303030;
-    border-radius: 360;
+    border-radius: 360px;
     padding-right: 16px;
 }
 
@@ -44,7 +62,7 @@ window#waybar.hidden {
 #battery,
 #tray {
     border-left: 2px solid #303030;
-    border-radius: 360;
+    border-radius: 360px;
     padding-left: 16px;
 }
 
@@ -97,7 +115,11 @@ window#waybar.hidden {
 }
 
 #custom-launcher,
-#battery.warning {
+#pulseaudio.muted,
+#wireplumber.muted,
+#battery.warning,
+#battery.charging,
+#battery.plugged {
 	color: #dda456;
 }
 
@@ -107,14 +129,7 @@ window#waybar.hidden {
 	color: #dd5656;
     animation-name: wave;
     animation-duration: 750ms;
-    animation-timing-function: steps(4);
+    animation-timing-function: steps(3);
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#pulseaudio.muted,
-#wireplumber.muted,
-#battery.charging,
-#battery.plugged {
-    color: #4285f4;
 }
