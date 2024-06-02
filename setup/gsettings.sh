@@ -2,7 +2,7 @@
 
 cat << EOF
 # ===========================================================================
-# AMARI INSTALLATION - APPLYING ICONS, CURSORS, COLORS & DARK THEME
+# AMATSAGU's CUSTOM SWAY INSTALLATION - APPLYING ICONS, CURSORS, COLORS & DARK THEME
 # ===========================================================================
 EOF
 

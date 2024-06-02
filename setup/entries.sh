@@ -2,7 +2,7 @@
 
 cat << EOF
 # ===========================================================================
-# AMARI INSTALLATION - CLEARING DESKTOP ENTRIES
+# AMATSAGU's CUSTOM SWAY INSTALLATION - CLEARING DESKTOP ENTRIES
 # ===========================================================================
 EOF
 

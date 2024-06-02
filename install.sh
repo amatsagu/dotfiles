@@ -2,7 +2,7 @@
 
 cat << EOF
 # ===========================================================================
-# AMARI INSTALLATION SCRIPT
+# AMATSAGU's CUSTOM SWAY INSTALLATION SCRIPT
 # ===========================================================================
 EOF
 
@@ -17,7 +17,7 @@ sudo apt update && sudo apt upgrade -y
 
 cat << EOF
 # ===========================================================================
-# AMARI INSTALLATION - START
+# AMATSAGU's CUSTOM SWAY INSTALLATION - START
 # ===========================================================================
 EOF
 
@@ -34,7 +34,7 @@ bash "./setup/entries.sh"
 # Clone configs
 cat << EOF
 # ===========================================================================
-# AMARI INSTALLATION - COPYING CONFIG FILES
+# AMATSAGU's CUSTOM SWAY INSTALLATION - COPYING CONFIG FILES
 # ===========================================================================
 EOF
 
@@ -45,7 +45,7 @@ printf "\n\n\n\n\n\n\n\n\n\n"
 
 cat << EOF
 # ===========================================================================
-# AMARI INSTALLATION - FINISH
+# AMATSAGU's CUSTOM SWAY INSTALLATION - FINISH
 # ===========================================================================
 
 - It is recommended to restart your computer. Use "sway" command to enter desktop.

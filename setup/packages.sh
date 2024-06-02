@@ -38,7 +38,7 @@ sudo apt install pipewire pipewire-audio-client-libraries pavucontrol pamixer -y
 
 cat << EOF
 # ===========================================================================
-# AMARI INSTALLATION - CONFIGURING AUDIO SERVER
+# AMATSAGU's CUSTOM SWAY INSTALLATION - CONFIGURING AUDIO SERVER
 # ===========================================================================
 EOF
 
