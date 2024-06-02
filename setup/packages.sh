@@ -2,7 +2,7 @@
 
 cat << EOF
 # ===========================================================================
-# AMARI INSTALLATION - INSTALLING ALL CORE PACKAGES
+# AMATSAGU's CUSTOM SWAY INSTALLATION - GET ALL CORE PACKAGES
 # ===========================================================================
 EOF
 
@@ -45,8 +45,8 @@ EOF
 systemctl --user daemon-reload
 systemctl --user --now enable pipewire pipewire-pulse
 
-# Install gsettings (lib + command)
-sudo apt install libglib2.0-0 libglib2.0-bin -y
+# Install common libs
+sudo apt install libglib2.0-0 libglib2.0-bin libnotify-bin -y
 
 # Install file manager, app launcher, and image capturer
 sudo apt install nemo fuzzel grim slurp -y
