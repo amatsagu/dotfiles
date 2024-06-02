@@ -28,7 +28,11 @@ gaps inner $gaps
 
 
 ### Background image
-output * scale $scale scale_filter smart subpixel rgb bg $HOME/.config/sway/wallpaper.jpeg fill
+output * scale $scale scale_filter smart subpixel rgb bg $HOME/.config/sway/wallpaper.jpg fill
+
+### My custom outputs (backup)
+# output DP-1 pos 0 0 mode 1920x1080@74.973Hz subpixel rgb bg $HOME/.config/sway/wallpaper.png fill
+# output eDP-1 pos 1920 0 mode 1920x1080@60.020Hz scale $scale scale_filter smart subpixel rgb bg $HOME/.config/sway/wallpaper.png fill
 
 
 
