@@ -36,6 +36,13 @@ output * scale $scale scale_filter smart subpixel rgb bg $HOME/.config/sway/wall
 
 
 
+### Lock screen
+exec swayidle -w \
+	timeout 300 'swaylock -f' \
+	timeout 450 'swaymsg "output * power off"' \
+	resume 'swaymsg "output * power on"'
+
+
 
 ### Keyboard layout
 input type:keyboard {
