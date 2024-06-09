@@ -6,24 +6,25 @@ include $HOME/.config/sway/config.d/*
 
 ### Variables
 set $mod Mod4
-set $scale 1.0
+set $scale 1.5
 set $gaps 5
-set $border 2
+set $border_size 2
+set $border_size_floating 3
 set $xkb_keyboard_layout pl
 
 ### Theme
 seat * xcursor_theme phinger-cursors-dark 24
 font pango:font pango:Noto Sans Font 12
-default_border pixel $border
-default_floating_border pixel $border
-#hide_edge_borders smart
+default_border pixel $border_size
+default_floating_border pixel $border_size_floating 
+hide_edge_borders smart
 
-client.focused              #0a0b16 #2f343f #4477ff #4f4f4f   #4f4f4f
+client.focused              #0a0b16 #2f343f #4477ff #b68083   #b68083
 client.focused_inactive     #2f343f #2f343f #d8dee8 #303030   #303030
 client.unfocused            #2f343f #2f343f #d8dee8 #303030   #303030
 gaps outer $gaps
 gaps inner $gaps
-#smart_gaps on
+smart_gaps on
 
 
 
