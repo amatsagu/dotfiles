@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Termius
+Comment=SSH client and terminal
+Exec=/opt/Termius/termius-app --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-gpu --ozone-platform=wayland %U
+Terminal=false
+Type=Application
+Icon=termius-app
+StartupWMClass=Termius
+GenericName=SSH Client
+Categories=Network;Utility;
+Keywords=ssh;terminal;remote;
+MimeType=x-scheme-handler/termius;
