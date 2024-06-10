@@ -33,16 +33,6 @@ fi
 # Install Sway + its core components like background image or screen lock functionality
 sudo apt install sway waybar wlogout swaylock swayidle swaybg mako-notifier -y
 
-# Install audio support
-sudo apt install pipewire pipewire-audio-client-libraries pavucontrol pamixer -y
-
-cat << EOF
-# ===========================================================================
-# AMATSAGU's CUSTOM SWAY INSTALLATION - CONFIGURING AUDIO SERVER
-# ===========================================================================
-EOF
-
-systemctl --user daemon-reload
 systemctl --user --now enable pipewire pipewire-pulse
 
 # Install common libs
@@ -62,3 +52,14 @@ cp ./setup/cursor-index.theme ~/.icons/default/index.theme
 
 # Install icons & themes
 sudo apt install papirus-icon-theme libgtk-3-0 -y
+
+# Install audio support
+sudo apt install pipewire pipewire-audio-client-libraries pavucontrol pamixer -y
+
+cat << EOF
+# ===========================================================================
+# AMATSAGU's CUSTOM SWAY INSTALLATION - CONFIGURING AUDIO SERVER
+# ===========================================================================
+EOF
+
+systemctl --user daemon-reload
