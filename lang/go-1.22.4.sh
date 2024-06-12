@@ -2,11 +2,11 @@
 
 cat << EOF
 # ===========================================================================
-# GOLANG 1.22.3 INSTALLATION
+# GOLANG 1.22.4 INSTALLATION
 # ===========================================================================
 EOF
 
-wget -O ~/GolangSetup.deb "https://dl.google.com/go/go1.22.3.linux-amd64.tar.gz"
+wget -O ~/GolangSetup.deb "https://dl.google.com/go/go1.22.4.linux-amd64.tar.gz"
 sudo tar -C /usr/local/ -xzf ~/GolangSetup.deb
 rm ~/GolangSetup.deb
 echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
