@@ -15,7 +15,7 @@ elif grep -E "AuthenticAMD" <<< ${proc_type}; then
 fi
 
 # Install essential packages
-sudo apt install htop zip curl wget network-manager rfkill neofetch gpg xdg-desktop-portal-wlr -y
+sudo apt install htop zip curl wget network-manager network-manager-gnome rfkill neofetch gpg xdg-desktop-portal-wlr -y
 sudo apt autoremove --purge -y
 systemctl enable --now NetworkManager
 
