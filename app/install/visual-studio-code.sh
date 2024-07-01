@@ -12,6 +12,7 @@ sudo apt install apt-transport-https -y
 sudo apt update
 sudo apt install code -y
 sudo cp ./app/desktop/code.desktop /usr/share/applications/code.desktop
+sudo cp ./app/desktop/code-url-handler.desktop /usr/share/applications/code-url-handler.desktop
 xdg-mime default code.desktop text/plain
 
 printf "\n\n\n\n\n\n\n\n\n\n"

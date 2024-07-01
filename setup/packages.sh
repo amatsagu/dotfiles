@@ -12,9 +12,6 @@ if grep -E "GenuineIntel" <<< ${proc_type}; then
     sudo apt install intel-microcode -y
 elif grep -E "AuthenticAMD" <<< ${proc_type}; then
     sudo apt install amd64-microcode -y
-    sudo apt install libegl-mesa0 libgbm1 libgl1-mesa-dri libglapi-mesa libglx-mesa0 mesa-utils-bin mesa-va-drivers mesa-vdpau-drivers mesa-vulkan-drivers -y
-    # Note: This is technically not required, just adding here for sanity check :)
-    # (tested on mobile ryzen CPU)
 fi
 
 # Install essential packages
@@ -39,7 +36,7 @@ systemctl --user --now enable pipewire pipewire-pulse
 sudo apt install libglib2.0-0 libglib2.0-bin libnotify-bin -y
 
 # Install file manager, app launcher, and image capturer
-sudo apt install nemo fuzzel grim slurp -y
+sudo apt install fuzzel grim slurp -y
 
 # Install fonts
 sudo apt install fonts-font-awesome fonts-roboto fonts-roboto-hinted fonts-roboto-unhinted fonts-roboto-fontface fonts-firacode fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted -y
