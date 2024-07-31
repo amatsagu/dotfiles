@@ -36,6 +36,8 @@ install_base_packages() {
     # Try to add bluetooth support
     if sudo rfkill list | grep -iq "Bluetooth"; then
         sudo apt-get install blueman -y >> /dev/null
+        sudo apt install libspa-0.2-bluetooth
+        sudo apt purge pulseaudio-module-bluetooth
     fi
 
     # Add extra applications that either extends common package or adds graphical interface
