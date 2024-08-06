@@ -31,7 +31,7 @@ install_base_packages() {
     print_message info "Installing base packages..."
 
     # Packages used for common operations or to provide basic functionality
-    sudo apt-get install htop zip curl wget network-manager rfkill fastfetch gpg brightnessctl pipewire pipewire-audio-client-libraries pamixer -y >> /dev/null
+    sudo apt-get install htop zip curl wget network-manager rfkill fastfetch gpg wlr-randr brightnessctl pipewire pipewire-audio-client-libraries pamixer -y >> /dev/null
 
     # Try to add bluetooth support
     if sudo rfkill list | grep -iq "Bluetooth"; then

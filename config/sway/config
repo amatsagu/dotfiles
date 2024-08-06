@@ -49,7 +49,7 @@ smart_gaps on
 
 
 ### Background image
-output * scale $scale scale_filter smart subpixel rgb bg $HOME/.config/sway/wallpaper.jpg fill
+output * scale $scale bg /home/amatsagu/Downloads/MOSHED-2024-8-6-13-32-55.jpg fill
 
 ### My custom outputs (backup)
 # output eDP-1 resolution 1920x1080@60.050Hz scale $scale bg $HOME/.config/sway/wallpaper.jpg fill
@@ -59,8 +59,8 @@ output * scale $scale scale_filter smart subpixel rgb bg $HOME/.config/sway/wall
 
 ### Lock screen
 exec swayidle -w \
-	timeout 300 'swaylock -f' \
-	timeout 450 'swaymsg "output * power off"' \
+	timeout 600 'swaylock -f' \
+	timeout 720 'swaymsg "output * power off"' \
 	resume 'swaymsg "output * power on"'
 
 
