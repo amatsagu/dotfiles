@@ -2,21 +2,16 @@
 
 detect_cpu_vendor() {
     local proc_type=$(lscpu)
-    print_message ok "Detected system with $proc_type CPU vendor."
-
-    case "$version_codename" in
-        "GenuineIntel")
-            print_message info "Installing Intel microcode..."
-            exec install_intel_microcode
-            ;;
-        "AuthenticAMD")
-            print_message info "Installing AMD microcode..."
-            exec install_amd_microcode
-            ;;
-        *)
-            print_message error "Unsupported CPU vendor: $version_codename. We'll continue installation but please be aware things are untested for your CPU - it may result in bugged experience."
-            ;;
-    esac
+    
+    if grep -E "GenuineIntel" <<< ${proc_type}; then
+        print_message info "Installing Intel microcode..."
+        exec install_intel_microcode
+    elif grep -E "AuthenticAMD" <<< ${proc_type}; then
+        print_message info "Installing AMD microcode..."
+        exec install_amd_microcode
+    else
+        print_message error "Unsupported CPU vendor. We'll continue installation but please be aware things are untested for your CPU - it may result in bugged experience."
+    fi
 }
 
 install_intel_microcode() {
