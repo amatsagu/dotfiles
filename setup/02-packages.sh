@@ -48,12 +48,12 @@ install_base_packages() {
     print_message ok "Successfully installed all base packages."
 }
 
-install_fluthub_support() {
+install_flathub_support() {
     print_message info "Adding support for flatpak... (registering flathub repository)"
     
     sudo apt-get flatpak -y >> /dev/null
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo >> /dev/null
-    sudo systemctl restart flatpak-system-helper >> /dev/null
+    # sudo systemctl restart flatpak-system-helper >> /dev/null
 
     print_message ok "Successfully added flathub repositories. You may need to restart your system to see all changes."
 }

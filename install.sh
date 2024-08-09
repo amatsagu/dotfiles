@@ -83,11 +83,11 @@ if systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk
 fi
 
 # Execute all major scripts
-detect_trixie # Checks if Debian 13 is present, otherwise upgrade to 13
+# detect_trixie # Checks if Debian 13 is present, otherwise upgrade to 13
 detect_cpu_vendor
 exec install_base_packages
+exec install_flathub_support
 exec install_sway_packages
-exec install_fluthub_support
 
 # Clean up the temporary file
 rm "$temp_output"
