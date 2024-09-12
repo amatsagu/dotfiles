@@ -7,7 +7,7 @@ indicator-thickness=64
 line-uses-ring
 font-size=32
 
-image=~/.config/sway/lockscreen.jpg
+image=~/.config/sway/wallpaper.jpeg
 color=3c795e
 
 # Typing Password

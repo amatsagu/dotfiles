@@ -33,7 +33,7 @@ tooltip label {
 
 #custom-launcher, #workspaces button {
 	font-weight: bold;
-	padding: 0 5px;
+	padding: 0;
     background-color: transparent;
     color: #4f4f4f;
     box-shadow: inset 0 -2px transparent;

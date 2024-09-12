@@ -1,47 +1,28 @@
-exec dbus-update-activation-environment --systemd \
-	WAYLAND_DISPLAY \
-    XDG_SESSION_TYPE=wayland \
-    XDG_CURRENT_DESKTOP=sway \
-    XDG_CURRENT_SESSION=sway \
-    XDG_SESSION_DESKTOP=sway \
-    ELECTRON_OZONE_PLATFORM_HINT=auto \
-    GTK_THEME=Adwaita:dark
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=sway XDG_CURRENT_SESSION=sway XDG_SESSION_DESKTOP=sway ELECTRON_OZONE_PLATFORM_HINT=auto GTK_CSD=0
 
 include /etc/sway/config-vars.d/*
 include $HOME/.config/sway/config.d/*
 
 ### Variables
 set $mod Mod4
-set $scale 1.375
+set $scale 1.25
 set $gaps 5
 set $border_size 2
 set $border_size_floating 3
 set $xkb_keyboard_layout pl
 
-### Apply screen scale preferences
-exec --no-startup-id sh -c ' \
-    GDK_SCALE=$scale; \
-    GDK_DPI_SCALE=$(echo "scale=6; 1/$scale" | bc); \
-    QT_SCALE_FACTOR=$scale; \
-    QT_AUTO_SCREEN_SCALE_FACTOR=1; \
-    export GDK_SCALE GDK_DPI_SCALE QT_SCALE_FACTOR QT_AUTO_SCREEN_SCALE_FACTOR; \
-    dbus-update-activation-environment --systemd \
-    GDK_SCALE=$GDK_SCALE \
-    GDK_DPI_SCALE=$GDK_DPI_SCALE \
-    QT_SCALE_FACTOR=$QT_SCALE_FACTOR \
-    QT_AUTO_SCREEN_SCALE_FACTOR=$QT_AUTO_SCREEN_SCALE_FACTOR \
-'
-
 ### Theme
 seat * xcursor_theme phinger-cursors-dark 24
 font pango:font pango:Noto Sans Font 12
 default_border pixel $border_size
-default_floating_border pixel $border_size_floating 
+default_floating_border pixel $border_size_floating
 hide_edge_borders smart
 
-client.focused              #0a0b16 #2f343f #4477ff #b68083   #b68083
-client.focused_inactive     #2f343f #2f343f #d8dee8 #303030   #303030
-client.unfocused            #2f343f #2f343f #d8dee8 #303030   #303030
+# target                    title     bg      text     indicator  border
+client.focused              #0a0b16   #2f343f #4477ff  #68a1be    #68a1be
+client.urgent               #0a0b16   #2f343f #4477ff  #d83e43    #d83e43
+client.focused_inactive     #2f343f   #2f343f #d8dee8  #303030    #303030
+client.unfocused            #2f343f   #2f343f #d8dee8  #303030    #303030
 gaps outer $gaps
 gaps inner $gaps
 smart_gaps on
@@ -49,13 +30,7 @@ smart_gaps on
 
 
 ### Background image
-output * scale $scale scale_filter smart subpixel rgb bg $HOME/.config/sway/wallpaper.jpg fill
-
-### My custom outputs (backup)
-# output eDP-1 resolution 1920x1080@60.050Hz scale $scale bg $HOME/.config/sway/wallpaper.jpg fill
-
-
-
+output eDP-1 scale $scale bg $HOME/.config/sway/wallpaper.jpeg fill
 
 ### Lock screen
 exec swayidle -w \

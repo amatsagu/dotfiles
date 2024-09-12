@@ -1,3 +1,1 @@
-Image made by Kanta, source: https://x.com/kantakerro/status/1656664039978852352
-
-I've modified it slightly by upscaling to 5k, removing watermark (for aesthetic reasons) + added 30% saturation and 5% lightness.
+Image made by Re Eʟy (@Elyzerda), source: https://x.com/elyzerda/status/1833474305729921168?t=Au0iDGAeCAdQdHbwjKoD_Q
