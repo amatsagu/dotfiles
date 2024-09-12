@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Termius
 Comment=SSH client and terminal
-Exec=/opt/Termius/termius-app --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-gpu --ozone-platform=wayland %U
+Exec=/opt/Termius/termius-app --ozone-platform-hint=auto --ozone-platform=wayland --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebUIDarkMode --force-dark-mode --start-maximized --enable-gpu %U
 Terminal=false
 Type=Application
 Icon=termius-app

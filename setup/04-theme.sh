@@ -34,7 +34,7 @@ apply_theme() {
     gsettings set org.gnome.desktop.interface clock-format "24h"
     gsettings set org.gtk.Settings.FileChooser clock-format "24h"
 
-    papirus-folders -C blue --theme Papirus-Dark >> /dev/null
+    papirus-folders -u -C blue --theme Papirus-Dark >> /dev/null
 
     print_message ok "Successfully modified theme & icons."
 }
