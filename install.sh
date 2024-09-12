@@ -75,6 +75,7 @@ chmod +x ./setup/*.sh
 source ./setup/01-trixie.sh
 source ./setup/02-packages.sh
 source ./setup/03-sway.sh
+source ./setup/04-theme.sh
 
 # Disable currently enabled display manager if exists (someone could add it from archinstall...)
 if systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm'; then
@@ -88,6 +89,8 @@ detect_cpu_vendor
 exec install_base_packages
 exec install_flathub_support
 exec install_sway_packages
+exec apply_fonts
+exec apply_theme
 
 # Clean up the temporary file
 rm "$temp_output"
