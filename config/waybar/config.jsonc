@@ -63,7 +63,7 @@
 		"interval": 5,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "   {signalStrength}%",
-        "format-ethernet": "  Connected",   
+        "format-ethernet": "Connected",   
         "format-linked": "  {ifname} (No IP)",
         "format-disconnected": "   Disconnected",
         "tooltip-format": "{essid} {ifname}: {ipaddr}/{cidr}",
@@ -110,8 +110,8 @@
 			"critical": 20
 		},
 		"format": "{icon}  {capacity}%",
-		"format-charging": "🗲  {capacity}%",
-        "format-plugged": "🗲  {capacity}%",
+		"format-charging": "  {capacity}%",
+        "format-plugged": "V  {capacity}%",
 		"format-alt": "󰥔  {time} remaining",
 		"format-icons": [
 			"",
@@ -122,7 +122,7 @@
 		]
 	},
     "tray": {
-		"icon-size": 16,
+		"icon-size": 14,
 		"spacing": 10
 	}
 }

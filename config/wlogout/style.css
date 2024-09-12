@@ -3,7 +3,7 @@ window {
 	font-size: 16px;
 	font-family: FontAwesome, Fira Code, Roboto, Helvetica, Arial, sans-serif;
 	font-weight: bold;
-	color: #e8eaed;
+	color: #4f4f4f;
 }
 
 button {
@@ -14,11 +14,12 @@ button {
 	background-size: 15%;
 	background-color: transparent;
 	margin: 10px;
+	color: #4f4f4f;
 }
 
 button:active, button:focus, button:hover {
-	border-color: #dda456;
-	color: #dda456;
+	border-color: #e8eaed;
+	color: #e8eaed;
 }
 
 #lock {

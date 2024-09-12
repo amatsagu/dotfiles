@@ -1,0 +1,12 @@
+.window-frame, .header-bar, .decoration {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.button, .entry, .combobox, .menu, .tooltip, .popovers, .popup {
+    border-radius: 0px;
+}
+
+.notebook, .paned {
+    border-radius: 0px;
+}

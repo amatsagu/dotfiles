@@ -89,6 +89,8 @@ detect_cpu_vendor
 exec install_base_packages
 exec install_flathub_support
 exec install_sway_packages
+mkdir ~/.config
+cp -r ./config/* ~/.config
 exec apply_fonts
 exec apply_theme
 

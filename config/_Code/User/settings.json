@@ -1,0 +1,7 @@
+{
+    "window.titleBarStyle": "custom",
+    "workbench.iconTheme": "vscode-icons",
+    "debug.console.fontFamily": "Fira Code",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+}
