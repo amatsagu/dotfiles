@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Honkers Railway Launcher
+Comment=The Honkers Railway launcher for Linux
+Exec=/home/amatsagu/.local/share/honkers-railway-launcher/HSR/honkers-railway-launcher
+Terminal=false
+Type=Application
+GenericName=HSR Launcher
+Categories=Game;
+Keywords=hsr;moe;honkai;star;rail;

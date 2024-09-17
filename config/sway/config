@@ -7,7 +7,7 @@ include $HOME/.config/sway/config.d/*
 set $mod Mod4
 set $scale 1.25
 set $gaps 5
-set $border_size 2
+set $border_size 3
 set $border_size_floating 3
 set $xkb_keyboard_layout pl
 
