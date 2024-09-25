@@ -1,6 +1,6 @@
-background-color=#101010bf
+background-color=#101010e6
 border-size=2
-border-color=#68a1be
+border-color=#303030
 border-radius=0
 max-icon-size=48
 default-timeout=5000
@@ -12,10 +12,10 @@ sort=+priority
 actions=0
 
 [urgency=low]
-border-color=#68a1be
+border-color=#303030
 
 [urgency=normal]
-border-color=#68a1be
+border-color=#303030
 
 [urgency=high]
 border-color=#dd5656
