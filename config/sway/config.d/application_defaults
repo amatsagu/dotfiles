@@ -1,4 +1,6 @@
-# set floating (nontiling)for apps needing it:
+for_window [shell="xwayland"] title_format "[XWayland] %title"
+
+# set floating (nontiling) for apps expecting to work in that mode:
 for_window [class="Yad" instance="yad"] floating enable
 for_window [app_id="yad"] floating enable
 for_window [app_id="blueman-manager"] floating enable, resize set width 40 ppt height 30 ppt
@@ -16,11 +18,12 @@ for_window [title="File Operation Progress"] floating enable, sticky enable
 for_window [title="Confirm to replace files"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="htop"] floating enable
 for_window [class="vlc"] floating enable
+for_window [app_id="thunar"] floating enable, resize set 800 500
+for_window [app_id="mpv"] floating enable, resize set 600 400
+for_window [app_id="imv"] floating enable
 for_window [app_id="virt-manager"] floating enable
-for_window [app_id="copyq"] floating enable, sticky enable, resize set height 600px width 550px, move position cursor, move down 330
 for_window [class="network-manager-gnome"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
-for_window [app_id="moe.launcher.the-honkers-railway-launcher"] floating enable
 
 # set floating for window roles
 for_window [window_role="pop-up"] floating enable
@@ -34,5 +37,8 @@ for_window [app_id="firefox" title="^Library$"] floating enable, border pixel 1,
 for_window [app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 30 ppt height 40 ppt
 for_window [title="Picture in picture"] floating enable, sticky enable
 
+# misc, custom fixes, not really important but may help someone
 for_window [app_id="xsensors"] floating enable
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
+for_window [app_id="copyq"] floating enable, sticky enable, resize set height 600px width 550px, move position cursor, move down 330
+for_window [app_id="moe.launcher.the-honkers-railway-launcher"] floating enable
