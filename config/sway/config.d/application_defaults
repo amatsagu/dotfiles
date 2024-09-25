@@ -13,6 +13,7 @@ for_window [title="Save Files"] floating enable, resize set width 50 ppt height 
 for_window [title="Replace Files"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="Save Folder"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="File Operation Progress"] floating enable, sticky enable
+for_window [title="Confirm to replace files"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="htop"] floating enable
 for_window [class="vlc"] floating enable
 for_window [app_id="virt-manager"] floating enable
