@@ -15,8 +15,7 @@ actions=0
 border-color=#68a1be
 
 [urgency=normal]
-border-color=#dda456
-default-timeout=10000
+border-color=#68a1be
 
 [urgency=high]
 border-color=#dd5656
