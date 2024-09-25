@@ -9,14 +9,6 @@ NC='\033[0m' # No Color
 # Define a temporary file to store command output
 temp_output=$(mktemp)
 
-print_banner() {
-  echo -e " "
-  echo -e "#=============================================="
-  echo -e "# $1"
-  echo -e "#=============================================="
-  echo -e " "
-}
-
 print_message() {
     local log_type="$1"
     local message="$2"
@@ -56,7 +48,6 @@ exec() {
     fi
 }
 
-print_banner "Environment 'Lushera' installation script"
 print_message warn "Proceeding with this installation will overwrite a lot of existing configurations. This custom, Sway installation relies on newer packages from Debian 13 (Trixie) so if you use version 12 - we'll try to force upgrade your repositories. This operation is somewhat dangerous and if fails - your system may end in unrecoverable state."
 echo -e "${NC}"
 echo -e "Do you want to proceed? (yes/no)"

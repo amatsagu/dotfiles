@@ -106,12 +106,13 @@
     "battery": {
         "interval": 5,
 		"states": {
-			"warning": 30,
-			"critical": 20
+			"full": 100,
+			"warning": 25,
+			"critical": 15
 		},
 		"format": "{icon}  {capacity}%",
-		"format-charging": "  {capacity}%",
-        "format-plugged": "V  {capacity}%",
+		"format-charging": "ϟ  {capacity}%",
+        "format-plugged": "ϟ  {capacity}%",
 		"format-alt": "󰥔  {time} remaining",
 		"format-icons": [
 			"",

@@ -103,17 +103,6 @@ tooltip label {
 
 /* END OF NORMAL CONFIGURATION, EVERYTHING BELOW ARE ANIMATIONS AND DYNAMIC COLORS */
 
-
-
-@keyframes wave {
-	from {
-		padding-top: 0px;
-	}
-    to {
-		padding-top: 4px;
-    }
-}
-
 #custom-launcher,
 #pulseaudio.muted,
 #wireplumber.muted,
@@ -127,9 +116,8 @@ tooltip label {
 #network.disconnected,
 #battery.critical:not(.charging) {
 	color: #dd5656;
-    animation-name: wave;
-    animation-duration: 750ms;
-    animation-timing-function: steps(3);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+}
+
+#battery.full {
+	color: #68a1be;
 }

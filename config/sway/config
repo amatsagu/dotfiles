@@ -1,4 +1,4 @@
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=sway XDG_CURRENT_SESSION=sway XDG_SESSION_DESKTOP=sway ELECTRON_OZONE_PLATFORM_HINT=auto GTK_CSD=0
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=sway XDG_CURRENT_SESSION=sway XDG_SESSION_DESKTOP=sway ELECTRON_OZONE_PLATFORM_HINT=auto QT_QPA_PLATFORM=wayland GTK_CSD=0
 
 include /etc/sway/config-vars.d/*
 include $HOME/.config/sway/config.d/*
@@ -45,11 +45,11 @@ input type:keyboard {
     xkb_layout $xkb_keyboard_layout
 }
 
-# input type:touchpad {
-#   dwt disabled
-#   tap enabled
-#   natural_scroll disabled
-# }
+input type:touchpad {
+   dwt disabled
+   tap enabled
+   natural_scroll disabled
+}
 
 
 ### Key bindings
@@ -72,14 +72,17 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym Print exec grim $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus-Dark/24x24/actions/image-crop.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png\n(tip: $mod+Print to crop)"
-bindsym $mod+Print exec slurp | grim -g - $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus/24x24/actions/image-crop.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png"
+bindsym Print exec grim $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus-Dark/64x64/categories/org.gnome.Screenshot.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png\n(tip: $mod+Print to crop)"
+bindsym $mod+Print exec slurp | grim -g - $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus-Dark/64x64/categories/org.gnome.Screenshot.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png"
 
 # Start a terminal
 bindsym $mod+Return exec foot
 
 # Kill focused window
 bindsym $mod+Shift+q kill
+
+# Shortcut to file explorer
+bindsym $mod+b exec thunar | xargs swaymsg exec --
 
 # Start your launcher
 bindsym $mod+d exec fuzzel | xargs swaymsg exec --
@@ -151,6 +154,15 @@ bindsym $mod+a focus parent
 # Note: Sway's scratchpad has been "disabled" as hardly anyone ever use it.
 # Check /etc/sway/config to see how to retrieve this functionality if needed.
 
+# Allow switching between workspaces with left and right swipes
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
+    
+# Allow container movements by pinching them
+bindgesture pinch:inward+up move up
+bindgesture pinch:inward+down move down
+bindgesture pinch:inward+left move left
+bindgesture pinch:inward+right move right
 
 
 ### Resize mode
@@ -161,10 +173,10 @@ mode "resize" {
     bindsym Right resize grow width 10px
 
     # Return to default mode
-    bindsym Return exec swaymsg mode "default" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/24x24/actions/window.svg" -a "Exit resize mode" -c "sway" "Left resize mode"
-    bindsym Escape exec swaymsg mode "default" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/24x24/actions/window.svg" -a "Exit resize mode" -c "sway" "Left resize mode"
+    bindsym Return exec swaymsg mode "default" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/64x64/apps/gnome-windows.svg" -a "Exit resize mode" -c "sway" "Left resize mode"
+    bindsym Escape exec swaymsg mode "default" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/64x64/apps/gnome-windows.svg" -a "Exit resize mode" -c "sway" "Left resize mode"
 }
-bindsym $mod+r exec swaymsg mode "resize" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/24x24/actions/window.svg" -a "Enter resize mode" -c "sway" "Entered resize mode" "Use arrows to edit windows"
+bindsym $mod+r exec swaymsg mode "resize" | notify-send -u low -i "/usr/share/icons/Papirus-Dark/64x64/apps/gnome-windows.svg" -a "Enter resize mode" -c "sway" "Entered resize mode" "Use arrows to edit windows"
 
 
 
