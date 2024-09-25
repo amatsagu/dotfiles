@@ -72,8 +72,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym Print exec grim $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus-Dark/64x64/categories/org.gnome.Screenshot.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png\n(tip: $mod+Print to crop)"
-bindsym $mod+Print exec slurp | grim -g - $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -i "/usr/share/icons/Papirus-Dark/64x64/categories/org.gnome.Screenshot.svg" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png"
+bindsym Print exec grim $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png"
+bindsym $mod+Print exec slurp | grim -g - $HOME/latest-screenshot.png | notify-send -u low -a "Screenshot taken" -c "grim" "Screenshot taken" "Saved at ~/latest-screenshot.png"
 
 # Start a terminal
 bindsym $mod+Return exec foot
