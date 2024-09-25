@@ -16,7 +16,7 @@
 		"clock#date"
     ],
     "modules-right": [
-		"network",
+		// "network",
 		"backlight",
 		"pulseaudio",
 		"battery",
@@ -107,13 +107,15 @@
         "interval": 5,
 		"states": {
 			"full": 100,
+			// Defined to make waybar only use "full" class at exactly 100%
+			"non-full": 99,
 			"warning": 25,
 			"critical": 15
 		},
 		"format": "{icon}  {capacity}%",
 		"format-charging": "ϟ  {capacity}%",
         "format-plugged": "ϟ  {capacity}%",
-		"format-alt": "󰥔  {time} remaining",
+		"format-alt": "{icon}  {time} remaining",
 		"format-icons": [
 			"",
 			"",
