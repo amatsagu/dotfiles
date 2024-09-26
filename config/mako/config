@@ -15,7 +15,7 @@ actions=0
 border-color=#303030
 
 [urgency=normal]
-border-color=#303030
+border-color=#68a1be
 
 [urgency=high]
 border-color=#dd5656
