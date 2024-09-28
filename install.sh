@@ -82,6 +82,7 @@ exec install_flathub_support
 exec install_sway_packages
 mkdir ~/.config
 cp -r ./config/* ~/.config
+chmod +x ~/.config/swaylock/lock.sh
 exec apply_fonts
 exec apply_theme
 

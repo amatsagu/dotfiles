@@ -36,7 +36,7 @@ install_base_packages() {
     fi
 
     # Add extra applications that either extends common package or adds graphical interface
-    sudo apt-get install network-manager-gnome pavucontrol -y >> /dev/null
+    sudo apt-get install network-manager-gnome pavucontrol imagemagick -y >> /dev/null
 
     # Add required libs
     sudo apt-get install libgtk-3-0 libglib2.0-0 libglib2.0-bin libnotify-bin libsass1 sassc -y >> /dev/null

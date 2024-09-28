@@ -6,15 +6,16 @@ image=~/.config/sway/wallpaper.jpeg
 # Ring
 indicator-radius=150
 # line-uses-ring
-line-color=#3b4252
-text-color=#d8dee9
-# inside-color=#2e344098
-# inside-color=#24273a
-inside-ver-color=#5e81ac
-line-ver-color=#5e81ac
-ring-ver-color=#5e81ac98
-ring-color=#24273a
+line-color=#68a1be
+ring-color=#498bab
+separator-color=#498bab
+
+text-color=#e8eaed
+layout-text-color=#e8eaed
+
+inside-ver-color=#dda456
+line-ver-color=#dda456
+ring-ver-color=#d58e2a
+
 key-hl-color=#b7bdf8
-separator-color=#4c566a
-layout-text-color=#eceff4
-line-wrong-color=#d08770
+line-wrong-color=#dd5656
