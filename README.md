@@ -8,7 +8,7 @@
 
 <h1></h1>
 
-<img src=".github/icon.png" alt="img" align="right" width="350px">
+<img src=".github/icon.png" alt="img" align="right" width="256px">
 
 - Linux distro - **Debian 13**
 - Tiling manager - **Sway**
