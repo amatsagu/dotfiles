@@ -18,7 +18,7 @@
 - Color theme - **Gnome shell**
 - Fonts - **Noto Sans, Awesome Fonts, FiraCode, Roboto**
 - Terminal - **Foot**
-- Text editor - **Nano**
+- Text editor - **VSCode, Nano**
 - File manager - **Thunar**
 - Status bar - **Waybar**
 - App menu - **Fuzzel**
