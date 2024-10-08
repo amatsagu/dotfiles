@@ -67,24 +67,25 @@ source ./setup/01-trixie.sh
 source ./setup/02-packages.sh
 source ./setup/03-sway.sh
 source ./setup/04-theme.sh
-
-# Disable currently enabled display manager if exists (someone could add it from archinstall...)
-if systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm'; then
-  print_message info "Disabling currently enabled display manager..."
-  sudo systemctl disable --now $(systemctl list-unit-files | grep enabled | grep -E 'gdm|lightdm|lxdm|lxdm-gtk3|sddm|slim|xdm' | awk -F ' ' '{print $1}') >> /dev/null
-fi
+source ./setup/05-applications.sh
 
 # Execute all major scripts
-# detect_trixie # Checks if Debian 13 is present, otherwise upgrade to 13
+detect_trixie
 detect_cpu_vendor
 exec install_base_packages
 exec install_flathub_support
 exec install_sway_packages
-mkdir ~/.config
+mkdir ~/.config >> /dev/null
 cp -r ./config/* ~/.config
 chmod +x ~/.config/swaylock/lock.sh
 exec apply_fonts
 exec apply_theme
+exec try_install_programming_languages
+exec try_install_web_browsers
+exec try_install_spotify
+exec try_install_nerd_packages
 
 # Clean up the temporary file
 rm "$temp_output"
+
+print_message ok "Successfully finished this custom sway installation. It's recommended to restart your computer. Type 'sway' in tty to start sway session."

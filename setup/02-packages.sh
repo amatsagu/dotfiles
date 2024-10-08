@@ -2,7 +2,7 @@
 
 detect_cpu_vendor() {
     local proc_type=$(lscpu)
-    
+
     if grep -E "GenuineIntel" <<< ${proc_type}; then
         print_message info "Installing Intel microcode..."
         exec install_intel_microcode
@@ -25,8 +25,10 @@ install_amd_microcode() {
 install_base_packages() {
     print_message info "Installing base packages..."
 
+    sudo apt-get update >> /dev/null
+
     # Packages used for common operations or to provide basic functionality
-    sudo apt-get install htop zip curl wget network-manager rfkill fastfetch gpg brightnessctl pipewire pipewire-audio-client-libraries pamixer -y >> /dev/null
+    sudo apt-get install htop zip curl wget apt-transport-https network-manager rfkill fastfetch gpg brightnessctl pipewire pipewire-audio-client-libraries pavucontrol pamixer -y >> /dev/null
 
     # Try to add bluetooth support
     if sudo rfkill list | grep -iq "Bluetooth"; then
@@ -54,8 +56,8 @@ install_base_packages() {
 
 install_flathub_support() {
     print_message info "Adding support for flatpak... (registering flathub repository)"
-    
-    sudo apt-get flatpak -y >> /dev/null
+
+    sudo apt-get install flatpak -y >> /dev/null
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo >> /dev/null
     # sudo systemctl restart flatpak-system-helper >> /dev/null
 

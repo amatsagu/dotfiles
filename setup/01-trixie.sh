@@ -13,7 +13,6 @@ detect_trixie() {
             ;;
         "trixie")
             print_message ok "Detected Debian 13 (trixie). No upgrade necessary."
-            exec upgrade_to_trixie
             ;;
         *)
             print_message error "Unsupported Debian version codename: $version_codename. Aborting."

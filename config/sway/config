@@ -34,9 +34,9 @@ output eDP-1 scale $scale bg $HOME/.config/sway/wallpaper.jpeg fill
 
 ### Lock screen
 exec swayidle -w \
-	timeout 600 '~/.config/swaylock/lock.sh' \
-	timeout 720 'swaymsg "output * power off"' \
-    timeout 3600 'systemctl suspend' \
+	timeout 300 '~/.config/swaylock/lock.sh &' \
+	timeout 600 'swaymsg "output * power off"' \
+    timeout 1200 'systemctl suspend' \
 	resume 'swaymsg "output * power on"'
 
 
@@ -56,12 +56,12 @@ input type:touchpad {
 ### Key bindings
 
 # Volume control
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioMute exec pamixer -t
 
 # Microphone control
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioMicMute exec pamixer --default-source -t
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
