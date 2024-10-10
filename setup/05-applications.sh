@@ -31,7 +31,7 @@ try_install_programming_languages() {
         sudo apt-get install golang -y >> /dev/null
 
         print_message info "Installing latest version of NodeJS environment (LTS)..."
-        sudo apt-get install nodejs -y >> /dev/null
+        sudo apt-get install nodejs npm -y >> /dev/null
 
         print_message info "Installing v21 of OpenJDK Java programming language..."
         sudo apt-get install openjdk-21-jdk -y >> /dev/null
