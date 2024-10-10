@@ -34,7 +34,7 @@ output eDP-1 scale $scale bg $HOME/.config/sway/wallpaper.jpeg fill
 
 ### Lock screen
 exec swayidle -w \
-	timeout 275 '~/.config/swaylock/lock.sh &' \
+	timeout 275 '~/.config/swaylock/lock.sh' \
 	timeout 300 'swaylock -f' \
 	timeout 450 'swaymsg "output * power off"' \
 	timeout 1200 'systemctl suspend' \
