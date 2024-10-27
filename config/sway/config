@@ -30,7 +30,7 @@ smart_gaps on
 
 
 ### Background image
-output eDP-1 scale $scale bg $HOME/.config/sway/wallpaper.jpg fill
+output eDP-1 scale $scale bg $HOME/.config/sway/wallpaper.jpeg fill
 
 ### Lock screen
 exec swayidle -w \
