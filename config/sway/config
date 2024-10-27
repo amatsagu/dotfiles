@@ -30,16 +30,16 @@ smart_gaps on
 
 
 ### Background image
-output eDP-1 scale $scale bg $HOME/.config/sway/wallpaper.jpeg fill
+output eDP-1 scale $scale bg $HOME/.config/sway/wallpaper.jpg fill
 
 ### Lock screen
 exec swayidle -w \
 	timeout 275 '~/.config/swaylock/lock.sh' \
 	timeout 300 'swaylock -f' \
 	timeout 450 'swaymsg "output * power off"' \
-	timeout 1200 'systemctl suspend' \
-	before-sleep 'swaylock -f' \
-	resume 'swaymsg "output * power on"'
+	    resume 'swaymsg "output * power on"' \
+	before-sleep 'playerctl pause' \
+	before-sleep 'swaylock -f' &
 
 
 
@@ -47,13 +47,6 @@ exec swayidle -w \
 input type:keyboard {
     xkb_layout $xkb_keyboard_layout
 }
-
-input type:touchpad {
-   dwt disabled
-   tap enabled
-   natural_scroll disabled
-}
-
 
 ### Key bindings
 
@@ -153,19 +146,6 @@ bindsym $mod+space focus mode_toggle
 
 # Move focus to the parent container
 bindsym $mod+a focus parent
-
-# Note: Sway's scratchpad has been "disabled" as hardly anyone ever use it.
-# Check /etc/sway/config to see how to retrieve this functionality if needed.
-
-# Allow switching between workspaces with left and right swipes
-bindgesture swipe:right workspace prev
-bindgesture swipe:left workspace next
-    
-# Allow container movements by pinching them
-bindgesture pinch:inward+up move up
-bindgesture pinch:inward+down move down
-bindgesture pinch:inward+left move left
-bindgesture pinch:inward+right move right
 
 
 ### Resize mode
