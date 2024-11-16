@@ -68,6 +68,7 @@ source ./setup/02-packages.sh
 source ./setup/03-sway.sh
 source ./setup/04-theme.sh
 source ./setup/05-applications.sh
+source ./setup/06-fingerprint-auth.sh
 
 # Execute all major scripts
 detect_trixie
@@ -84,6 +85,12 @@ exec try_install_programming_languages
 exec try_install_web_browsers
 exec try_install_spotify
 exec try_install_nerd_packages
+
+# ==================================
+# Additional modules you can enable:
+# ==================================
+
+# exec try_install_fingerprint_support
 
 # Clean up the temporary file
 rm "$temp_output"
