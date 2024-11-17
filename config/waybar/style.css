@@ -5,7 +5,7 @@
 
 window#waybar {
     background-color: rgba(16, 16, 16, 0.9);
-    border-bottom: 2px solid #303030;
+    border-bottom: 2px solid #3d3d3d;
     color: #e8eaed;
     /* transition: background-color 250ms ease-in-out, border-bottom 250ms ease-in-out; */
 }
@@ -23,7 +23,7 @@ window#waybar:not(.solo) {
 
 tooltip {
     background-color: rgba(16, 16, 16, 0.9);
-    border: 2px solid #303030;
+    border: 2px solid #3d3d3d;
     border-radius: 0;
 }
 
@@ -47,22 +47,21 @@ tooltip label {
 /* #window, */
 #clock.time,
 #clock.date {
-    border-right: 2px solid #303030;
-    border-radius: 360px;
+    border-right: 2px solid #3d3d3d;
+    border-radius: 120px;
     padding-right: 16px;
 }
 
 /* Waves to the left */
 #clock.week,
 #clock.time,
-#network,
 #pulseaudio,
 #wireplumber,
 #backlight,
 #battery,
 #tray {
-    border-left: 2px solid #303030;
-    border-radius: 360px;
+    border-left: 2px solid #3d3d3d;
+    border-radius: 120px;
     padding-left: 16px;
 }
 
@@ -84,7 +83,6 @@ tooltip label {
 #clock,
 #battery,
 #backlight,
-#network,
 #pulseaudio,
 #wireplumber,
 #tray {
@@ -109,15 +107,10 @@ tooltip label {
 #battery.warning,
 #battery.charging,
 #battery.plugged {
-	color: #dda456;
+	color: #d58f3f;
 }
 
 #workspaces button.urgent,
-#network.disconnected,
 #battery.critical:not(.charging) {
-	color: #dd5656;
-}
-
-#battery.full {
-	color: #68a1be;
+	color: #d83e43;
 }

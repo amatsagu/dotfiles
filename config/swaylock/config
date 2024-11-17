@@ -1,7 +1,7 @@
 ignore-empty-password
 
-color=24283b
-image=~/.config/swaylock/lockscreen.jpeg
+color=dda456
+image=~/.config/swaylock/lockscreen.jpg
 
 # Ring
 indicator-radius=150

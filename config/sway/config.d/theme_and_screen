@@ -1,0 +1,15 @@
+set $scale 1.25
+
+seat * xcursor_theme phinger-cursors-dark 24
+font pango:font pango:Noto Sans Font 12
+
+output eDP-1 scale $scale bg $HOME/.config/sway/wallpaper.jpg fill
+
+exec {
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+    gsettings set org.x.apps.portal color-scheme "prefer-dark"
+
+    gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+    gsettings set org.gnome.desktop.interface cursor-theme "phinger-cursors-dark"
+    gsettings set org.gnome.desktop.interface gtk-theme "Fluent-Dark"
+}

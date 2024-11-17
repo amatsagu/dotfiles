@@ -1,1 +1,1 @@
-Image made by Re Eʟy (@Elyzerda), source: https://x.com/elyzerda/status/1833474305729921168?t=Au0iDGAeCAdQdHbwjKoD_Q
+Image made by lofibug, source: https://www.artstation.com/artwork/RnGKWm

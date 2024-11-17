@@ -16,7 +16,6 @@
 		"clock#date"
     ],
     "modules-right": [
-		// "network",
 		"backlight",
 		"pulseaudio",
 		"battery",
@@ -59,16 +58,6 @@
 		"format": "{:%d.%m.%Y}",
 		"tooltip-format": "<tt><big>{calendar}</big></tt>"
 	},
-    "network": {
-		"interval": 5,
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "   {signalStrength}%",
-        "format-ethernet": "Connected",   
-        "format-linked": "  {ifname} (No IP)",
-        "format-disconnected": "   Disconnected",
-        "tooltip-format": "{essid} {ifname}: {ipaddr}/{cidr}",
-		"on-click": "exec nm-connection-editor"
-    },
     "backlight": {
         // "device": "acpi_video1",
         "format": "   {percent}%",
@@ -106,15 +95,12 @@
     "battery": {
         "interval": 5,
 		"states": {
-			"full": 100,
-			// Defined to make waybar only use "full" class at exactly 100%
-			"non-full": 99,
 			"warning": 25,
 			"critical": 15
 		},
 		"format": "{icon}  {capacity}%",
-		"format-charging": "ϟ  {capacity}%",
-        "format-plugged": "ϟ  {capacity}%",
+		"format-charging": "ϟ  {icon}  {capacity}%",
+        "format-plugged": "ϟ  {icon}  {capacity}%",
 		"format-alt": "{icon}  {time} remaining",
 		"format-icons": [
 			"",

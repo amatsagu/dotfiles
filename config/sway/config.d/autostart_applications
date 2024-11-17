@@ -4,5 +4,5 @@ exec mako
 # Network Applet
 exec nm-applet
 
-# Bluetooth (it will fail if doesn't exist but don't worry)
+# Bluetooth Applet (it will fail if doesn't exist but don't worry)
 exec blueman-applet

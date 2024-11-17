@@ -1,5 +1,3 @@
-for_window [shell="xwayland"] title_format "[XWayland] %title"
-
 # set floating (nontiling) for apps expecting to work in that mode:
 for_window [class="Yad" instance="yad"] floating enable
 for_window [app_id="yad"] floating enable
@@ -18,7 +16,7 @@ for_window [title="File Operation Progress"] floating enable, sticky enable
 for_window [title="Confirm to replace files"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="htop"] floating enable
 for_window [class="vlc"] floating enable
-for_window [app_id="thunar"] floating enable, resize set 800 500
+for_window [app_id="thunar"] floating enable
 for_window [app_id="mpv"] floating enable, resize set 600 400
 for_window [app_id="imv"] floating enable
 for_window [app_id="virt-manager"] floating enable
