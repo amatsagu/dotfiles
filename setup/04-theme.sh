@@ -13,7 +13,7 @@ apply_theme() {
     mkdir ./setup/_gtk -p
     curl -sL https://github.com/vinceliuice/Fluent-gtk-theme/archive/refs/tags/2024-06-12.tar.gz | tar -xzf - -C ./setup/_gtk >> /dev/null
     cd ./setup/_gtk/Fluent-gtk-theme-2024-06-12
-    ./install.sh -t default -c dark -s standard -i debian -l --tweaks noborder >> /dev/null
+    ./install.sh -t yellow -c dark -s standard -i debian -l --tweaks noborder >> /dev/null
     cd - >> /dev/null
     rm ./setup/_gtk -r >> /dev/null
 
@@ -31,7 +31,7 @@ apply_theme() {
     print_message info "Installing & modding Papirus icons..."
     sudo apt-get install papirus-icon-theme -y >> /dev/null
     curl -sL https://git.io/papirus-folders-install | sh >> /dev/null
-    papirus-folders -u -C blue --theme Papirus-Dark >> /dev/null
+    papirus-folders -u -C yellow --theme Papirus-Dark >> /dev/null
 
     print_message ok "Successfully modified theme & icons."
 }
