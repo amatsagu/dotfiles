@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Spotify
-GenericName=Music Player
-Icon=spotify-client
-Exec=spotify --ozone-platform-hint=auto --ozone-platform=wayland --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebUIDarkMode --force-dark-mode --start-maximized --enable-gpu %U
-Terminal=false
-MimeType=x-scheme-handler/spotify;
-Categories=Audio;Music;Player;AudioVideo;
