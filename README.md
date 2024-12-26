@@ -49,9 +49,9 @@ cd ./dotfiles
 > [!CAUTION] 
 > Download this script on a directory where you have write permissions. ie. HOME. Or any directory within your home directory (otherwise script will fail). Additionally - if it detects Debian 12 (Bookworm), it'll attempt upgrade to Debian 13 (Trixie). It remains highly stable as all debian packages are thoroughly tested (unlikely on arch based systems) before being accepted. We do this to obtain all the new libraries and Sway which comes with a lot of bufixes and optimization for NVidia and AMD. Edit source code & recompile or follow below steps for other distros if you must stay on outdated Debian 12.
 
-<br>
-![fullscreen view](.github/4.png)
-<br>
+<br><br>
+![script example](.github/4.png)
+<br><br>
 
 ### For other distros
 1. Get repo: `git clone https://github.com/amatsagu/dotfiles.git && cd ./dotfiles`
