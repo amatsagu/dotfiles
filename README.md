@@ -8,7 +8,7 @@
 
 <h1></h1>
 
-- Linux distro - **Debian 13/Trixie**
+- Linux distro - **Debian 13 (Trixie)**
 - Tiling manager - **Sway**
 - GTK theme - **Fluent (yellow, dark)**
 - Icon theme - **Papirus (dark)**
