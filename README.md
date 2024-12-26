@@ -1,4 +1,4 @@
-<h1 align=center>Amatsagu Dotfiles</h1>
+<h2 align=center>Amatsagu Dotfiles<br>✦ Five-tailed ✦</h2>
 
 <div align="center">
 <a href="#gallery">Gallery</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#credit">Credit</a>
