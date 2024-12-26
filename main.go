@@ -122,5 +122,12 @@ func themeInstall() {
 		os.Exit(1)
 	}
 
-	logger.Success("Successfully installed & applied all style preferences.")
+	logger.Text("Cloning configs/dotfiles...")
+	res, err = pkg.RunCommand("bash", "./script/clone-configs.sh")
+	if err != nil {
+		logger.Error(" | Failed to execute ./script/clone-configs.sh script:\n" + res)
+		os.Exit(1)
+	}
+
+	logger.Success("Successfully installed & applied all style preferences/configs.")
 }

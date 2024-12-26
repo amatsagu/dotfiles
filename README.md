@@ -8,49 +8,64 @@
 
 <h1></h1>
 
-<img src=".github/icon.png" alt="img" align="right" width="256px">
-
-- Linux distro - **Debian 13**
+- Linux distro - **Debian 13/Trixie**
 - Tiling manager - **Sway**
-- GTK theme - **Fluent (dark)**
+- GTK theme - **Fluent (yellow, dark)**
 - Icon theme - **Papirus (dark)**
 - Cursor theme - **Phinger cursors (dark)**
-- Color theme - **Gnome shell**
-- Fonts - **Noto Sans, Awesome Fonts, FiraCode, Roboto**
+- Terminal color theme - **Gnome shell**
+- Fonts - **Noto Sans, Awesome Fonts, FiraCode**
 - Terminal - **Foot**
 - Text editor - **VSCode, Nano**
-- File manager - **Thunar**
+- File manager - **Thunar** (with GVFS & Archive Manager)
 - Status bar - **Waybar**
 - App menu - **Fuzzel**
 - Notifications - **Mako**
-- Session control - **Wlogout**
+- Session control - **Wlogout** (with ImageMagick blur script)
 - Audio server - **Pipewire**
 - Bluetooth manager - **Blueman**
 - Connection manager - **Network manager**
 
 ## Gallery
-![full mode view](.github/1.png)
+![tilling view](.github/1.png)
 <br><br>
 ![floating windows view](.github/2.png)
+<br><br>
+![fullscreen view](.github/3.png)
 <br><br>
 
 ## Install
 
-This installation script is built to hopefully make the installation process easier for you. I cannot guarantee that it will work; you may run into issues. If something is missing and/or doesn't work, I would recommend reading over the installation script. Keep in mind that those dotfiles were created primarily for my usage so it's expected. After installation, you'll probably want to check `.config/sway` config to set valid screen scale for your monitor or change some keybinds (I use mostly default ones).
-
-Now, if you use other distro than Debian 12 or 13, you're out of luck - you can still make it work but you'll need to open setup directory with scripts and manually install all used packages, themes, fonts & applications. For Debian users, there's automatic script to assist you - install fresh system with just minimal packages (uncheck gnome or any other desktop during installation), clone this repository & run installation script; feel free to copy & paste below commands:
+### For Debian 12/13
+There's app/script prepared to help you quickly setup base desktop. Start by installing minimal version of debian from ISO (without DE), after first login type:
 ```sh
+sudo apt install git
 git clone https://github.com/amatsagu/dotfiles.git
 cd ./dotfiles
-chmod +x ./install.sh
-./install.sh
+./bin/install
 ```
-After that, it's recommended to restart your computer. After that - type `sway` to enter your new desktop :)
+> [!CAUTION] 
+> Download this script on a directory where you have write permissions. ie. HOME. Or any directory within your home directory (otherwise script will fail). Additionally - if it detectds Debian 12 (Bookworm), it'll attempt upgrade to Debian 13 (Trixie). It remains highly stable as all debian packages are thoroughly tested (unlikely on arch based systems) before being accepted. We do this to obtain all the new libraries and Sway which comes with a lot of bufixes and optimization for NVidia and AMD. Edit source code & recompile or follow below steps for other distros if you must stay on outdated Debian 12.
+
+### For other distros
+1. Get repo: `git clone https://github.com/amatsagu/dotfiles.git && cd ./dotfiles`
+2. Install all packages listed in `pkg/core.go`, `pkg/sway.go` & `pkg/theme.go`
+3. Run scripts in order: `script/cursor.sh`, `script/gtk-theme.sh`, `script/papirus-folders.sh`, `script/gsettings.sh` & `script/clone-configs.sh`
+4. Restart machine (highly recommended)
+5. Login into any tty and type `sway` to start session
+
+## First entry
+Type `sway` into any tty to start Sway session. Default configuration is tailored for my laptop so you'll need to edit `~/.config/sway` configs to at least change keyboard layout and screen scalling. If you dislike starting sway from tty, you can install login manager or add below code at bottom of `~/.profile` for auto-start:
+```sh
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
+    exec sway
+fi
+```
 
 ## Usage
 
 ### Keybinds
-Check sway documentation, all keybinds are set to default. By default, Mod key is Windows logo [Mod4].
+Check sway documentation, all keybinds are set to default. By default, Mod key is Windows/Copilot logo [Mod4].
 
 ### Session control (wlogout)
 You can click golden gate icon in top left corner on waybar or press `Mod + Shift + E` keys.

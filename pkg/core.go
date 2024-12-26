@@ -18,6 +18,7 @@ var CORE_PACKAGES = []string{
 	"p7zip-full",
 	"git",
 	"webp",
+	"nano",
 
 	"pipewire",
 	"pipewire-pulse",
