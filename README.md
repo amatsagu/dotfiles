@@ -76,4 +76,4 @@ Check sway documentation, all keybinds are set to default. By default, Mod key i
 You can click golden gate icon in top left corner on waybar or press `Mod + Shift + E` keys.
 
 ## Credit
-- Wallpaper created by [Re Eʟy (@Elyzerda)](https://x.com/elyzerda/status/1833474305729921168?t=Au0iDGAeCAdQdHbwjKoD_Q)
+- Wallpaper created by [ao~](https://www.pixiv.net/en/artworks/123675620)

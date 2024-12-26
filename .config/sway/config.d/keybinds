@@ -1,17 +1,18 @@
 set $mod Mod4
-set $xkb_keyboard_layout pl
 
 input type:keyboard {
-    xkb_layout $xkb_keyboard_layout
+    xkb_layout pl
+    repeat_delay 600
+    repeat_rate 25
 }
 
 # Volume control
-bindsym XF86AudioLowerVolume exec pamixer -d 5
-bindsym XF86AudioRaiseVolume exec pamixer -i 5
-bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Microphone control
-bindsym XF86AudioMicMute exec pamixer --default-source -t
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+

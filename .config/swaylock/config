@@ -1,21 +1,21 @@
 ignore-empty-password
 
-color=dda456
+color=d58f3f
 image=~/.config/swaylock/lockscreen.jpg
 
 # Ring
 indicator-radius=150
 # line-uses-ring
-line-color=#68a1be
-ring-color=#498bab
-separator-color=#498bab
+line-color=#d58f3f
+ring-color=#d58f3f
+separator-color=#d58f3f
 
 text-color=#e8eaed
 layout-text-color=#e8eaed
 
-inside-ver-color=#dda456
-line-ver-color=#dda456
+inside-ver-color=#d58f3f
+line-ver-color=#d58f3f
 ring-ver-color=#d58e2a
 
-key-hl-color=#b7bdf8
+key-hl-color=#e8eaed
 line-wrong-color=#dd5656
