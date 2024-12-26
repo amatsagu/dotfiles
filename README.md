@@ -83,7 +83,7 @@ You can click golden gate icon in top left corner on waybar or press `Mod + Shif
 > Reliability. I'll admire current Debian 12 is sometimes too old so script will attempt auto upgrade to Debian 13 Trixie, testing branch. While they have "testing" in name - all packages are fairly well tested before being allowed. In my experience it's far more reliable than any Arch based distro while we still can enjoy almost latest packages.
 
 3. What's wrong with default settings?
-> At first launch, you'll find Sway using polish keyboard and 125% screen scalling. Those are my settings for P14s laptop that has 14'' physical screen. Check higher `#First entry` section to adjust preferences.
+> At first launch, you'll find Sway using polish keyboard and 125% screen scalling. Those are my settings for Thinkpad P14s (gen 2 AMD) laptop with 14'' physical screen. Check higher `#First entry` section to adjust preferences.
 
 4. What about gaming?
 > Install `gamemode` and `xwayland` packages, then restart machine. Proton still relies on x-server and gamemode should help you start your favorite games in optimized settings.
