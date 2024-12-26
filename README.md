@@ -14,7 +14,7 @@
 - Icon theme - **Papirus (dark)**
 - Cursor theme - **Phinger cursors (dark)**
 - Terminal color theme - **Gnome shell**
-- Fonts - **Noto Sans, Awesome Fonts, FiraCode**
+- Fonts - **Noto Sans, Awesome Fonts, Fira Code, Roboto**
 - Terminal - **Foot**
 - Text editor - **VSCode, Nano**
 - File manager - **Thunar** (with GVFS & Archive Manager)
