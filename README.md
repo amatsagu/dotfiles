@@ -37,13 +37,14 @@
 ## Install
 
 ### For Debian 12/13
-There's app/script prepared to help you quickly setup base desktop. Start by installing minimal version of debian from ISO (without DE), after first login type:
+1. There's app/script prepared to help you quickly setup base desktop. Start by installing minimal version of debian from ISO (without DE), after first login type:
 ```sh
 sudo apt install git
 git clone https://github.com/amatsagu/dotfiles.git
 cd ./dotfiles
 ./bin/install
 ```
+2. Restart machine (highly recommended)
 
 > [!CAUTION] 
 > Download this script on a directory where you have write permissions. ie. HOME. Or any directory within your home directory (otherwise script will fail). Additionally - if it detects Debian 12 (Bookworm), it'll attempt upgrade to Debian 13 (Trixie). It remains highly stable as all debian packages are thoroughly tested (unlikely on arch based systems) before being accepted. We do this to obtain all the new libraries and Sway which comes with a lot of bufixes and optimization for NVidia and AMD. Edit source code & recompile or follow below steps for other distros if you must stay on outdated Debian 12.
@@ -57,7 +58,6 @@ cd ./dotfiles
 2. Install all packages listed in `pkg/core.go`, `pkg/sway.go` & `pkg/theme.go`
 3. Run scripts in order: `script/cursor.sh`, `script/gtk-theme.sh`, `script/papirus-folders.sh`, `script/gsettings.sh` & `script/clone-configs.sh`
 4. Restart machine (highly recommended)
-5. Login into any tty and type `sway` to start session
 
 ## First entry
 Type `sway` into any tty to start Sway session. Default configuration is tailored for my laptop so you'll need to edit `~/.config/sway` configs to at least change keyboard layout and screen scalling. If you dislike starting sway from tty, you can install login manager or add below code at bottom of `~/.profile` for auto-start:
