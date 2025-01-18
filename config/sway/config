@@ -1,0 +1,20 @@
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=sway XDG_CURRENT_SESSION=sway XDG_SESSION_DESKTOP=sway ELECTRON_OZONE_PLATFORM_HINT=auto QT_QPA_PLATFORM=wayland GTK_CSD=0
+
+include /etc/sway/config-vars.d/*
+include $HOME/.config/sway/config.d/*
+
+decoration_hint server
+
+### Lock screen
+exec swayidle -w \
+	timeout 275 '~/.config/swaylock/lock.sh' \
+	timeout 300 'swaylock -f' \
+	timeout 450 'swaymsg "output * power off"' \
+	    resume 'swaymsg "output * power on"' \
+	before-sleep 'playerctl pause' \
+	before-sleep 'swaylock -f' &
+
+# Status bar
+bar {
+    swaybar_command waybar
+}
