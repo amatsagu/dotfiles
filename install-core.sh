@@ -40,6 +40,7 @@ exec install_gtk_theme
 exec install_font_packages
 source ./script/shared/gsettings.sh
 exec apply_gsettings
+apply_gsettings # Fallback because gsettings are weird
 mkdir ~/.config -p >> /dev/null
 cp ./config/* ~/.config -r >> /dev/null
 chmod +x ~/.config/swaylock/lock.sh >> /dev/null
