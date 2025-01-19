@@ -38,11 +38,12 @@ exec install_cursors
 exec install_icons
 exec install_gtk_theme
 exec install_font_packages
+exec install_wallpapers
 source ./script/shared/gsettings.sh
 exec apply_gsettings
-apply_gsettings # Fallback because gsettings are weird
 mkdir ~/.config -p >> /dev/null
 cp ./config/* ~/.config -r >> /dev/null
+chmod +x ~/.config/sway/script/* >> /dev/null
 chmod +x ~/.config/swaylock/lock.sh >> /dev/null
 print_message ok "Installed & applied all visual modifications."
 

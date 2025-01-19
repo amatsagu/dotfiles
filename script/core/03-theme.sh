@@ -28,6 +28,8 @@ install_gtk_theme() {
 }
 
 install_font_packages() {
+    print_message info "Installing fonts..."
+
     sudo apt-get install \
         fonts-cantarell \
         fonts-font-awesome \
@@ -48,4 +50,11 @@ install_font_packages() {
         fonts-noto-ui-extra \
         fonts-noto-unhinted \
     -y >> /dev/null
+}
+
+install_wallpapers() {
+    print_message info "Copying wallpapers (at ~/.local/share/backgrounds)..."
+
+    mkdir ~/.local/share/backgrounds -p >> /dev/null
+    cp ./wallpaper/* ~/.local/share/backgrounds -r >> /dev/null
 }

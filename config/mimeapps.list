@@ -1,0 +1,14 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+text/plain=code.desktop
+x-scheme-handler/terminal=foot.desktop
+inode/directory=Thunar.desktop
+application/x-directory=Thunar.desktop
+x-scheme-handler/terminal-emulator=foot.desktop
+
+[Added Associations]
+image/png=google-chrome.desktop;imv.desktop;

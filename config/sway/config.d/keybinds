@@ -48,6 +48,9 @@ floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
+# Change wallpaper
+bindsym $mod+Shift+w exec $HOME/.config/sway/script/change-wallpaper.sh
+
 # Sesson control
 bindsym $mod+Shift+e exec wlogout -p layer-shell
 

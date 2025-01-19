@@ -33,6 +33,7 @@ install_sway_packages() {
     -y >> /dev/null
 
     xdg-mime default foot.desktop x-scheme-handler/terminal >> /dev/null
+    xdg-mime default foot.desktop x-scheme-handler/terminal-emulator >> /dev/null
     xdg-mime default Thunar.desktop inode/directory >> /dev/null
     xdg-mime default Thunar.desktop application/x-directory >> /dev/null
 }
