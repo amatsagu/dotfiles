@@ -46,5 +46,7 @@ cp ./config/* ~/.config -r >> /dev/null
 chmod +x ~/.config/sway/script/* >> /dev/null
 chmod +x ~/.config/swaylock/lock.sh >> /dev/null
 print_message ok "Installed & applied all visual modifications."
+source ./script/core/04-variables.sh
+exec assign_environmental_variables_to_profile
 
 print_message info "It's recommended to make full system restart. After rebooting - you can type 'sway' in tty to start sway session."

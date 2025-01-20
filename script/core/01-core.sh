@@ -41,6 +41,7 @@ install_base_packages() {
         libnotify-bin \
         libsass1 \
         sassc \
+        polkitd \
     -y >> /dev/null
 }
 

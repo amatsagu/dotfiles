@@ -6,3 +6,6 @@ exec nm-applet
 
 # Bluetooth Applet (it will fail if doesn't exist but don't worry)
 exec blueman-applet
+
+# Shows popup whenever app asks for password, etc. to receive permissions
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &

@@ -5,7 +5,7 @@
 
 window#waybar {
     background-color: rgba(16, 16, 16, 0.9);
-    border-bottom: 2px solid #3d3d3d;
+    border-bottom: 2px solid #444444;
     color: #e8eaed;
     /* transition: background-color 250ms ease-in-out, border-bottom 250ms ease-in-out; */
 }
@@ -17,13 +17,13 @@ window#waybar.hidden {
 window#waybar.empty,
 window#waybar.floating,
 window#waybar:not(.solo) {
-    background-color: rgba(16, 16, 16, 0.6);
-    border-bottom: 2px solid transparent;
+    background-color: rgba(16, 16, 16, 0.75);
+    border-bottom: 2px dashed rgba(68, 68, 68, 0.75);
 }
 
 tooltip {
     background-color: rgba(16, 16, 16, 0.9);
-    border: 2px solid #3d3d3d;
+    border: 2px solid #444444;
     border-radius: 0;
 }
 
@@ -47,8 +47,8 @@ tooltip label {
 /* #window, */
 #clock.time,
 #clock.date {
-    border-right: 2px solid #3d3d3d;
-    border-radius: 120px;
+    border-right: 2px dashed #444444;
+    border-radius: 360px;
     padding-right: 16px;
 }
 
@@ -60,8 +60,8 @@ tooltip label {
 #backlight,
 #battery,
 #tray {
-    border-left: 2px solid #3d3d3d;
-    border-radius: 120px;
+    border-left: 2px dashed #444444;
+    border-radius: 360px;
     padding-left: 16px;
 }
 

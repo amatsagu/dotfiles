@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Discord (Vesktop)
 Comment=All-in-one voice and text chat for gamers - now patched for wayland
-Exec=/opt/Vesktop/vesktop --ozone-platform-hint=auto --ozone-platform=wayland --enable-webrtc-pipewire-capturer --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebUIDarkMode --force-dark-mode --start-maximized --enable-gpu %U
+Exec=/opt/Vesktop/vesktop --ozone-platform-hint=wayland --ozone-platform=wayland --enable-webrtc-pipewire-capturer --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebUIDarkMode --force-dark-mode --start-maximized --enable-gpu %U
 Terminal=false
 Type=Application
 Icon=vesktop

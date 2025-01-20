@@ -2,7 +2,7 @@
 Name=Visual Studio Code - URL Handler
 Comment=Code Editing. Redefined.
 GenericName=Text Editor
-Exec=/usr/share/code/code --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-gpu --ozone-platform=wayland --open-url %U
+Exec=/usr/share/code/code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland --enable-gpu --ozone-platform=wayland --open-url %U
 Icon=vscode
 Type=Application
 NoDisplay=true

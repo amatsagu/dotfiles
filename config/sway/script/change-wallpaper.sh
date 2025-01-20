@@ -13,6 +13,6 @@ while read -r SELECTED_WALLPAPER; do
     pkill swaybg 2> /dev/null
     swaybg -i "$WALLPAPER_DIR/$SELECTED_WALLPAPER" -m fill > /dev/null 2>&1 &
 
-done < <(find "$WALLPAPER_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" \) -printf "%f\n" | fuzzel --dmenu)
+done < <(find "$WALLPAPER_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" \) -printf "%f\n" | fuzzel --dmenu --width 50)
 
 disown 2> /dev/null

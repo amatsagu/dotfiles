@@ -3,7 +3,7 @@
 print_message info "Registering Spotify source list..."
 curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg  >> /dev/null
 sudo install -D -o root -g root -m 644 /etc/apt/trusted.gpg.d/spotify.gpg /etc/apt/keyrings/packages.spotify.gpg >> /dev/null
-echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.spotify.gpg] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list  >> /dev/null
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.spotify.gpg] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list >> /dev/null
 
 print_message info "Installing latest version of Spotify (stable)..."
 sudo apt-get update >> /dev/null
