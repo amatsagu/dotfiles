@@ -1,7 +1,7 @@
 <h2 align=center>Amatsagu Dotfiles<br>✦ Last Gate ✦</h2>
 
 <div align="center">
-<a href="#gallery">Gallery</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#frequently-asked-questions">FAQ</a> - <a href="#credit">Credit</a>
+<a href="#gallery">Gallery</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#credit">Credit</a>
 <br>
 ┗━ <a href="https://www.reddit.com/r/unixporn/comments/1d9r6a8/sway_like_falling_petals_and_flowing_water/">See OG reddit thread</a> ━┛
 </div>
@@ -68,25 +68,6 @@ You can click golden gate icon in top left corner on waybar or press `Mod + Shif
 
 ### Wallpapers
 There's custom script to let you quickly swap wallpapers under `Mod + Shift + W` keys.
-
-## Frequently asked questions
-1. Why Sway over Hyprland?
-> Stability. Hyprland sadly introduces a lot of regressions between updates and even in general just doesn't work very well outside arch based distros due to their bleeding edge nature. Yes - it is possible to run Hyprland on Debian 13 (Trixie) but is it worth it? For what? Animations? Those dotfiles are meant to be for more work oriented setups where many of us will end up disabling annoying animations anyway.
-
-2. Why Debian?
-> Reliability. I'll admire current Debian 12 is sometimes too old so script will attempt auto upgrade to Debian 13 Trixie, testing branch. While they have "testing" in name - all packages are fairly well tested before being allowed. In my experience it's far more reliable than any Arch based distro while we still can enjoy almost latest packages.
-
-3. What's wrong with default settings?
-> At first launch, you'll find Sway using polish keyboard and 125% screen scalling. Those are my settings for Thinkpad P14s (gen 2 AMD) laptop with 14'' physical screen. Check higher `#First entry` section to adjust preferences.
-
-4. What about gaming?
-> Install `gamemode` and `xwayland` packages, then restart machine. Proton still relies on x-server and gamemode should help you start your favorite games in optimized settings.
-
-5. XYZ app doesn't work?
-> Most likely it tries to launch on x-server (which will fail without xwayland package). You can install `xwaland` package, reboot and try then or add flag at start command to force wayland render type. A lot of electron based apps are known to ignore wayland until you enable ozone layer via flag. It's not Sway or Debian problem. By default - all apps I use works with pure wayland - that's the reason why xwayland pkg is opt-in.
-
-6. NVidia?
-> Untested. I assume you'll need Debian 13 to have newer kernel and then change/add kernel params to make it work. Sway has about same compatibility as Hyprland regarding that.
 
 ## Credit
 - For wallpapers, check `wallpaper/credits.txt`
