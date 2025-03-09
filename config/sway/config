@@ -13,6 +13,8 @@ include $HOME/.config/sway/config.d/*
 
 ### Lock screen
 exec swayidle -w \
+	timeout 240 'brightnessctl -s && brightnessctl set 25' \
+		resume 'brightnessctl -r' \
 	timeout 275 '~/.config/swaylock/lock.sh' \
 	timeout 300 'swaylock -f' \
 	timeout 450 'swaymsg "output * power off"' \
