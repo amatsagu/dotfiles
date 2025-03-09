@@ -79,6 +79,13 @@ for_window [title="Replace Files"] floating enable, resize set width 50 ppt heig
 for_window [title="Save Folder"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [title="File Operation Progress"] floating enable
 for_window [title="Confirm to replace files"] floating enable
+for_window [class="vlc"] floating enable
+for_window [app_id="thunar"] floating enable
+for_window [app_id="mpv"] floating enable, resize set width 50 ppt height 60 ppt
+for_window [app_id="imv"] floating enable, resize set width 50 ppt height 60 ppt
+for_window [app_id="virt-manager"] floating enable
+for_window [class="network-manager-gnome"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
 for_window [title="Firefox .*— Sharing Indicator"] floating enable, sticky enable, move to scratchpad
 for_window [app_id="" title=".* is sharing your screen."] floating enable
 for_window [title="^wlay$"] floating enable
