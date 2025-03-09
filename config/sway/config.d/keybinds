@@ -4,6 +4,12 @@ input type:keyboard {
     xkb_layout pl
 }
 
+input type:touchpad {
+      dwt enabled
+      tap enabled
+      natural_scroll enabled
+}
+
 # Volume control
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
