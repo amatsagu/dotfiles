@@ -35,9 +35,19 @@ if [ -d /sys/module/nvidia ] && [ ! -d /sys/module/amdgpu ] && [ ! -d /sys/modul
     export LIBVA_DRIVER_NAME=nvidia
 fi
 
+# Run Sway under ssh-agent
+run_sway() {
+    exec systemd-cat -- /usr/bin/ssh-agent /usr/bin/sway $@
+}
+
 # Auto start sway from tty1 after login
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-    exec sway
+    # Check if Nvidia driver installed, start Sway and send output to the journal
+    if [ -d /sys/module/nvidia ] && [ ! -d /sys/module/amdgpu ] && [ ! -d /sys/module/i915 ]; then
+        run_sway --unsupported-gpu $@
+    else
+        run_sway
+    fi
 fi
 
 EOF
