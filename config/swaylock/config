@@ -1,19 +1,15 @@
-color=dda456
+indicator-caps-lock
+indicator-idle-visible
+ignore-empty-password
+show-failed-attempts
+show-keyboard-layout
 image=~/.config/swaylock/lockscreen.jpg
-
-# Ring
 indicator-radius=150
-# line-uses-ring
-line-color=#68a1be
-ring-color=#498bab
-separator-color=#498bab
-
-text-color=#e8eaed
-layout-text-color=#e8eaed
-
-inside-ver-color=#dda456
-line-ver-color=#dda456
-ring-ver-color=#d58e2a
-
-key-hl-color=#b7bdf8
-line-wrong-color=#dd5656
+font=Ubuntu
+color=2f2f2f
+text-color=e8eaed
+inside-color=2f2f2f
+inside-clear-color=eeeeee
+ring-color=317b79
+ring-clear-color=317b79
+ring-ver-color=2980b9
