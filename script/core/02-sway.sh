@@ -30,7 +30,7 @@ install_sway_packages() {
 	    gvfs-common \
 	    gvfs-backends \
 	    nwg-look \
-        policykit-1-gnome \
+        mate-polkit \
     -y >> /dev/null
 
     xdg-mime default foot.desktop x-scheme-handler/terminal >> /dev/null
