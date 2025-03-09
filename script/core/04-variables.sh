@@ -10,8 +10,11 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
-export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK_CSD=0
+export _JAVA_AWT_WM_NONREPARENTING=1 # Java xwayland blank screen fix
+
 
 # Check if system is running in virtual machine
 case "$(systemd-detect-virt)" in
