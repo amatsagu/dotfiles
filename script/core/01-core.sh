@@ -35,8 +35,8 @@ install_base_packages() {
         nano \
         imagemagick \
         libadwaita-1-0 \
-        libgtk-3-0 \
-        libglib2.0-0 \
+        libgtk-3-0t64 \
+        libglib2.0-0t64 \
         libglib2.0-bin \
         libnotify-bin \
         libsass1 \
