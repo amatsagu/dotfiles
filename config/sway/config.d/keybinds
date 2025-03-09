@@ -1,8 +1,7 @@
 set $mod Mod4
-set $xkb_keyboard_layout pl
 
 input type:keyboard {
-    xkb_layout $xkb_keyboard_layout
+    xkb_layout pl
 }
 
 # Volume control
