@@ -56,5 +56,5 @@ fi
 EOF
 )
 
-    echo "$PROFILE_DATA" | tee "~/.profile" >> /dev/null
+    echo "$PROFILE_DATA" >> ~/.profile
 }
