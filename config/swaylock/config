@@ -5,10 +5,10 @@ show-failed-attempts
 show-keyboard-layout
 image=~/.config/swaylock/lockscreen.jpg
 indicator-radius=150
-font=Ubuntu
-color=2f2f2f
+font=Noto Sans
+color=de5648
 text-color=e8eaed
-inside-color=2f2f2f
+inside-color=de5648
 inside-clear-color=eeeeee
 ring-color=317b79
 ring-clear-color=317b79
