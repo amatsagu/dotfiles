@@ -1,51 +1,6 @@
-# set floating (nontiling) for apps expecting to work in that mode:
+# set floating mode for generated windows
 for_window [class="Yad" instance="yad"] floating enable
 for_window [app_id="yad"] floating enable
-for_window [app_id="blueman-manager"] floating enable, resize set width 40 ppt height 30 ppt
-for_window [app_id="pavucontrol"] floating enable, resize set width 40 ppt height 30 ppt
-for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-for_window [title="Open File"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="Open Files"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="Open Folder"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="Save File"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="Replace File"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="Save Files"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="Replace Files"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="Save Folder"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="File Operation Progress"] floating enable, sticky enable
-for_window [title="Confirm to replace files"] floating enable, resize set width 50 ppt height 60 ppt
-for_window [title="htop"] floating enable
-for_window [class="vlc"] floating enable
-for_window [app_id="thunar"] floating enable
-for_window [app_id="mpv"] floating enable, resize set 600 400
-for_window [app_id="imv"] floating enable
-for_window [app_id="virt-manager"] floating enable
-for_window [class="network-manager-gnome"] floating enable
-for_window [app_id="nm-connection-editor"] floating enable
-
-# set floating for window roles
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-for_window [window_role="About"] floating enable
-for_window [app_id="firefox" title="^Library$"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
-for_window [app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 30 ppt height 40 ppt
-for_window [title="Picture in picture"] floating enable, sticky enable
-
-
-
-
-
-
-
-
-
-
-
-# set floating mode for generated windows
 for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 50 ppt height 60 ppt
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -53,6 +8,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+for_window [window_role="About"] floating enable
 
 # set floating mode for specific applications
 for_window [instance="lxappearance"] floating enable
@@ -84,7 +40,12 @@ for_window [app_id="firefox" title="^Library$"] floating enable, border pixel 1,
 for_window [app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
 for_window [title="Picture in picture"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
 for_window [app_id="" title=".* is sharing your screen."] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
+for_window [app_id="blueman-manager"] floating enable, resize set width 40 ppt height 30 ppt
+for_window [app_id="pavucontrol"] floating enable, resize set width 40 ppt height 30 ppt
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="network-manager-gnome"] floating enable, resize set width 40 ppt height 30 ppt
+for_window [app_id="nm-connection-editor"] floating enable, resize set width 40 ppt height 30 ppt
 
 # misc, custom fixes, not really important but may help someone
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
-for_window [app_id="moe.launcher.the-honkers-railway-launcher"] floating enable
+for_window [app_id="moe.launcher.the-honkers-railway-launcher"] floating enable, resize set width 40 ppt height 30 ppt
