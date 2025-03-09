@@ -15,12 +15,11 @@ include $HOME/.config/sway/config.d/*
 exec swayidle -w \
 	timeout 240 'brightnessctl -s && brightnessctl set 25' \
 		resume 'brightnessctl -r' \
-	timeout 275 '~/.config/swaylock/lock.sh' \
-	timeout 300 'swaylock -f' \
+	timeout 300 '~/.config/swaylock/lock.sh' \
 	timeout 450 'swaymsg "output * power off"' \
 	    resume 'swaymsg "output * power on"' \
 	before-sleep 'playerctl pause' \
-	before-sleep 'swaylock -f' &
+	before-sleep '~/.config/swaylock/lock.sh && sleep 2' &
 
 # Status bar
 bar {
