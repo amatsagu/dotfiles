@@ -35,12 +35,6 @@ for_window [app_id="firefox" title="^Library$"] floating enable, border pixel 1,
 for_window [app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 30 ppt height 40 ppt
 for_window [title="Picture in picture"] floating enable, sticky enable
 
-# misc, custom fixes, not really important but may help someone
-for_window [app_id="xsensors"] floating enable
-for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
-for_window [app_id="copyq"] floating enable, sticky enable, resize set height 600px width 550px, move position cursor, move down 330
-for_window [app_id="moe.launcher.the-honkers-railway-launcher"] floating enable
-
 
 
 
@@ -89,5 +83,8 @@ for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="firefox" title="^Library$"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
 for_window [app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
 for_window [title="Picture in picture"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
-for_window [title="Firefox .*— Sharing Indicator"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
 for_window [app_id="" title=".* is sharing your screen."] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
+
+# misc, custom fixes, not really important but may help someone
+for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
+for_window [app_id="moe.launcher.the-honkers-railway-launcher"] floating enable
