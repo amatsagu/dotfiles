@@ -33,18 +33,18 @@ print_message ok "User accepted the warning. Proceeding with installation..."
 # exec install_sway_packages
 # print_message ok "Installed all sway related packages, essential apps and portals. Sway is already working, next step will theme it."
 
-source ./script/core/03-theme.sh
-exec install_cursors
-exec install_icons
-exec install_gtk_theme
-exec install_font_packages
-exec install_wallpapers
-source ./script/shared/gsettings.sh
-exec apply_gsettings
-mkdir ~/.config -p >> /dev/null
-cp ./config/* ~/.config -r >> /dev/null
-chmod +x ~/.config/sway/script/* >> /dev/null
-chmod +x ~/.config/swaylock/lock.sh >> /dev/null
+# source ./script/core/03-theme.sh
+# exec install_cursors
+# exec install_icons
+# exec install_gtk_theme
+# exec install_font_packages
+# exec install_wallpapers
+# source ./script/shared/gsettings.sh
+# exec apply_gsettings
+# mkdir ~/.config -p >> /dev/null
+# cp ./config/* ~/.config -r >> /dev/null
+# chmod +x ~/.config/sway/script/* >> /dev/null
+# chmod +x ~/.config/swaylock/lock.sh >> /dev/null
 print_message ok "Installed & applied all visual modifications."
 source ./script/core/04-variables.sh
 exec assign_environmental_variables_to_profile
