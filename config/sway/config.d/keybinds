@@ -110,6 +110,12 @@ bindsym $mod+space focus mode_toggle
 # Move focus to the parent container
 bindsym $mod+a focus parent
 
+# Allow switching between workspaces with left and right swipes (three fingers)
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
+
+# Allow toggling floating mode (and vice versa) for selected window
+bindgesture swipe:down floating toggle
 
 ### Resize mode
 mode "resize" {
