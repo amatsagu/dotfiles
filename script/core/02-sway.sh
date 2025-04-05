@@ -3,33 +3,33 @@
 install_sway_packages() {
     print_message info "Installing desktop portals, sway + essential apps & their extension packages..."
 
-    # Utility, core packages
     sudo apt-get install \
+        xdg-desktop-portal \
         xdg-desktop-portal-wlr \
         xdg-desktop-portal-gtk \
         sway \
         swaybg \
         swayidle \
-        swaylock \
+        gtklock \
         waybar \
+        pamixer \
         wlogout \
-        mako-notifier \
+        mako \
         fuzzel \
         grim \
         slurp \
         mpv \
         imv \
         thunar \
-        thunar-data \
-	    thunar-volman \
-	    thunar-archive-plugin \
-	    gvfs \
-	    gvfs-libs \
-	    gvfs-fuse \
-	    gvfs-daemons \
-	    gvfs-common \
-	    gvfs-backends \
-	    nwg-look \
+        thunar-volman \
+        thunar-archive-plugin \
+        gvfs \
+        gvfs-mtp \
+        gvfs-nfs \
+        gvfs-smb \
+        foot \
+        gnome-keyring \
+        polkit \
         mate-polkit \
     -y >> /dev/null
 

@@ -1,7 +1,17 @@
 source ./script/shared/logger.sh
 
+if ! grep -q "CachyOS" /etc/os-release; then
+    print_message error "You're not running CachyOS Linux distro. This script is prepared & tested specifically for CachyOS. Installation aborted."
+    exit 1
+fi
+
+if [[ "$(basename "$SHELL")" != "bash" ]]; then
+    print_message error "This script is supposed to run using bash. Default zsh configuration will be removed. Please change default shell and restart before you continue: chsh -s /usr/bin/bash"
+    exit 1
+fi
+
 echo -e " "
-print_message warn "Proceeding with this installation will overwrite a lot of existing configurations. This custom, Sway/Owl installation relies on newer packages from Debian 13 (Trixie) so if you use version 12 - we'll try to force upgrade your repositories. This operation is somewhat dangerous and if fails - your system may end in unrecoverable state."
+print_message warn "Proceeding with this installation will overwrite a lot of existing configurations. This operation is somewhat dangerous and if fails - your system may end in unrecoverable state."
 echo -e "${NC}"
 echo -e "Do you want to proceed? (yes/no)"
 echo -e " "
@@ -15,29 +25,23 @@ fi
 
 print_message ok "User accepted the warning. Proceeding with installation..."
 
-source ./script/shared/upgrade-trixie.sh
-exec try_trixie_upgrade
-
-print_message info "Upgrading system packages... (can take a while)"
-exec upgrade_system_packages
+print_message info "Searching & auto updating system packages... (can take a while)"
+source ./script/shared/cachyos.sh
+exec refresh_keyrings
+exec update_system
 
 source ./script/core/01-core.sh
-exec install_microcode
 exec install_base_packages
-exec install_audio_packages
-exec try_install_bluetooth_packages
-exec try_install_brightnessctl
+exec purge_base_noise_packages
 print_message ok "Installed all basic packages. From this point, you should see working network, bluetooth, audio, etc."
+print_message info "Your audio, network, bluetooth, laptop specific packages are handled by CachyOS Hello packages, script does not touch those elements."
 
 source ./script/core/02-sway.sh
 exec install_sway_packages
 print_message ok "Installed all sway related packages, essential apps and portals. Sway is already working, next step will theme it."
 
 source ./script/core/03-theme.sh
-exec install_cursors
-exec install_icons
-exec install_gtk_theme
-exec install_font_packages
+exec install_theme_packages
 exec install_wallpapers
 source ./script/shared/gsettings.sh
 exec apply_gsettings

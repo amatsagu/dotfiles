@@ -6,9 +6,9 @@ show-keyboard-layout
 image=~/.config/swaylock/lockscreen.jpg
 indicator-radius=150
 font=Noto Sans
-color=de5648
+color=5294e2
 text-color=e8eaed
-inside-color=de5648
+inside-color=5294e2
 inside-clear-color=eeeeee
 ring-color=317b79
 ring-clear-color=317b79

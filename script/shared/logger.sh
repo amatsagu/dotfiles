@@ -45,7 +45,7 @@ exec() {
     if [ $? -ne 0 ]; then
         print_message error "Failed to execute '$command' command:"
         print_error_output
-        rm "$temp_output"
-        exit 1
+        # rm "$temp_output"
+        # exit 1
     fi
 }

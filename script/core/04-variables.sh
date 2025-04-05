@@ -13,6 +13,9 @@ export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK_CSD=0
+export GDK_BACKEND="wayland,x11"
+export GTK_BACKEND="wayland,x11"
+export CLUTTER_BACKEND=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1 # Java xwayland blank screen fix
 
 
@@ -56,5 +59,5 @@ fi
 EOF
 )
 
-    echo "$PROFILE_DATA" >> ~/.profile
+    echo "$PROFILE_DATA" >> ~/.bash_profile
 }

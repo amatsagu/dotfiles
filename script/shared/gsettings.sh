@@ -6,7 +6,7 @@ apply_gsettings() {
 
     gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
     gsettings set org.gnome.desktop.interface cursor-theme "phinger-cursors-dark"
-    gsettings set org.gnome.desktop.interface gtk-theme "Fluent-red-Dark"
+    gsettings set org.gnome.desktop.interface gtk-theme "Fluent-Dark"
 
     gsettings set org.gnome.desktop.interface clock-format "24h"
     gsettings set org.gtk.Settings.FileChooser clock-format "24h"

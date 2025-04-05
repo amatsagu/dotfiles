@@ -8,4 +8,4 @@ exec nm-applet
 exec blueman-applet
 
 # Shows popup whenever app asks for password, etc. to receive permissions
-exec /usr/libexec/polkit-mate-authentication-agent-1 &
+exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &

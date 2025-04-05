@@ -7,7 +7,7 @@ default_floating_border pixel $border_size_floating
 hide_edge_borders smart
 
 # target                    title     bg      text     indicator  border
-client.focused              #0a0b16   #2f343f #4477ff  #de5648    #de5648
+client.focused              #0a0b16   #2f343f #4477ff  #5294e2    #5294e2
 client.urgent               #0a0b16   #2f343f #4477ff  #d83e43    #d83e43
 client.focused_inactive     #2f343f   #2f343f #d8dee8  #3d3d3d    #3d3d3d
 client.unfocused            #2f343f   #2f343f #d8dee8  #3d3d3d    #3d3d3d
