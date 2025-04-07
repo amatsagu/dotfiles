@@ -48,7 +48,6 @@ exec apply_gsettings
 mkdir ~/.config -p >> /dev/null
 cp ./config/* ~/.config -r >> /dev/null
 chmod +x ~/.config/sway/script/* >> /dev/null
-chmod +x ~/.config/swaylock/lock.sh >> /dev/null
 print_message ok "Installed & applied all visual modifications."
 source ./script/core/04-variables.sh
 exec assign_environmental_variables_to_profile

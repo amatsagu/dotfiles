@@ -18,7 +18,7 @@ window#waybar.empty,
 window#waybar.floating,
 window#waybar:not(.solo) {
     background-color: rgba(16, 16, 16, 0.75);
-    border-bottom: 2px dashed rgba(68, 68, 68, 0.75);
+    border-bottom: none;
 }
 
 tooltip {
@@ -47,7 +47,7 @@ tooltip label {
 /* #window, */
 #clock.time,
 #clock.date {
-    border-right: 2px dashed #444444;
+    border-right: 2px solid #444444;
     border-radius: 360px;
     padding-right: 16px;
 }
@@ -60,7 +60,7 @@ tooltip label {
 #backlight,
 #battery,
 #tray {
-    border-left: 2px dashed #444444;
+    border-left: 2px solid #444444;
     border-radius: 360px;
     padding-left: 16px;
 }

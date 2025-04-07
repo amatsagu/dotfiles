@@ -11,6 +11,7 @@ install_sway_packages() {
         swaybg \
         swayidle \
         gtklock \
+        gtklock-userinfo-module \
         waybar \
         pamixer \
         wlogout \
