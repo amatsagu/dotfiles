@@ -2,9 +2,11 @@
 Name=Visual Studio Code
 Comment=Code Editing. Redefined.
 GenericName=Text Editor
-Exec=/usr/share/code/code --ozone-platform-hint=wayland --ozone-platform=wayland --enable-webrtc-pipewire-capturer --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebUIDarkMode --force-dark-mode --start-maximized --enable-gpu %F
-Icon=vscode
+Exec=/usr/bin/code --ozone-platform-hint=wayland --ozone-platform=wayland --enable-webrtc-pipewire-capturer --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebUIDarkMode --force-dark-mode --start-maximized --enable-gpu %F
+Icon=visual-studio-code
 Type=Application
+StartupNotify=false
+StartupWMClass=Code
 Terminal=false
 Categories=TextEditor;Development;IDE;Utility;
 MimeType=text/plain;inode/directory;application/x-code-workspace;
@@ -13,5 +15,5 @@ Keywords=vscode;vsc;code;editor;text;
 
 [Desktop Action new-empty-window]
 Name=New Empty Window
-Icon=vscode
-Exec=/usr/share/code/code --ozone-platform-hint=wayland --ozone-platform=wayland --enable-webrtc-pipewire-capturer --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebUIDarkMode --force-dark-mode --start-maximized --enable-gpu --new-window %F
+Icon=visual-studio-code
+Exec=/usr/bin/code --ozone-platform-hint=wayland --ozone-platform=wayland --enable-webrtc-pipewire-capturer --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebUIDarkMode --force-dark-mode --start-maximized --enable-gpu --new-window %F

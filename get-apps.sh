@@ -1,13 +1,10 @@
 source ./script/shared/logger.sh
 
-# Included here are only apps, languages or libraries that have specific way to get them working on Debian 13, wayland.
-# Any other apps like Firefox or Deluge should be normally installed from apt as is.
+# Included here are only apps, languages or libraries that have specific way to get them working on wayland.
+# Any other apps like Firefox or Deluge should be normally installed as is.
 INSTALL_APPS=(
-    "discord"
     "termius"
-    "spotify"
     "vsc" # Microsoft's Visual Studio Code
-    "google-chrome"
 )
 
 # There's also included way to properly remove all "custom" apps that were previously installed by this script.

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 print_message info "Uninstalling Visual Studio Code..."
-sudo apt-get purge code -y >> /dev/null
+paru -Rs --noconfirm visual-studio-code-bin >> /dev/null
 sudo rm /usr/share/applications/code.desktop >> /dev/null
 sudo rm ~/.local/share/applications/code.desktop >> /dev/null
 sudo rm /usr/share/applications/code-url-handler.desktop >> /dev/null

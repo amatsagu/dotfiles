@@ -3,7 +3,7 @@
 install_sway_packages() {
     print_message info "Installing desktop portals, sway + essential apps & their extension packages..."
 
-    sudo apt-get install \
+    sudo pacman -S --noconfirm \
         xdg-desktop-portal \
         xdg-desktop-portal-wlr \
         xdg-desktop-portal-gtk \
@@ -32,7 +32,7 @@ install_sway_packages() {
         gnome-keyring \
         polkit \
         mate-polkit \
-    -y >> /dev/null
+    >> /dev/null
 
     xdg-mime default foot.desktop x-scheme-handler/terminal >> /dev/null
     xdg-mime default foot.desktop x-scheme-handler/terminal-emulator >> /dev/null

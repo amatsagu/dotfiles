@@ -4,7 +4,7 @@ install_base_packages() {
     print_message info "Installing essential packages..."
 
     # Utility, core packages
-    sudo pacman -Syu --noconfirm \
+    sudo pacman -S --noconfirm \
         network-manager-applet \
         nano \
         nano-syntax-highlighting \

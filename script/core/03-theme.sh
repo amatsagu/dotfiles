@@ -4,7 +4,7 @@ install_theme_packages() {
     print_message info "Installing fonts + theme packages..."
 
     # Utility, core packages
-    sudo pacman -Syu --noconfirm \
+    sudo pacman -S --noconfirm \
         phinger-cursors \
         papirus-icon-theme \
         fluent-gtk-theme \
@@ -20,7 +20,7 @@ install_theme_packages() {
         ttf-opensans \
     >> /dev/null
 
-    paru -Syu --noconfirm papirus-folders >> /dev/null
+    paru -S --noconfirm papirus-folders >> /dev/null
     papirus-folders -u -C blue --theme Papirus-Dark >> /dev/null
 }
 
