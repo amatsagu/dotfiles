@@ -67,4 +67,4 @@ You can click golden gate icon in top left corner on waybar or press `Mod + Shif
 There's custom script to let you quickly swap wallpapers under `Mod + Shift + W` keys. Script does not edit colors, so it's up to end user to update their sway & waybar configs.
 
 ## Credit
-- For wallpapers, check `wallpaper/credits.txt`
+- For backgrounds, check `./wallpapers/credits.txt`
