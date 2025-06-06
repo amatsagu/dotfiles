@@ -32,6 +32,8 @@
 <br><br>
 ![floating view](.github/2.png)
 <br><br>
+![fullscreen view](.github/3.png)
+<br><br>
 
 ## Install
 
@@ -44,7 +46,7 @@
 sudo pacman -Syu git
 git clone https://github.com/amatsagu/dotfiles.git
 cd ./dotfiles
-./install-core.sh
+./scripts/install.sh
 ```
 2. Restart machine (highly recommended)
 
