@@ -1,4 +1,4 @@
-<h2 align=center>Amatsagu Dotfiles<br>✦ Horizon ✦</h2>
+<h2 align=center>Amatsagu Dotfiles<br>✦ InkTide ✦</h2>
 
 <div align="center">
 <a href="#gallery">Gallery</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#credit">Credit</a>
@@ -48,6 +48,8 @@ git clone https://github.com/amatsagu/dotfiles.git
 cd ./dotfiles
 ./scripts/install.sh
 ```
+![fullscreen view](.github/script.png)
+
 2. Restart machine (highly recommended)
 
 > [!CAUTION] 

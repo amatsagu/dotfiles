@@ -4,7 +4,9 @@ install_dotfiles() {
     papirus-folders -u -C magenta --theme Papirus-Dark >> /dev/null
 
     mkdir ~/.local/share/backgrounds -p >> /dev/null
-    cp ./wallpaper/* ~/.local/share/backgrounds -r >> /dev/null
+    cp ./wallpapers/* ~/.local/share/backgrounds -r >> /dev/null
+
+    cp ./configs/* ~/.config -r >> /dev/null
 }
 
 apply_gsettings() {
