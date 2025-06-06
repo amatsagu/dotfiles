@@ -1,0 +1,25 @@
+set $scale 1.25
+
+seat * shortcuts_inhibitor disable
+seat * xcursor_theme phinger-cursors-dark 24
+font pango:font pango:Noto Sans Font 12
+
+output * scale $scale
+exec $HOME/.config/sway/script/set-wallpaper.sh
+
+exec {
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+    # gsettings set org.x.apps.portal color-scheme "prefer-dark"
+
+    gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+    gsettings set org.gnome.desktop.interface cursor-theme "phinger-cursors-dark"
+    gsettings set org.gnome.desktop.interface gtk-theme "Fluent-grey-Dark"
+
+    gsettings set org.gnome.desktop.interface clock-format "24h"
+    gsettings set org.gtk.Settings.FileChooser clock-format "24h"
+
+    gsettings set org.gnome.desktop.interface font-name "Roboto 10"
+    gsettings set org.gnome.desktop.interface document-font-name "Roboto 10"
+    gsettings set org.gnome.desktop.wm.preferences titlebar-font "Sans Bold 10"
+    gsettings set org.gnome.desktop.interface monospace-font-name "Fira Code 11"
+}

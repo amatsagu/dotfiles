@@ -1,0 +1,77 @@
+* {
+  all: unset;
+}
+
+window {
+  /* background-color: #181818; */
+  background-image: url("../../.local/share/backgrounds/Elysia.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#window-box {
+  background-color: alpha(#101010, 0.90);
+  border: 1px solid #e8eaed;
+  padding: 0 32px;
+  box-shadow:
+    0 60px 80px rgba(0, 0, 0, 0.6),
+    0 45px 26px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+}
+
+#time-box {
+  font-size: 0;
+}
+
+#clock-label {
+  min-width: 320px;
+  background-color: alpha(#e2799f, 0.1);
+  color: #e2799f;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 30px;
+  margin-bottom: 10px;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid alpha(#e2799f, 0.5);
+  border-top: 0;
+}
+
+/* hide "Password:" label */
+#input-label {
+  font-size: 0;
+}
+
+#user-icon {
+  margin: 8px 0 0 0;
+}
+
+#user-name {
+  font-size: 16px;
+  margin: 8px 0 8px 0;
+}
+
+#input-field {
+  border-radius: 8px;
+  padding: 10px 15px;
+  border: 1px solid #3d3d3d;
+}
+
+#input-field:focus {
+  border: 1px solid #e8eaed;
+}
+
+#warning-label,
+#error-label,
+#unlock-button {
+  margin-top: 12px;
+  padding: 10px 2rem;
+  margin-bottom: 20px;
+}
+
+#unlock-button {
+  border-radius: 8px;
+  background-color: alpha(#e2799f, 0.1);
+  color: #e2799f;
+  border: 1px solid alpha(#e2799f, 0.5);
+}

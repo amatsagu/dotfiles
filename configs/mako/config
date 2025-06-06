@@ -1,0 +1,26 @@
+background-color=#1f1f1ff2
+border-size=1
+border-color=#444444
+border-radius=0
+max-icon-size=48
+default-timeout=6000
+font=Fira Code 11
+max-visible=3
+max-history=5
+sort=+priority
+# anchor=top-center
+actions=0
+
+[urgency=low]
+border-color=#444444
+
+[urgency=normal]
+border-color=#e8eaed
+
+[urgency=high]
+border-color=#d58f3f
+default-timeout=0
+
+[urgency=critical]
+border-color=#d83e43
+default-timeout=0

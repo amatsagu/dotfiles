@@ -1,4 +1,4 @@
-<h2 align=center>Amatsagu Dotfiles<br>✦ Voyage ✦</h2>
+<h2 align=center>Amatsagu Dotfiles<br>✦ Horizon ✦</h2>
 
 <div align="center">
 <a href="#gallery">Gallery</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#credit">Credit</a>
@@ -10,8 +10,8 @@
 
 - Linux distro - **CachyOS**
 - Tiling manager - **Sway**
-- GTK theme - **Fluent (blue, dark)**
-- Icon theme - **Papirus (yaru, dark)**
+- GTK theme - **Fluent (gray, dark)**
+- Icon theme - **Papirus (magenta, dark)**
 - Cursor theme - **Phinger cursors (dark)**
 - Terminal color theme - **Gnome shell**
 - Fonts - **Noto Sans, Awesome Fonts, Fira Code, Roboto**

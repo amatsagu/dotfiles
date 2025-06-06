@@ -1,0 +1,141 @@
+* {
+    font-size: 	13px;
+	font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.3) 25%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.1) 100%
+    ), rgba(31, 31, 31, 0.95);
+    color: #e8eaed;
+    border-bottom: 1px solid #444444;
+}
+
+window#waybar.empty,
+window#waybar.floating,
+window#waybar:not(.solo) {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.25) 20%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.0) 100%
+    );
+    border-bottom: none;
+}
+
+tooltip {
+    background-color: rgba(16, 16, 16, 0.8);
+    border: 1px solid #444444;
+    border-radius: 0;
+}
+
+tooltip label {
+    color: #e8eaed;
+}
+
+/* Shared elements */
+#custom-launcher,
+#workspaces,
+#time-display,
+#tray {
+    border: 1px solid #444444;
+    border-top: 0;
+    margin: 0 8px;
+    padding: 0 8px;
+    background-color: #1f1f1f;
+}
+
+#custom-launcher,
+#pulseaudio.muted,
+#wireplumber.muted,
+#battery.warning,
+#battery.charging,
+#battery.plugged {
+	color: #d58f3f;
+}
+
+#workspaces button.urgent,
+#battery.critical:not(.charging) {
+	color: #d83e43;
+}
+
+/* Left side */
+#workspaces button,
+#custom-launcher {
+    font-weight: bold;
+    box-shadow: inset 0 -2px transparent;
+}
+
+#workspaces button {
+    color: #4f4f4f;
+    background-color: transparent;
+    border: none;
+}
+
+#workspaces button:hover,
+#workspaces button.focused {
+    background: inherit;
+    color: #e8eaed;
+}
+
+/* Right side */
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#backlight,
+#custom-star-divider,
+#pulseaudio,
+#battery {
+    border-bottom: 1px solid #444444;
+    padding: 0 4px;
+    background-color: #1f1f1f;
+}
+
+#custom-star-divider {
+    color: #e2799f;
+    font-size: 16px;
+}
+
+#backlight {
+    margin-left: 8px;
+    padding-left: 8px;
+    border-left: 1px solid #444444;
+}
+
+#battery {
+    margin-right: 8px;
+    padding-right: 8px;
+    border-right: 1px solid #444444;
+}
+
+#time-display #custom-star-divider {
+    border-bottom: none;
+}
+
+/* #clock.date {
+    margin-left: 4px;
+} */
+
+/* #clock.time, #clock.date {
+    background-color: #3b3a3f;
+    padding: 2px 4px;
+    margin: 0 4px;
+}
+
+#clock.date {
+} */
+

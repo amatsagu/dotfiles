@@ -1,0 +1,129 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": [
+        "custom/launcher",
+        "sway/workspaces",
+        "sway/window"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "tray",
+        "backlight",
+        "custom/star-divider",
+        "pulseaudio",
+        "custom/star-divider",
+        "battery",
+        "group/time-display"
+    ],
+    "group/time-display": {
+        "orientation": "horizontal",
+        "modules": [
+            "clock#time",
+            "custom/star-divider",
+            "clock#date"
+        ],
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": true
+        }
+    },
+    "custom/launcher": {
+        "format": "ム",
+        "tooltip": false,
+        "on-click": "exec wlogout -p layer-shell"
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "enable-bar-scroll": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
+        }
+    },
+    "sway/window": {
+        "format": "{}"
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 8
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "   {percent}%",
+        "on-scroll-up": "exec brightnessctl set 5%+",
+        "on-scroll-down": "exec brightnessctl set 5%-",
+        "tooltip": false
+    },
+    "custom/star-divider": {
+        "format": "✦",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon}   {volume:2}%   {format_source}",
+        "format-bluetooth": "{icon}   {volume:2}%    {format_source}",
+        "format-bluetooth-muted": "{icon}   Muted    {format_source}",
+        "format-muted": "{icon}   Muted   {format_source}",
+        "format-source": "  {volume:2}%",
+        "format-source-muted": "   Muted",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "default": [
+                "",
+                // Increase number of icons indicating "some volume" and "high volume" so the "empty speaker" is only used in <10%
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol"
+    },
+    "battery": {
+        "interval": 5,
+        "states": {
+            "warning": 25,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "ϟ  {icon}  {capacity}%",
+        "format-plugged": "ϟ  {icon}  {capacity}%",
+        "format-alt": "{icon}  {time} remaining",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "clock#week": {
+        "format": "{:%A}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
+    },
+    "clock#time": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
+    },
+    "clock#date": {
+        "format": "{:%d.%m.%Y}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
+    }
+}
