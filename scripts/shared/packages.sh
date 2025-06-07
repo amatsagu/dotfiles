@@ -43,6 +43,7 @@ install_sway_packages() {
         thunar-volman \
         thunar-archive-plugin \
         tumbler \
+        engrampa \
         gvfs \
         gvfs-mtp \
         gvfs-nfs \
