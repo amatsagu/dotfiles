@@ -1,5 +1,4 @@
 {
-    "workbench.iconTheme": "bearded-icons",
     "debug.console.fontFamily": "Fira Code",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
@@ -7,5 +6,7 @@
     "go.inlayHints.constantValues": true,
     "go.inlayHints.rangeVariableTypes": true,
     "vscord.status.idle.check": false,
-    "vscord.status.idle.enabled": false
+    "vscord.status.idle.enabled": false,
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "vscode-icons"
 }
