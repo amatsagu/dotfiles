@@ -1,10 +1,11 @@
 {
-    "window.titleBarStyle": "custom",
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "bearded-icons",
     "debug.console.fontFamily": "Fira Code",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "go.inlayHints.assignVariableTypes": true,
     "go.inlayHints.constantValues": true,
     "go.inlayHints.rangeVariableTypes": true,
+    "vscord.status.idle.check": false,
+    "vscord.status.idle.enabled": false
 }
