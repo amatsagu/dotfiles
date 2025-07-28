@@ -15,14 +15,16 @@ assign_environmental_variables_to_profile() {
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
+export DESKTOP_SESSION=sway
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK_CSD=0
 export GDK_BACKEND="wayland,x11"
-export GTK_BACKEND="wayland,x11"
+export GTK_BACKEND="wayland"
 export CLUTTER_BACKEND=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1 # Java xwayland blank screen fix
+export TERMINAL="foot"
 
 
 # Check if system is running in virtual machine
@@ -49,7 +51,7 @@ fi
 
 # Run Sway under ssh-agent
 run_sway() {
-    exec systemd-cat -- /usr/bin/ssh-agent /usr/bin/sway $@
+    exec systemd-cat -- dbus-run-session ssh-agent sway "$@"
 }
 
 # Auto start sway from tty1 after login

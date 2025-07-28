@@ -1,1 +1,29 @@
-/home/amatsagu/.themes/Fluent-Dark/gtk-4.0/gtk.css
+window, dialog, .background {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border: 1px solid #444444;
+}
+
+decoration {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.window-frame, .header-bar, .decoration {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.button, .entry, .combobox, .menu, .tooltip, .popovers, .popup {
+    border-radius: 0px;
+}
+
+.notebook, .paned {
+    border-radius: 0px;
+}

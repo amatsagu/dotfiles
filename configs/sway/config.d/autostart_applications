@@ -12,3 +12,9 @@ exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 
 # Show OSD notifications + make functional keys work
 exec swayosd-server
+
+# Make clipboard work similar to Gnome/KDE or Windows
+exec wl-paste --watch clipman store
+
+# Have thunar and its other components running in backgrounds so they launch way faster when needed
+exec thunar --daemon

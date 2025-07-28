@@ -11,4 +11,4 @@ application/x-directory=Thunar.desktop
 x-scheme-handler/terminal-emulator=foot.desktop
 
 [Added Associations]
-image/png=brave-browser.desktop;imv.desktop;
+image/png=brave-browser.desktop;

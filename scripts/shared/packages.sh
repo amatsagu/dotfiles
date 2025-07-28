@@ -39,8 +39,9 @@ install_sway_packages() {
         fuzzel \
         grim \
         slurp \
+        wl-clipboard \
+        clipman \
         mpv \
-        imv \
         thunar \
         thunar-volman \
         thunar-archive-plugin \
