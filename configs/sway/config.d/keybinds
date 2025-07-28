@@ -28,8 +28,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym Print exec bash -c 'grim ~/screenshot.png && wl-copy < ~/screenshot.png && notify-send -u low -a "Screenshot" "Saved and copied to clipboard"'
-bindsym $mod+Print exec bash -c 'grim -g "$(slurp)" ~/screenshot.png && wl-copy < ~/screenshot.png && notify-send -u low -a "Screenshot" "Region saved and copied to clipboard"'
+bindsym Print exec grim /tmp/screenshot.png && wl-copy --type image/png < /tmp/screenshot.png && notify-send "Screenshot taken and copied"
+bindsym $mod+Print exec slurp | xargs -I {} grim -g {} /tmp/screenshot.png && wl-copy --type image/png < /tmp/screenshot.png && notify-send "Region screenshot copied"
 
 # Start a terminal
 bindsym $mod+Return exec foot
