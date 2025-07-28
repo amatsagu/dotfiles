@@ -11,16 +11,16 @@ input type:touchpad {
 }
 
 # Volume control
-bindsym XF86AudioLowerVolume exec pamixer -d 5
-bindsym XF86AudioRaiseVolume exec pamixer -i 5
-bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioLowerVolume exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --output-volume lower
+bindsym XF86AudioRaiseVolume exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --output-volume raise
+bindsym XF86AudioMute exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --output-volume mute-toggle
 
 # Microphone control
-bindsym XF86AudioMicMute exec pamixer --default-source -t
+bindsym XF86AudioMicMute exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --input-volume mute-toggle
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessDown exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --brightness lower
+bindsym XF86MonBrightnessUp exec swayosd-client --monitor "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true).name')" --brightness raise
 
 # Music/Audio control
 bindsym XF86AudioPlay exec playerctl play-pause

@@ -9,3 +9,6 @@ exec blueman-applet
 
 # Shows popup whenever app asks for password, etc. to receive permissions
 exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+
+# Show OSD notifications + make functional keys work
+exec swayosd-server

@@ -4,7 +4,7 @@
 
 window {
   /* background-color: #181818; */
-  background-image: url("../../.local/share/backgrounds/Elysia.png");
+  background-image: url("../../.local/share/backgrounds/Astra Yao.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -26,14 +26,14 @@ window {
 
 #clock-label {
   min-width: 320px;
-  background-color: alpha(#e2799f, 0.1);
-  color: #e2799f;
+  background-color: alpha(#d58f3f, 0.1);
+  color: #d58f3f;
   font-weight: 500;
   font-size: 14px;
   padding: 10px 30px;
   margin-bottom: 10px;
   border-radius: 0 0 4px 4px;
-  border: 1px solid alpha(#e2799f, 0.5);
+  border: 1px solid alpha(#d58f3f, 0.5);
   border-top: 0;
 }
 
@@ -71,7 +71,7 @@ window {
 
 #unlock-button {
   border-radius: 8px;
-  background-color: alpha(#e2799f, 0.1);
-  color: #e2799f;
-  border: 1px solid alpha(#e2799f, 0.5);
+  background-color: alpha(#d58f3f, 0.1);
+  color: #d58f3f;
+  border: 1px solid alpha(#d58f3f, 0.5);
 }
