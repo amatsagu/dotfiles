@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 install_dotfiles() {
-    papirus-folders -u -C magenta --theme Papirus-Dark >> /dev/null
+    papirus-folders -u -C yellow --theme Papirus-Dark >> /dev/null
 
     mkdir ~/.local/share/backgrounds -p >> /dev/null
     cp ./wallpapers/* ~/.local/share/backgrounds -r >> /dev/null

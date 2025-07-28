@@ -17,7 +17,8 @@ install_base_packages() {
         htop \
         fastfetch \
         dconf \
-        paru
+        paru \
+        jq
 }
 
 install_sway_packages() {
@@ -28,6 +29,7 @@ install_sway_packages() {
         sway \
         swaybg \
         swayidle \
+        swayosd \
         gtklock \
         gtklock-userinfo-module \
         waybar \

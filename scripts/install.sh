@@ -66,6 +66,9 @@ main() {
     grep -q "CachyOS" /etc/os-release && {
         run_command "purge_base_noise_packages" "Purging some base CachyOS packages (debloating)..."
     }
+
+    # May be needed to let user control screen brightness in rare cases
+    sudo usermod -a -G video $USER
     
     # Final message
     echo

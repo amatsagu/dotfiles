@@ -5,10 +5,6 @@ optimize_for_laptop() {
     sudo systemctl enable --now bluetooth.service
     sudo sed -i 's/#AutoEnable=false/AutoEnable=true/' /etc/bluetooth/main.conf
 
-    sudo cp ./services/low-battery-notification.service /etc/systemd/system/low-battery-notification.service
-    sudo cp ./services/powertop.service /etc/systemd/system/powertop.service
-    sudo systemctl enable --now low-battery-notification.service
-    sudo systemctl enable --now powertop.service
     warning "Installed custom services which will auto-tune battery usage in real time and notify you when battery is low (<15%)."
 }
 
