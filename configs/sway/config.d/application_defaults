@@ -46,7 +46,7 @@ for_window [app_id="waydroid.*"] floating enable
 for_window [app_id="spotify-launcher"] floating enable
 for_window [class="Deluge"] floating enable
 for_window [class="Engrampa"] floating enable
-or_window [app_id="blueman-manager"] floating enable
+for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="network-manager-gnome"] floating enable
