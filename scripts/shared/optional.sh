@@ -27,7 +27,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1 # Java xwayland blank screen fix
 export TERMINAL="foot"
 export SSH_AUTH_SOCK
 
-
 # Check if system is running in virtual machine
 case "$(systemd-detect-virt)" in
 qemu)
@@ -52,7 +51,7 @@ fi
 
 # Run Sway under ssh-agent
 run_sway() {
-    exec dbus-run-session sway
+    exec systemd-cat -- /usr/bin/ssh-agent /usr/bin/sway $@
 }
 
 # Auto start sway from tty1 after login
