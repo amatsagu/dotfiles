@@ -25,6 +25,7 @@ export GTK_BACKEND="wayland"
 export CLUTTER_BACKEND=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1 # Java xwayland blank screen fix
 export TERMINAL="foot"
+export SSH_AUTH_SOCK
 
 
 # Check if system is running in virtual machine
@@ -51,7 +52,7 @@ fi
 
 # Run Sway under ssh-agent
 run_sway() {
-    exec systemd-cat -- dbus-run-session ssh-agent sway "$@"
+    exec dbus-run-session sway
 }
 
 # Auto start sway from tty1 after login
