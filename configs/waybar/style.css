@@ -57,18 +57,15 @@ tooltip label {
 #custom-launcher,
 #pulseaudio.muted,
 #wireplumber.muted,
-#battery.warning {
+#battery.warning,
+#battery.charging,
+#battery.plugged {
 	color: #d58f3f;
 }
 
 #workspaces button.urgent,
 #battery.critical:not(.charging) {
 	color: #d83e43;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: rgb(11, 193, 17);
 }
 
 /* Left side */
