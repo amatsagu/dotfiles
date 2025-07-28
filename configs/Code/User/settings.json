@@ -7,4 +7,7 @@
     "go.inlayHints.assignVariableTypes": true,
     "go.inlayHints.constantValues": true,
     "go.inlayHints.rangeVariableTypes": true,
+    "workbench.startupEditor": "none",
+    "vscord.status.idle.check": false,
+    "vscord.status.idle.enabled": false,
 }
