@@ -11,3 +11,7 @@ output_path = "~/.config/sway/config.d/colors"
 [[config.templates.css]]
 input_path = "~/.config/matugen/templates/colors.tpl"
 output_path = "~/.config/matugen/colors.css"
+
+[[config.templates.fuzzel]]
+input_path = "~/.config/matugen/templates/fuzzel.tpl"
+output_path = "~/.config/fuzzel/fuzzel.ini"
