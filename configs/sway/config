@@ -1,17 +1,6 @@
-# [Probably obsolete duplicate] Force export same variables that are defined by install script at your ~/.profile
-exec dbus-update-activation-environment --systemd \
-WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP \
-XDG_CURRENT_SESSION XDG_SESSION_DESKTOP \
-ELECTRON_OZONE_PLATFORM_HINT QT_QPA_PLATFORM GTK_CSD \
-GDK_BACKEND GTK_BACKEND CLUTTER_BACKEND \
-TERMINAL
-
-exec systemctl --user import-environment \
-WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP \
-XDG_CURRENT_SESSION XDG_SESSION_DESKTOP \
-ELECTRON_OZONE_PLATFORM_HINT QT_QPA_PLATFORM GTK_CSD \
-GDK_BACKEND GTK_BACKEND CLUTTER_BACKEND \
-TERMINAL
+### Export Wayland variables to D-Bus and Systemd for portal/app compatibility
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 include /etc/sway/config-vars.d/*
 include $HOME/.config/sway/config.d/*
