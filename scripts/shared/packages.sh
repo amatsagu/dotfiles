@@ -116,7 +116,6 @@ is_pkg_installed() {
 
 purge_base_noise_packages() {
     local pkgs_to_remove=(
-        power-profiles-daemon
         cpupower
         micro
         vim

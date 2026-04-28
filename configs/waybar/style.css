@@ -99,6 +99,7 @@ tooltip label {
 #backlight,
 #custom-star-divider,
 #pulseaudio,
+#power-profiles-daemon,
 #battery {
     border-bottom: 1px solid #444444;
     padding: 0 4px;

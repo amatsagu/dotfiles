@@ -2,10 +2,13 @@
 
 optimize_for_laptop() {
     sudo systemctl enable --now tlp.service
+    sudo systemctl enable --now tlp-pd.service
     sudo systemctl enable --now bluetooth.service
+    sudo systemctl enable NetworkManager-dispatcher.service
+    sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
     sudo sed -i 's/#AutoEnable=false/AutoEnable=true/' /etc/bluetooth/main.conf
 
-    warning "Installed custom services which will auto-tune battery usage in real time and notify you when battery is low (<15%)."
+    warning "Installed custom services (TLP + TLP-PD) which will auto-tune battery usage and provide power profiles."
 }
 
 assign_environmental_variables_to_profile() {

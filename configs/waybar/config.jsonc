@@ -14,9 +14,21 @@
         "custom/star-divider",
         "pulseaudio",
         "custom/star-divider",
+        "power-profiles-daemon",
         "battery",
         "group/time-display"
     ],
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+          "default": "",
+          "performance": "",
+          "balanced": "",
+          "power-saver": ""
+        }
+    },
     "group/time-display": {
         "orientation": "horizontal",
         "modules": [
