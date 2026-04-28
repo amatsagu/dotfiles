@@ -1,7 +1,7 @@
 <h2 align=center>Amatsagu Dotfiles<br>✦ InkTide ✦</h2>
 
 <div align="center">
-<a href="#gallery">Gallery</a> - <a href="#features">Features</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#credit">Credit</a>
+<a href="#gallery">Gallery</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#credit">Credit</a>
 <br>
 ┗━ <a href="https://www.reddit.com/r/unixporn/comments/1d9r6a8/sway_like_falling_petals_and_flowing_water/">See OG reddit thread</a> ━┛
 </div>
