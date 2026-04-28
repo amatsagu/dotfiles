@@ -3,6 +3,8 @@
 ## -- GLOBAL CONFIG -- ##
 IGNORE_ERRORS=false
 IS_CACHY=false
+KBD_LAYOUT="us"
+SCREEN_SCALE="1"
 
 source ./scripts/shared/terminal.sh
 source ./scripts/shared/packages.sh
@@ -36,6 +38,32 @@ main() {
     if ! confirm "Proceeding with this installation will modify your system. This operation can be dangerous. Continue?"; then
         info "Installation cancelled by user"
         exit 0
+    fi
+
+    # Keyboard Layout Selection
+    question "Enter your preferred keyboard layout (e.g., us, pl, de)"
+    echo -n " [Default: $KBD_LAYOUT]: "
+    read -r input_kbd
+    if [ -n "$input_kbd" ]; then
+        if localectl list-x11-keymap-layouts | grep -qw "$input_kbd"; then
+            KBD_LAYOUT="$input_kbd"
+            success "Keyboard layout set to: $KBD_LAYOUT"
+        else
+            warning "Layout '$input_kbd' not found. Falling back to default: $KBD_LAYOUT"
+        fi
+    fi
+
+    # Screen Scaling Selection
+    question "Enter your preferred screen scaling (float number, e.g., 1, 1.25, 1.5)"
+    echo -n " [Default: $SCREEN_SCALE]: "
+    read -r input_scale
+    if [ -n "$input_scale" ]; then
+        if [[ "$input_scale" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+            SCREEN_SCALE="$input_scale"
+            success "Screen scaling set to: $SCREEN_SCALE"
+        else
+            warning "Invalid scale '$input_scale'. Falling back to default: $SCREEN_SCALE"
+        fi
     fi
 
     confirm "Ignore errors and continue?" false && IGNORE_ERRORS=true

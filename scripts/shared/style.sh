@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
 
 install_dotfiles() {
-    papirus-folders -u -C yellow --theme Papirus-Dark >> /dev/null
+    # Wallpapers & Configs
+    mkdir -p ~/.local/share/backgrounds ~/.config/sway/config.d ~/.config/matugen/templates ~/.config/fuzzel ~/.config/sway/script &> /dev/null
+    cp -r ./wallpapers/. ~/.local/share/backgrounds/ &> /dev/null
+    cp -r ./configs/. ~/.config/ &> /dev/null
+    chmod +x ~/.config/sway/script/*.sh 2>/dev/null
 
-    mkdir ~/.local/share/backgrounds -p >> /dev/null
-    cp -r ./wallpapers/. ~/.local/share/backgrounds/ >> /dev/null
+    # Customizations (Apply user-selected keyboard and scale)
+    sed -i "s/xkb_layout .*/xkb_layout $KBD_LAYOUT/" ~/.config/sway/config.d/keybinds
+    sed -i "s/set \$scale .*/set \$scale $SCREEN_SCALE/" ~/.config/sway/config.d/theme_and_screen
 
-    cp -r ./configs/. ~/.config/ >> /dev/null
-
-    # Copy Chromium/Electron flags to /etc/ for global application support
-    # (Many Arch-based apps like VSCodium, Spotify, and Vesktop look here)
+    # Global flags for Chromium/Electron
     for flagfile in ./configs/*-flags.conf; do
-        sudo cp "$flagfile" "/etc/" 2>/dev/null
+        [ -f "$flagfile" ] && sudo cp "$flagfile" "/etc/" 2>/dev/null
     done
 
-    # Ensure a default wallpaper is selected if none exists
+    # Wallpaper selection
     local CURRENT_WALLPAPER_FILE="$HOME/.local/share/backgrounds/.current-wallpaper"
     if [ ! -f "$CURRENT_WALLPAPER_FILE" ]; then
-        ls -1 ./wallpapers/. | grep -E "\.(jpg|jpeg|png)$" | head -n 1 > "$CURRENT_WALLPAPER_FILE"
+        find ./wallpapers/ -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -printf "%f\n" | head -n 1 > "$CURRENT_WALLPAPER_FILE"
     fi
-
-    # Generate initial colors
-    if command -v matugen &>/dev/null; then
-        local WP=$(cat "$CURRENT_WALLPAPER_FILE")
-        matugen image "$HOME/.local/share/backgrounds/$WP"
-    fi
+    
+    # Matugen color generation (triggers update-icons.sh via matugen post-process)
+    local WP=$(cat "$CURRENT_WALLPAPER_FILE")
+    matugen image "$HOME/.local/share/backgrounds/$WP"
 }
 
 apply_qt_settings() {

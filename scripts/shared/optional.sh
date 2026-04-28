@@ -12,8 +12,15 @@ optimize_for_laptop() {
 }
 
 assign_environmental_variables_to_profile() {
-    local PROFILE_DATA=$(cat <<'EOF'
+    local TAG="# [INKTIDE-ENVIRONMENT-VARIABLES]"
+    if grep -q "$TAG" ~/.bash_profile 2>/dev/null; then
+        warning "Environment variables already present in ~/.bash_profile. Skipping."
+        return 0
+    fi
 
+    local PROFILE_DATA=$(cat <<EOF
+
+$TAG
 # Environment variables for theme, wayland & sway proper execution
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
@@ -32,10 +39,10 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export TERMINAL="foot"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
+export SSH_AUTH_SOCK="\$XDG_RUNTIME_DIR/keyring/ssh"
 
 # GPU & VM Compatibility
-case "$(systemd-detect-virt)" in
+case "\$(systemd-detect-virt)" in
   qemu|kvm|oracle)
     export WLR_RENDERER=pixman
     export WLR_NO_HARDWARE_CURSORS=1
@@ -51,7 +58,7 @@ if [ -d /sys/module/nvidia ]; then
 fi
 
 # Auto start Sway from tty1 after login
-if [[ -z $DISPLAY && $(tty) == /dev/tty1 ]]; then
+if [[ -z \$DISPLAY && \$(tty) == /dev/tty1 ]]; then
     # Check for Nvidia and launch with proper flags if needed
     if [ -d /sys/module/nvidia ]; then
         exec systemd-cat -- sway --unsupported-gpu
