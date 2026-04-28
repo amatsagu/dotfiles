@@ -21,6 +21,7 @@ install_base_packages() {
         htop \
         fastfetch \
         dconf \
+        libdisplay-info \
         jq
 }
 
@@ -108,21 +109,38 @@ install_theme_packages() {
         papirus-folders
 }
 
+# Check if a package is installed
+is_pkg_installed() {
+    pacman -Qi "$1" &> /dev/null
+}
+
 purge_base_noise_packages() {
-    sudo pacman -Rs --noconfirm \
-        power-profiles-daemon \
-        cpupower \
-        micro \
-        vim \
-        cachyos-zsh-config \
-        cachyos-fish-config \
-        cachyos-micro-settings \
-        meld \
-        alacritty \
+    local pkgs_to_remove=(
+        power-profiles-daemon
+        cpupower
+        micro
+        vim
+        cachyos-zsh-config
+        cachyos-fish-config
+        cachyos-micro-settings
+        meld
+        alacritty
         btop
-    
-    sudo pacman -R --noconfirm \
         octopi
+    )
+
+    local found_pkgs=()
+    for pkg in "${pkgs_to_remove[@]}"; do
+        if is_pkg_installed "$pkg"; then
+            found_pkgs+=("$pkg")
+        fi
+    done
+
+    if [ ${#found_pkgs[@]} -gt 0 ]; then
+        sudo pacman -Rs --noconfirm "${found_pkgs[@]}"
+    else
+        info "No 'noise' packages found to purge. Skipping."
+    fi
 }
 
 install_laptop_packages() {
@@ -130,6 +148,7 @@ install_laptop_packages() {
         brightnessctl \
         blueman \
         tlp \
+        tlp-pd \
         tlp-rdw \
         acpi
 }

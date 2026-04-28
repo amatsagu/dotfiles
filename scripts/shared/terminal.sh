@@ -127,31 +127,41 @@ confirm() {
     done
 }
 
+# Global cleanup trap
+__cleanup() {
+    tput cnorm 2>/dev/null
+    [ -f "$LOG_FILE" ] && rm -f "$LOG_FILE"
+}
+trap __cleanup EXIT SIGINT SIGTERM
+
 run_command() {
     local cmd="$1"
     local desc="$2"
+    local hint="$3"
     local output_file=$(mktemp)
     local exit_code=0
 
-    # Run command, capture all output to temp file
+    # Capture output for logging/debugging
     ($cmd > "$output_file" 2>&1) & __spinner "$desc"
     exit_code=$?
 
     if [ $exit_code -ne 0 ]; then
-        error "Command failed: $desc (exit code: $exit_code)"
+        echo
+        error "Failure: $desc"
         
-        # Print captured output if it exists
-        if [ -s "$output_file" ]; then
-            echo
-            echo "Command output:"
-            cat "$output_file" | sed 's/^/   /'
-            echo
+        if [ -n "$hint" ]; then
+            info "Mitigation Hint: $hint"
         fi
 
-        if [ "$IGNORE_ERRORS" = false ]; then
-            if ! confirm "Continue installation despite the error?"; then
+        if [ -s "$output_file" ]; then
+            warning "Relevant output from the failed command:"
+            sed 's/^/   /' "$output_file"
+        fi
+
+        if [ "$IGNORE_ERRORS" = "false" ]; then
+            if ! confirm "Continue despite this failure?"; then
                 rm -f "$output_file"
-                warning "User cancelled script early."
+                error "Installation aborted by user."
                 exit $exit_code
             fi
         fi

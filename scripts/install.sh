@@ -48,24 +48,36 @@ main() {
     run_command "install_theme_packages" "Downloading theme preferences, fonts & icons..."
     
     info "Step [ 2/3 ] :: Starting main installation process:"
-    run_command "install_dotfiles" "Installing dotfiles... (can take a while)"
-    run_command "apply_gsettings" "Updating style rules for GTK..."
-    run_command "apply_qt_settings" "Updating style rules for QT..."
+    run_command "install_dotfiles" "Installing dotfiles... (can take a while)" "Check permissions or manually run 'install_dotfiles' from scripts/shared/style.sh"
+    run_command "apply_gsettings" "Updating style rules for GTK..." "Manually run 'apply_gsettings' from scripts/shared/style.sh"
+    run_command "apply_qt_settings" "Updating style rules for QT..." "Manually run 'apply_qt_settings' from scripts/shared/style.sh"
 
     info "Step [ 3/3 ] :: Select optional enhancements:"
     confirm "Add \"launch script\" code into ~/.bash_profile that will automatically help solve common wayland problems + auto start Sway from tty1 on new session?" false && {
-        run_command "assign_environmental_variables_to_profile" "Adding launch script code into local user bash profile..."
+        run_command "assign_environmental_variables_to_profile" "Adding launch script code into local user bash profile..." "Manually append the PROFILE_DATA from scripts/shared/optional.sh to your ~/.bash_profile"
     }
 
     confirm "Optimize for laptops? (installs potentially missing packages, enabled tlp & bluetooth)" false && {
-        run_command "install_laptop_packages" "Downloading extra packages for laptops..."
-        run_command "optimize_for_laptop" "Optimizing..."
+        run_command "install_laptop_packages" "Downloading extra packages for laptops..." "Try installing brightnessctl, blueman, tlp manually"
+        run_command "optimize_for_laptop" "Optimizing..." "Check 'optimize_for_laptop' in scripts/shared/optional.sh"
     }
 
 
     info "Finalizing..."
-    grep -q "CachyOS" /etc/os-release && {
-        run_command "purge_base_noise_packages" "Purging some base CachyOS packages (debloating)..."
+    if [ "$IS_CACHY" = true ]; then
+        run_command "purge_base_noise_packages" "Purging base CachyOS 'noise' packages..."
+    fi
+
+    # May be needed to let user control screen brightness in rare cases
+    sudo usermod -a -G video $USER
+    
+    # Final message
+    echo
+    success "Installation completed successfully!"
+    info "You may need to reboot for all changes to take effect"
+}
+
+mainse_packages" "Purging some base CachyOS packages (debloating)..."
     }
 
     # May be needed to let user control screen brightness in rare cases
@@ -73,6 +85,11 @@ main() {
     
     # Final message
     echo
+    success "Installation completed successfully!"
+    info "You may need to reboot for all changes to take effect"
+}
+
+main    echo
     success "Installation completed successfully!"
     info "You may need to reboot for all changes to take effect"
 }
