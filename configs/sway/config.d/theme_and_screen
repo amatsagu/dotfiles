@@ -1,4 +1,4 @@
-set $scale 1.25
+set $scale 1
 
 seat * shortcuts_inhibitor disable
 seat * xcursor_theme phinger-cursors-dark 24

@@ -1,7 +1,7 @@
 set $mod Mod4
 
 input type:keyboard {
-    xkb_layout pl
+    xkb_layout us
 }
 
 input type:touchpad {

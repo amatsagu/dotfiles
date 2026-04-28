@@ -4,6 +4,10 @@
 command = "swaymsg reload"
 only_on_change = true
 
+[[config.post_process]]
+command = "bash ~/.config/sway/script/update-icons.sh '{{colors.primary.default.hex}}'"
+only_on_change = true
+
 [[config.templates.sway]]
 input_path = "~/.config/matugen/templates/sway-colors.tpl"
 output_path = "~/.config/sway/config.d/colors"
