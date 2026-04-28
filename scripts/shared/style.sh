@@ -4,9 +4,15 @@ install_dotfiles() {
     papirus-folders -u -C yellow --theme Papirus-Dark >> /dev/null
 
     mkdir ~/.local/share/backgrounds -p >> /dev/null
-    cp ./wallpapers/* ~/.local/share/backgrounds -r >> /dev/null
+    cp -r ./wallpapers/. ~/.local/share/backgrounds/ >> /dev/null
 
-    cp ./configs/* ~/.config -r >> /dev/null
+    cp -r ./configs/. ~/.config/ >> /dev/null
+
+    # Ensure a default wallpaper is selected if none exists
+    local CURRENT_WALLPAPER_FILE="$HOME/.local/share/backgrounds/.current-wallpaper"
+    if [ ! -f "$CURRENT_WALLPAPER_FILE" ]; then
+        ls -1 ./wallpapers | grep -E "\.(jpg|jpeg|png)$" | head -n 1 > "$CURRENT_WALLPAPER_FILE"
+    fi
 }
 
 apply_gsettings() {
