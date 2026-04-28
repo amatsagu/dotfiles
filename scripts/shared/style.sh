@@ -8,6 +8,12 @@ install_dotfiles() {
 
     cp -r ./configs/. ~/.config/ >> /dev/null
 
+    # Copy Chromium/Electron flags to /etc/ for global application support
+    # (Many Arch-based apps like VSCodium, Spotify, and Vesktop look here)
+    for flagfile in ./configs/*-flags.conf; do
+        sudo cp "$flagfile" "/etc/" 2>/dev/null
+    done
+
     # Ensure a default wallpaper is selected if none exists
     local CURRENT_WALLPAPER_FILE="$HOME/.local/share/backgrounds/.current-wallpaper"
     if [ ! -f "$CURRENT_WALLPAPER_FILE" ]; then

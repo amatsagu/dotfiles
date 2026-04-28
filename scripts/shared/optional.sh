@@ -31,22 +31,16 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export TERMINAL="foot"
 export SSH_AUTH_SOCK
 
-# Check if system is running in virtual machine
+# GPU & VM Compatibility
 case "$(systemd-detect-virt)" in
-qemu)
-  export WLR_RENDERER=pixman
-  export WLR_NO_HARDWARE_CURSORS=1
-  ;;
-kvm)
-  export WLR_NO_HARDWARE_CURSORS=1
-  ;;
-oracle)
-  export WLR_NO_HARDWARE_CURSORS=1
-  ;;
+  qemu|kvm|oracle)
+    export WLR_RENDERER=pixman
+    export WLR_NO_HARDWARE_CURSORS=1
+    ;;
 esac
 
-# Apply Nvidia-specific variables
-if [ -d /sys/module/nvidia ] && [ ! -d /sys/module/amdgpu ] && [ ! -d /sys/module/i915 ]; then
+# Nvidia Specifics (Still required for stability)
+if [ -d /sys/module/nvidia ]; then
     export WLR_NO_HARDWARE_CURSORS=1
     export GBM_BACKEND=nvidia-drm
     export __GLX_VENDOR_LIBRARY_NAME=nvidia
