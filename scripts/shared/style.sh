@@ -11,7 +11,13 @@ install_dotfiles() {
     # Ensure a default wallpaper is selected if none exists
     local CURRENT_WALLPAPER_FILE="$HOME/.local/share/backgrounds/.current-wallpaper"
     if [ ! -f "$CURRENT_WALLPAPER_FILE" ]; then
-        ls -1 ./wallpapers | grep -E "\.(jpg|jpeg|png)$" | head -n 1 > "$CURRENT_WALLPAPER_FILE"
+        ls -1 ./wallpapers/. | grep -E "\.(jpg|jpeg|png)$" | head -n 1 > "$CURRENT_WALLPAPER_FILE"
+    fi
+
+    # Generate initial colors
+    if command -v matugen &>/dev/null; then
+        local WP=$(cat "$CURRENT_WALLPAPER_FILE")
+        matugen image "$HOME/.local/share/backgrounds/$WP"
     fi
 }
 

@@ -26,14 +26,14 @@ window {
 
 #clock-label {
   min-width: 320px;
-  background-color: alpha(#d58f3f, 0.1);
-  color: #d58f3f;
+  background-color: alpha(@primary, 0.1);
+  color: @primary;
   font-weight: 500;
   font-size: 14px;
   padding: 10px 30px;
   margin-bottom: 10px;
   border-radius: 0 0 4px 4px;
-  border: 1px solid alpha(#d58f3f, 0.5);
+  border: 1px solid alpha(@primary, 0.5);
   border-top: 0;
 }
 
@@ -71,7 +71,8 @@ window {
 
 #unlock-button {
   border-radius: 8px;
-  background-color: alpha(#d58f3f, 0.1);
-  color: #d58f3f;
-  border: 1px solid alpha(#d58f3f, 0.5);
+  background-color: alpha(@primary, 0.1);
+  color: @primary;
+  border: 1px solid alpha(@primary, 0.5);
+}order: 1px solid alpha(#d58f3f, 0.5);
 }

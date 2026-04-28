@@ -78,6 +78,7 @@ install_theme_packages() {
     fi
 
     $AUR_HELPER -S --noconfirm \
+        matugen-bin \
         phinger-cursors \
         papirus-icon-theme \
         fluent-gtk-theme \

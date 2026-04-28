@@ -3,6 +3,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 include /etc/sway/config-vars.d/*
+include $HOME/.config/sway/config.d/colors
 include $HOME/.config/sway/config.d/*
 
 ### Lock screen

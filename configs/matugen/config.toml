@@ -1,0 +1,13 @@
+[config]
+# Generate colors for Sway
+[[config.post_process]]
+command = "swaymsg reload"
+only_on_change = true
+
+[[config.templates.sway]]
+input_path = "~/.config/matugen/templates/sway-colors.tpl"
+output_path = "~/.config/sway/config.d/colors"
+
+[[config.templates.css]]
+input_path = "~/.config/matugen/templates/colors.tpl"
+output_path = "~/.config/matugen/colors.css"

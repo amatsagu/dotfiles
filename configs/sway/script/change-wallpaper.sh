@@ -10,6 +10,10 @@ while read -r SELECTED_WALLPAPER; do
 
     # Persist the selection for confirmation
     echo "$SELECTED_WALLPAPER" > "$CURRENT_WALLPAPER_FILE"
+    
+    # Update colors
+    matugen image "$WALLPAPER_DIR/$SELECTED_WALLPAPER"
+    
     pkill swaybg 2> /dev/null
     swaybg -i "$WALLPAPER_DIR/$SELECTED_WALLPAPER" -m fill > /dev/null 2>&1 &
 
