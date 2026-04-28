@@ -9,7 +9,7 @@ optimize_for_laptop() {
 }
 
 assign_environmental_variables_to_profile() {
-    local PROFILE_DATA = $(cat <<'EOF'
+    local PROFILE_DATA=$(cat <<'EOF'
 
 # Environment variables for theme, wayland & sway proper execution
 export XDG_CURRENT_DESKTOP=sway
