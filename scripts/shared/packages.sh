@@ -99,6 +99,12 @@ install_theme_packages() {
         ttf-firacode-nerd \
         ttf-nerd-fonts-symbols \
         ttf-opensans \
+        ttf-hack \
+        ttf-ms-fonts \
+        ttf-ms-win11-auto \
+        ttf-all-the-icons \
+        otf-font-awesome \
+        adobe-source-han-sans-otc-fonts \
         papirus-folders
 }
 

@@ -53,8 +53,8 @@ apply_gsettings() {
     gsettings set org.gtk.Settings.FileChooser clock-format "24h"
 
     # Fonts
-    gsettings set org.gnome.desktop.interface font-name "Roboto 10"
-    gsettings set org.gnome.desktop.interface document-font-name "Roboto 10"
-    gsettings set org.gnome.desktop.wm.preferences titlebar-font "Sans Bold 10"
+    gsettings set org.gnome.desktop.interface font-name "Noto Sans 10"
+    gsettings set org.gnome.desktop.interface document-font-name "Noto Sans 10"
+    gsettings set org.gnome.desktop.wm.preferences titlebar-font "Noto Sans Bold 10"
     gsettings set org.gnome.desktop.interface monospace-font-name "Fira Code 11"
 }
