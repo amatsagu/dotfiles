@@ -58,6 +58,8 @@ install_sway_packages() {
         gvfs-smb \
         foot \
         gnome-keyring \
+        seahorse \
+        libsecret \
         polkit \
         mate-polkit
 

@@ -1,6 +1,6 @@
-### Export Wayland variables to D-Bus and Systemd for portal/app compatibility
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+### Export Wayland & Keyring variables to D-Bus and Systemd
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK SSH_AUTH_SOCK
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK SSH_AUTH_SOCK
 
 include /etc/sway/config-vars.d/*
 include $HOME/.config/sway/config.d/colors

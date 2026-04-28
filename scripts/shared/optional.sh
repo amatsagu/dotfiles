@@ -32,7 +32,7 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export TERMINAL="foot"
-export SSH_AUTH_SOCK
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 
 # GPU & VM Compatibility
 case "$(systemd-detect-virt)" in
