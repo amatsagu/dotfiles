@@ -110,8 +110,8 @@ main() {
         run_command "purge_base_noise_packages" "Purging base CachyOS 'noise' packages..."
     fi
 
-    # May be needed to let user control screen brightness in rare cases
-    sudo usermod -a -G video $USER
+    # May be needed to let user control screen brightness and input devices for OSD
+    sudo usermod -a -G video,input $USER
     
     # Final message
     echo

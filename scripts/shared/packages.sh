@@ -12,6 +12,16 @@ install_base_packages() {
         qt5ct \
         qt6ct \
         xwayland \
+        pipewire \
+        pipewire-pulse \
+        pipewire-alsa \
+        pipewire-audio \
+        wireplumber \
+        gst-plugin-pipewire \
+        gst-plugins-base \
+        gst-plugins-good \
+        gst-plugins-bad \
+        gst-plugins-ugly \
         7zip \
         zip \
         unzip \
@@ -39,6 +49,7 @@ install_sway_packages() {
         gtklock-userinfo-module \
         waybar \
         pamixer \
+        playerctl \
         wlogout \
         mako \
         fuzzel \
