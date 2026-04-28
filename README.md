@@ -10,10 +10,10 @@
 
 - Linux distro - **Any Arch-based** (tested on CachyOS)
 - Tiling manager - **Sway v1.12+** (with experimental EDID detection support)
-- GTK theme - **Fluent (dark gray)**
-- QT5/QT6 theme - **Fluent (Kvantum)**
-- Icon theme - **Papirus (dark)**
-- Cursor theme - **Phinger cursors (dark)**
+- GTK theme - **Fluent-grey-Dark**
+- QT5/QT6 theme - **Fluent-GreyDark (Kvantum)**
+- Icon theme - **Papirus-Dark**
+- Cursor theme - **phinger-cursors-dark**
 - Colors - **Partially Dynamic (via Matugen)**
 - Fonts - **Noto Sans, Hack, Fira Code, Windows 11 Fonts, Nerd Fonts, CJK**
 - Terminal - **Foot**
