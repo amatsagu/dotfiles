@@ -38,10 +38,10 @@ bindsym $mod+Return exec foot
 bindsym $mod+Shift+q kill
 
 # Shortcut to file explorer
-bindsym $mod+b exec thunar | xargs swaymsg exec --
+bindsym $mod+b exec thunar
 
 # Start your launcher
-bindsym $mod+d exec fuzzel | xargs swaymsg exec --
+bindsym $mod+d exec fuzzel
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
