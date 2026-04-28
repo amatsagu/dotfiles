@@ -1,3 +1,5 @@
+@import "../matugen/colors.css";
+
 * {
   all: unset;
 }
@@ -74,5 +76,4 @@ window {
   background-color: alpha(@primary, 0.1);
   color: @primary;
   border: 1px solid alpha(@primary, 0.5);
-}order: 1px solid alpha(#d58f3f, 0.5);
 }

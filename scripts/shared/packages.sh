@@ -3,6 +3,7 @@
 # Utility, core packages
 install_base_packages() {
     sudo pacman -S --noconfirm \
+        networkmanager \
         network-manager-applet \
         nano \
         nano-syntax-highlighting \
@@ -159,6 +160,8 @@ purge_base_noise_packages() {
 install_laptop_packages() {
     sudo pacman -S --noconfirm \
         brightnessctl \
+        bluez \
+        bluez-utils \
         blueman \
         tlp \
         tlp-pd \

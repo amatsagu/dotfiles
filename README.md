@@ -44,10 +44,7 @@
 > This configuration is made by myself, for myself. While the installer now supports general Arch-based systems, it is still experimental.
 
 ### For Arch-based Distros (CachyOS, EndeavourOS, etc.)
-1. Install a minimal version of your distro with no desktop. **It is highly recommended to use CachyOS** as it provides the optimized kernel and repository structure this was built for. Ensure you have the following services installed and enabled:
-    - **Networking**: `networkmanager` (Systemd service: `NetworkManager.service`)
-    - **Bluetooth**: `bluez`, `bluez-utils` (Systemd service: `bluetooth.service`)
-    - **Audio**: `pipewire`, `wireplumber`, `pipewire-pulse` (+ libs to support specific audio profiles, etc.)
+1. Install a minimal version of your distro with no desktop. Installer supports any Arch-based distro but it was only originally created for CachyOS.
 
 Login to TTY and run:
 ```sh

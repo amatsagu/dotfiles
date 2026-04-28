@@ -1,3 +1,5 @@
+@import "../matugen/colors.css";
+
 * {
     font-size: 	13px;
 	font-family: FontAwesome, Noto Sans, Helvetica, Arial, sans-serif;
@@ -127,23 +129,4 @@ tooltip label {
     border-bottom: none;
 }
 
-/* #clock.date {
-    margin-left: 4px;
-} */
-
-/* #clock.time, #clock.date {
-    background-color: #3b3a3f;
-    padding: 2px 4px;
-    margin: 0 4px;
-}
-
-#clock.date {
-} */
-
-;
-    margin: 0 4px;
-}
-
-#clock.date {
-} */
 

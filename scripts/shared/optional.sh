@@ -4,6 +4,7 @@ optimize_for_laptop() {
     sudo systemctl enable --now tlp.service
     sudo systemctl enable --now tlp-pd.service
     sudo systemctl enable --now bluetooth.service
+    sudo systemctl enable --now NetworkManager.service
     sudo systemctl enable NetworkManager-dispatcher.service
     sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
     sudo sed -i 's/#AutoEnable=false/AutoEnable=true/' /etc/bluetooth/main.conf
