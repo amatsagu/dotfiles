@@ -7,7 +7,11 @@ install_base_packages() {
         nano \
         nano-syntax-highlighting \
         cachyos-packageinstaller \
+        qt5-wayland \
         qt6-wayland \
+        qt5ct \
+        qt6ct \
+        xwayland \
         7zip \
         zip \
         unzip \
@@ -79,6 +83,8 @@ install_theme_packages() {
 
     $AUR_HELPER -S --noconfirm \
         matugen-bin \
+        kvantum-qt5 \
+        fluent-kvantum-theme-git \
         phinger-cursors \
         papirus-icon-theme \
         fluent-gtk-theme \

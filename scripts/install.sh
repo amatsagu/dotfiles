@@ -50,6 +50,7 @@ main() {
     info "Step [ 2/3 ] :: Starting main installation process:"
     run_command "install_dotfiles" "Installing dotfiles... (can take a while)"
     run_command "apply_gsettings" "Updating style rules for GTK..."
+    run_command "apply_qt_settings" "Updating style rules for QT..."
 
     info "Step [ 3/3 ] :: Select optional enhancements:"
     confirm "Add \"launch script\" code into ~/.bash_profile that will automatically help solve common wayland problems + auto start Sway from tty1 on new session?" false && {

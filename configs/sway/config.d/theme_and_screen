@@ -5,4 +5,11 @@ seat * xcursor_theme phinger-cursors-dark 24
 font pango:Noto Sans Font 12
 
 output * scale $scale
+
+# Legacy applications (X11): Apply scaling themselves (avoids blur)
+xwayland scale 1
+
+# Allow screen tearing in fullscreen windows (for gaming)
+allow_tearing yes
+
 exec $HOME/.config/sway/script/set-wallpaper.sh

@@ -21,6 +21,25 @@ install_dotfiles() {
     fi
 }
 
+apply_qt_settings() {
+    # Configure Kvantum
+    mkdir -p ~/.config/Kvantum
+    echo "[General]
+theme=Fluent-GreyDark" > ~/.config/Kvantum/kvantum.kvconfig
+
+    # Configure QT5CT
+    mkdir -p ~/.config/qt5ct
+    echo "[Appearance]
+icon_theme=Papirus-Dark
+style=kvantum" > ~/.config/qt5ct/qt5ct.conf
+
+    # Configure QT6CT (it can usually share or mirror qt5ct settings)
+    mkdir -p ~/.config/qt6ct
+    echo "[Appearance]
+icon_theme=Papirus-Dark
+style=kvantum" > ~/.config/qt6ct/qt6ct.conf
+}
+
 apply_gsettings() {
     # Theme & Color Scheme
     gsettings set org.x.apps.portal color-scheme "prefer-dark"

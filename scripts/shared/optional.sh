@@ -16,14 +16,18 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
 export DESKTOP_SESSION=sway
-export ELECTRON_OZONE_PLATFORM_HINT=wayland
-export QT_QPA_PLATFORM="wayland;xcb"
-export QT_QPA_PLATFORMTHEME=qt5ct
-export GTK_CSD=0
+export MOZ_ENABLE_WAYLAND=1
+export SDL_VIDEODRIVER=wayland
+export CLUTTER_BACKEND=wayland
 export GDK_BACKEND="wayland,x11"
 export GTK_BACKEND="wayland"
-export CLUTTER_BACKEND=wayland
-export _JAVA_AWT_WM_NONREPARENTING=1 # Java xwayland blank screen fix
+export GTK_CSD=0
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORMTHEME=kvantum
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
 export TERMINAL="foot"
 export SSH_AUTH_SOCK
 
