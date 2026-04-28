@@ -1,24 +1,25 @@
 <h2 align=center>Amatsagu Dotfiles<br>✦ InkTide ✦</h2>
 
 <div align="center">
-<a href="#gallery">Gallery</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#credit">Credit</a>
+<a href="#gallery">Gallery</a> - <a href="#features">Features</a> - <a href="#install">Install</a> - <a href="#usage">Usage</a> - <a href="#credit">Credit</a>
 <br>
 ┗━ <a href="https://www.reddit.com/r/unixporn/comments/1d9r6a8/sway_like_falling_petals_and_flowing_water/">See OG reddit thread</a> ━┛
 </div>
 
 <h1></h1>
 
-- Linux distro - **CachyOS**
-- Tiling manager - **Sway**
-- GTK theme - **Fluent (gray, dark)**
-- Icon theme - **Papirus (magenta, dark)**
+- Linux distro - **Any Arch-based** (tested on CachyOS)
+- Tiling manager - **Sway v1.12+** (with experimental EDID detection support)
+- GTK theme - **Fluent (dark gray)**
+- QT5/QT6 theme - **Fluent (Kvantum)**
+- Icon theme - **Papirus (dark)**
 - Cursor theme - **Phinger cursors (dark)**
-- Terminal color theme - **Gnome shell**
-- Fonts - **Noto Sans, Awesome Fonts, Fira Code, Roboto**
+- Colors - **Partially Dynamic (via Matugen)**
+- Fonts - **Noto Sans, Hack, Fira Code, Windows 11 Fonts, Nerd Fonts, CJK**
 - Terminal - **Foot**
-- Text editor - **VSCode, Nano**
+- Text editor - **VSCodium, Nano**
 - File manager - **Thunar** (with GVFS & Archive Manager)
-- Status bar - **Waybar**
+- Status bar - **Waybar** (with power support: TLP + TLP-PD)
 - App menu - **Fuzzel**
 - Notifications - **Mako**
 - Session control - **Wlogout**
@@ -26,6 +27,8 @@
 - Audio server - **Pipewire**
 - Bluetooth manager - **Blueman**
 - Connection manager - **Network manager**
+- XDG desktop portals - **WLR, GTK, XAPP**
+- Password vault manager - **Gnome keyring, Seahorse**
 
 ## Gallery
 ![clear view](.github/1.png)
@@ -38,10 +41,15 @@
 ## Install
 
 > [!WARNING]
-> This configuration is made by myself, for myself, and with very little concern for other's preferences. This configuration is not meant to be "good", it's just meant to be comfortable for me. You'll need some knowledge to tweak sway or waybar configs to match your preferences.
+> This configuration is made by myself, for myself. While the installer now supports general Arch-based systems, it is still experimental.
 
-### For CachyOS / Arch based (uses pacman and paru)
-1. Install minimal version of CachyOS/Arch with no desktop and minimal amount of packages to get support for audio, bluetooth, network, etc. Then login to tty and paste:
+### For Arch-based Distros (CachyOS, EndeavourOS, etc.)
+1. Install a minimal version of your distro with no desktop. **It is highly recommended to use CachyOS** as it provides the optimized kernel and repository structure this was built for. Ensure you have the following services installed and enabled:
+    - **Networking**: `networkmanager` (Systemd service: `NetworkManager.service`)
+    - **Bluetooth**: `bluez`, `bluez-utils` (Systemd service: `bluetooth.service`)
+    - **Audio**: `pipewire`, `wireplumber`, `pipewire-pulse` (+ libs to support specific audio profiles, etc.)
+
+Login to TTY and run:
 ```sh
 sudo pacman -Syu git
 git clone https://github.com/amatsagu/dotfiles.git
@@ -58,13 +66,16 @@ cd ./dotfiles
 ## Usage
 
 ### Keybinds
-Check sway documentation, all keybinds are set to default. By default, Mod key is Windows/Copilot logo [Mod4].
+- **Mod key**: Windows/Super logo [Mod4].
+- **Terminal**: `Mod + Enter`
+- **Launcher**: `Mod + D`
+- **File Manager**: `Mod + B`
+- **Change Wallpaper**: `Mod + Shift + W` (Triggers Matugen color update)
+- **Session Control**: `Mod + Shift + E`
+- **Lock Screen**: `Mod + L`
 
-### Session control (wlogout)
-You can click golden gate icon in top left corner on waybar or press `Mod + Shift + E` keys.
-
-### Wallpapers
-There's custom script to let you quickly swap wallpapers under `Mod + Shift + W` keys. Script does not edit colors, so it's up to end user to update their sway & waybar configs.
+### Power Profiles
+Click the power icon (next to battery status) on the Waybar to cycle between Performance, Balanced, and Power Saver modes.
 
 ## Credit
 - For backgrounds, check `./wallpapers/credits.txt`
