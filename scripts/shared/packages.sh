@@ -17,7 +17,6 @@ install_base_packages() {
         htop \
         fastfetch \
         dconf \
-        paru \
         jq
 }
 
@@ -63,7 +62,22 @@ install_sway_packages() {
 }
 
 install_theme_packages() {
-    paru -S --noconfirm \
+    local AUR_HELPER=""
+    if command -v paru &>/dev/null; then
+        AUR_HELPER="paru"
+    elif command -v yay &>/dev/null; then
+        AUR_HELPER="yay"
+    else
+        info "AUR helper not found. Attempting to install paru..."
+        sudo pacman -S --needed base-devel git
+        local tmpdir=$(mktemp -d)
+        git clone https://aur.archlinux.org/paru-bin.git "$tmpdir"
+        (cd "$tmpdir" && makepkg -si --noconfirm)
+        rm -rf "$tmpdir"
+        AUR_HELPER="paru"
+    fi
+
+    $AUR_HELPER -S --noconfirm \
         phinger-cursors \
         papirus-icon-theme \
         fluent-gtk-theme \
