@@ -30,6 +30,7 @@ install_sway_packages() {
         xdg-desktop-portal \
         xdg-desktop-portal-wlr \
         xdg-desktop-portal-gtk \
+        xdg-desktop-portal-xapp \
         sway \
         swaybg \
         swayidle \

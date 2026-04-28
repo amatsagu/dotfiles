@@ -2,6 +2,7 @@
 
 ## -- GLOBAL CONFIG -- ##
 IGNORE_ERRORS=false
+IS_CACHY=false
 
 source ./scripts/shared/terminal.sh
 source ./scripts/shared/packages.sh
@@ -9,9 +10,18 @@ source ./scripts/shared/style.sh
 source ./scripts/shared/optional.sh
 
 main() {
-    if ! grep -q "CachyOS" /etc/os-release; then
-        error "You're not running CachyOS Linux distro. This script is prepared & tested specifically for CachyOS. Installation aborted."
+    # Verify Arch-based system
+    if [ ! -f /etc/arch-release ]; then
+        error "This script is designed for Arch Linux and its derivatives. Installation aborted."
         exit 1
+    fi
+
+    # Detect CachyOS for specialized optimizations
+    grep -q "CachyOS" /etc/os-release && IS_CACHY=true
+
+    if [ "$IS_CACHY" = false ]; then
+        warning "You're not running CachyOS. This script was originally built for it."
+        confirm "Proceed anyway with general Arch installation?" || exit 0
     fi
 
     if [[ "$(basename "$SHELL")" != "bash" ]]; then
@@ -49,6 +59,10 @@ main() {
     
     info "Step [ 2/3 ] :: Starting main installation process:"
     run_command "install_dotfiles" "Installing dotfiles... (can take a while)" "Check permissions or manually run 'install_dotfiles' from scripts/shared/style.sh"
+    
+    # Run color check now that configs are in place
+    check_display_color_capabilities
+
     run_command "apply_gsettings" "Updating style rules for GTK..." "Manually run 'apply_gsettings' from scripts/shared/style.sh"
     run_command "apply_qt_settings" "Updating style rules for QT..." "Manually run 'apply_qt_settings' from scripts/shared/style.sh"
 
@@ -73,23 +87,6 @@ main() {
     
     # Final message
     echo
-    success "Installation completed successfully!"
-    info "You may need to reboot for all changes to take effect"
-}
-
-mainse_packages" "Purging some base CachyOS packages (debloating)..."
-    }
-
-    # May be needed to let user control screen brightness in rare cases
-    sudo usermod -a -G video $USER
-    
-    # Final message
-    echo
-    success "Installation completed successfully!"
-    info "You may need to reboot for all changes to take effect"
-}
-
-main    echo
     success "Installation completed successfully!"
     info "You may need to reboot for all changes to take effect"
 }

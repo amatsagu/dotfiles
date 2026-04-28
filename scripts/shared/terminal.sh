@@ -128,6 +128,8 @@ confirm() {
 }
 
 # Global cleanup trap
+LOG_FILE=$(mktemp)
+
 __cleanup() {
     tput cnorm 2>/dev/null
     [ -f "$LOG_FILE" ] && rm -f "$LOG_FILE"
