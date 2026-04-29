@@ -24,7 +24,7 @@ install_dotfiles() {
     
     # Matugen color generation (triggers update-icons.sh via matugen post-process)
     local WP=$(cat "$CURRENT_WALLPAPER_FILE")
-    matugen image "$HOME/.local/share/backgrounds/$WP"
+    matugen image "$HOME/.local/share/backgrounds/$WP" --prefer darkness
 }
 
 apply_qt_settings() {

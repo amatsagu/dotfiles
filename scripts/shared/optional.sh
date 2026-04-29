@@ -27,6 +27,7 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
 export DESKTOP_SESSION=sway
+export WLR_RENDERER=vulkan
 export MOZ_ENABLE_WAYLAND=1
 export SDL_VIDEODRIVER=wayland
 export CLUTTER_BACKEND=wayland
@@ -72,30 +73,4 @@ EOF
 )
 
     echo "$PROFILE_DATA" >> ~/.bash_profile
-}
-# Check for display EDID profiles and offer Sway 1.12+ color enhancement
-check_display_color_capabilities() {
-    local edid_found=false
-    local config_file="$HOME/.config/sway/config.d/theme_and_screen"
-
-    # Check if any EDID is accessible via DRM sysfs (works in TTY)
-    for edid_path in /sys/class/drm/card*-*/edid; do
-        if [ -s "$edid_path" ]; then
-            edid_found=true
-            break
-        fi
-    done
-
-    if [ "$edid_found" = true ]; then
-        success "Hardware EDID color profiles detected!"
-        if confirm "Sway 1.12+ can use EDID primaries for better color accuracy. Enable this for all your displays?"; then
-            if [ -f "$config_file" ]; then
-                # Update the existing 'output * scale' line to include the color profile
-                sed -i 's/output \* scale $scale/output \* scale $scale color_profile --device-primaries/' "$config_file"
-                success "Updated Sway config with --device-primaries."
-            else
-                error "Sway config not found at $config_file - skipping update."
-            fi
-        fi
-    fi
 }

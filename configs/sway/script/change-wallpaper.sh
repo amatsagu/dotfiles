@@ -12,7 +12,7 @@ while read -r SELECTED_WALLPAPER; do
     echo "$SELECTED_WALLPAPER" > "$CURRENT_WALLPAPER_FILE"
     
     # Update colors
-    matugen image "$WALLPAPER_DIR/$SELECTED_WALLPAPER"
+    matugen image "$WALLPAPER_DIR/$SELECTED_WALLPAPER" --prefer darkness
     
     pkill swaybg 2> /dev/null
     swaybg -i "$WALLPAPER_DIR/$SELECTED_WALLPAPER" -m fill > /dev/null 2>&1 &

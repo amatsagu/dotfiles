@@ -87,12 +87,8 @@ main() {
     
     info "Step [ 2/3 ] :: Starting main installation process:"
     run_command "install_dotfiles" "Installing dotfiles... (can take a while)" "Check permissions or manually run 'install_dotfiles' from scripts/shared/style.sh"
-    
-    # Run color check now that configs are in place
-    check_display_color_capabilities
-
     run_command "apply_gsettings" "Updating style rules for GTK..." "Manually run 'apply_gsettings' from scripts/shared/style.sh"
-    run_command "apply_qt_settings" "Updating style rules for QT..." "Manually run 'apply_qt_settings' from scripts/shared/style.sh"
+    # run_command "apply_qt_settings" "Updating style rules for QT..." "Manually run 'apply_qt_settings' from scripts/shared/style.sh"
 
     info "Step [ 3/3 ] :: Select optional enhancements:"
     confirm "Add \"launch script\" code into ~/.bash_profile that will automatically help solve common wayland problems + auto start Sway from tty1 on new session?" false && {

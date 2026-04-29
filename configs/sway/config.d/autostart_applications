@@ -3,7 +3,7 @@ exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
 # Desktop notifications
 exec mako
-...
+
 # Network Applet
 exec nm-applet
 

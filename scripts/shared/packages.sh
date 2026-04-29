@@ -12,7 +12,7 @@ install_base_packages() {
         qt6-wayland \
         qt5ct \
         qt6ct \
-        xwayland \
+        xorg-xwayland \
         pipewire \
         pipewire-pulse \
         pipewire-alsa \
@@ -41,7 +41,6 @@ install_sway_packages() {
         xdg-desktop-portal \
         xdg-desktop-portal-wlr \
         xdg-desktop-portal-gtk \
-        xdg-desktop-portal-xapp \
         sway \
         swaybg \
         swayidle \
@@ -98,9 +97,8 @@ install_theme_packages() {
     fi
 
     $AUR_HELPER -S --noconfirm \
-        matugen-bin \
+        matugen \
         kvantum-qt5 \
-        fluent-kvantum-theme-git \
         phinger-cursors \
         papirus-icon-theme \
         fluent-gtk-theme \
@@ -117,7 +115,6 @@ install_theme_packages() {
         ttf-opensans \
         ttf-hack \
         ttf-ms-fonts \
-        ttf-ms-win11-auto \
         ttf-all-the-icons \
         otf-font-awesome \
         adobe-source-han-sans-otc-fonts \
