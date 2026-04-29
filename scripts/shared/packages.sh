@@ -2,7 +2,7 @@
 
 # Utility, core packages
 install_base_packages() {
-    sudo pacman -S --noconfirm \
+    sudo pacman -S --needed --noconfirm \
         networkmanager \
         network-manager-applet \
         nano \
@@ -37,7 +37,7 @@ install_base_packages() {
 }
 
 install_sway_packages() {
-    sudo pacman -S --noconfirm \
+    sudo pacman -S --needed --noconfirm \
         xdg-desktop-portal \
         xdg-desktop-portal-wlr \
         xdg-desktop-portal-gtk \
@@ -97,7 +97,7 @@ install_theme_packages() {
         AUR_HELPER="paru"
     fi
 
-    $AUR_HELPER -S --noconfirm \
+    $AUR_HELPER -S --needed --noconfirm \
         matugen \
         kvantum-qt5 \
         phinger-cursors \
@@ -155,7 +155,7 @@ purge_base_noise_packages() {
 }
 
 install_laptop_packages() {
-    sudo pacman -S --noconfirm \
+    sudo pacman -S --needed --noconfirm \
         brightnessctl \
         bluez \
         bluez-utils \
