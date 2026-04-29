@@ -1,20 +1,20 @@
-@import "../matugen/colors.css";
+@define-color primary {{colors.primary.default.hex}};
+@define-color on_primary {{colors.on_primary.default.hex}};
 
 * {
   all: unset;
 }
 
 window {
-  /* background-color: #181818; */
-  background-image: url("../../.local/share/backgrounds/Blushing Zelda.jpeg");
+  background-image: url("{{image}}");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 #window-box {
-  background-color: alpha(#101010, 0.95);
-  border: 1px solid #e8eaed;
+  background-color: rgba(16, 16, 16, 0.90);
+  border: 1px solid alpha(@primary, 0.5);
   padding: 0 32px;
   box-shadow:
     0 60px 80px rgba(0, 0, 0, 0.6),
@@ -51,29 +51,41 @@ window {
 #user-name {
   font-size: 16px;
   margin: 8px 0 8px 0;
+  color: #eeeeee;
 }
 
 #input-field {
   border-radius: 8px;
   padding: 10px 15px;
-  border: 1px solid #3d3d3d;
+  border: 1px solid alpha(@primary, 0.3);
+  color: #eeeeee;
+  background-color: rgba(30, 30, 30, 0.5);
 }
 
 #input-field:focus {
-  border: 1px solid #e8eaed;
+  border: 1px solid @primary;
 }
 
-#warning-label,
-#error-label,
+#warning-label {
+  color: #ff5555;
+  margin-top: 12px;
+}
+
+#error-label {
+  color: #ff5555;
+  margin-top: 12px;
+}
+
 #unlock-button {
   margin-top: 12px;
   padding: 10px 2rem;
   margin-bottom: 20px;
-}
-
-#unlock-button {
   border-radius: 8px;
   background-color: alpha(@primary, 0.1);
   color: @primary;
   border: 1px solid alpha(@primary, 0.5);
+}
+
+#unlock-button:hover {
+  background-color: alpha(@primary, 0.2);
 }

@@ -14,8 +14,7 @@
         "custom/star-divider",
         "pulseaudio",
         "custom/star-divider",
-        "power-profiles-daemon",
-        "battery",
+        "group/power-display",
         "group/time-display"
     ],
     "power-profiles-daemon": {
@@ -27,6 +26,18 @@
           "performance": "",
           "balanced": "",
           "power-saver": ""
+        }
+    },
+    "group/power-display": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "power-profiles-daemon",
+            "custom/star-divider"
+        ],
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
         }
     },
     "group/time-display": {
@@ -115,8 +126,8 @@
             "critical": 15
         },
         "format": "{icon}  {capacity}%",
-        "format-charging": "ϟ  {icon}  {capacity}%",
-        "format-plugged": "ϟ  {icon}  {capacity}%",
+        "format-charging": "{icon} 󱐋  {capacity}%",
+        "format-plugged": "{icon} 󱐋  {capacity}%",
         "format-alt": "{icon}  {time} remaining",
         "format-icons": [
             "",

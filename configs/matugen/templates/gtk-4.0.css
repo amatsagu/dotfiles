@@ -1,8 +1,8 @@
-@define-color primary #fab1da;
-@define-color surface #181115;
-@define-color on_surface #eddfe4;
-@define-color outline #9c8d93;
-@define-color error #ffb4ab;
+@define-color primary {{colors.primary.default.hex}};
+@define-color surface {{colors.surface.default.hex}};
+@define-color on_surface {{colors.on_surface.default.hex}};
+@define-color outline {{colors.outline.default.hex}};
+@define-color error {{colors.error.default.hex}};
 
 window, dialog, .background {
   border-radius: 0 !important;

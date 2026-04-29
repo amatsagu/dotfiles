@@ -41,6 +41,7 @@ install_sway_packages() {
         xdg-desktop-portal \
         xdg-desktop-portal-wlr \
         xdg-desktop-portal-gtk \
+        xorg-xwayland \
         sway \
         swaybg \
         swayidle \
@@ -117,8 +118,7 @@ install_theme_packages() {
         ttf-ms-fonts \
         ttf-all-the-icons \
         otf-font-awesome \
-        adobe-source-han-sans-otc-fonts \
-        papirus-folders
+        adobe-source-han-sans-otc-fonts
 }
 
 # Check if a package is installed

@@ -5,19 +5,34 @@
 command = "swaymsg reload"
 only_on_change = true
 
-[[config.post_process]]
-command = "bash ~/.config/sway/script/update-icons.sh '{{colors.primary.default.hex}}'"
-only_on_change = true
-
-
 [templates.sway]
-input_path = "~/.config/matugen/templates/sway-colors.tpl"
+input_path = "~/.config/matugen/templates/sway.tpl"
 output_path = "~/.config/sway/config.d/colors"
+
+[templates.fuzzel]
+input_path = "~/.config/matugen/templates/fuzzel.ini"
+output_path = "~/.config/fuzzel/fuzzel.ini"
+
+[templates.gtk3]
+input_path = "~/.config/matugen/templates/gtk-3.0.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk-4.0.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/cava-colors.ini"
+output_path = "~/.config/cava/config"
+
+[templates.steam]
+input_path = "~/.config/matugen/templates/steam.css"
+output_path = "~/.local/share/Steam/skins/Matugen/resource/styles/colors.styles"
+
+[templates.gtklock]
+input_path = "~/.config/matugen/templates/gtklock.css"
+output_path = "~/.config/gtklock/style.css"
 
 [templates.css]
 input_path = "~/.config/matugen/templates/colors.tpl"
 output_path = "~/.config/matugen/colors.css"
-
-[templates.fuzzel]
-input_path = "~/.config/matugen/templates/fuzzel.tpl"
-output_path = "~/.config/fuzzel/fuzzel.ini"
