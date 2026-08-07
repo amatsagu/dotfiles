@@ -72,3 +72,25 @@ hl.window_rule({
   },
   opacity = 0.9,
 })
+
+-- File Roller (floating by initial class and dynamic title)
+hl.window_rule({
+    match = { 
+        class = "org.gnome.FileRoller",
+        initial_class = "org.gnome.FileRoller"
+    },
+    float = true,
+    size = { 952, 625 },
+    center = true,
+})
+
+-- Thunar File Operations (Matches "File Operation Progress", "Copying...", "Moving...", etc.)
+hl.window_rule({
+    match = { 
+        class = "thunar",
+        title = ".*(Progress|Copying|Moving|Deleting|Conflict|Properties).*"
+    },
+    float = true,
+    size = { 952, 625 },
+    center = true,
+})
