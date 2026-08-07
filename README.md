@@ -30,7 +30,7 @@
 - Bluetooth - **bluez, bluez-hid2hci, bluez-obex, bluez-utils**
 
 ## Gallery
-![clear view](.github/desktop-preview-1.png
+![clear view](.github/desktop-preview-1.png)
 <br><br>
 ![floating view](.github/desktop-preview-2.png)
 <br><br>
