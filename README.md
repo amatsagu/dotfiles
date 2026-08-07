@@ -8,27 +8,23 @@
 
 <h1></h1>
 
-- Linux distro - **Any Arch-based** (tested on CachyOS)
-- Tiling manager - **Sway v1.12+** (with experimental EDID detection support)
-- GTK theme - **Fluent-grey-Dark**
-- QT5/QT6 theme - **Fluent-GreyDark (Kvantum)**
-- Icon theme - **Papirus-Dark**
-- Cursor theme - **phinger-cursors-dark**
-- Colors - **Partially Dynamic (via Matugen)**
-- Fonts - **Noto Sans, Hack, Fira Code, Windows 11 Fonts, Nerd Fonts, CJK**
+- Linux distro - **any Arch-based** (tested on CachyOS)
+- Tiling manager - **hyprland v0.56.2+**
+- GTK theme - **adw-gtk3-dark** (auto themed with Noctalia)
+- QT5/QT6 theme - **default** (auto themed with Noctalia)
+- Icon theme - **papirus** (auto themed with Noctalia)
+- Cursor theme - **default**
+- Colors - **dynamic** (auto themed with Noctalia based on wallpaper)
+- Fonts - **MD IO Trial, Fira Code, Noto Sans, CJK**
 - Terminal - **Foot**
-- Text editor - **VSCodium, Nano**
+- Text editor - **vscodium, nano**
 - File manager - **Thunar** (with GVFS & Archive Manager)
-- Status bar - **Waybar** (with power support: TLP + TLP-PD)
-- App menu - **Fuzzel**
-- Notifications - **Mako**
-- Session control - **Wlogout**
-- Session lock - **GTKlock**
-- Audio server - **Pipewire**
-- Bluetooth manager - **Blueman**
-- Connection manager - **Network manager**
-- XDG desktop portals - **WLR, GTK, XAPP**
-- Password vault manager - **Gnome keyring, Seahorse**
+- Shell - **noctalia v5.0.0+** (bar, session control, lockscreen, OSD, bluetooth, wifi, notifications, app menu)
+- XDG desktop portals - **wlr, gtk, hyprland**
+- Polkit - **hyprpolkitagent**
+- Audio - **alsa-lib, alsa-utils, pipewire, pipewire-alsa, pipewire-audio, pipewire-audio, pipewire-pulse, wireplumber**
+- Network - **iwd, networkmanager, wpa_supplicant**
+- Bluetooth - **bluez, bluez-hid2hci, bluez-obex, bluez-utils**
 
 ## Gallery
 ![clear view](.github/1.png)
@@ -40,39 +36,32 @@
 
 ## Install
 
-> [!WARNING]
-> This configuration is made by myself, for myself. While the installer now supports general Arch-based systems, it is still experimental.
+> [!NOTE]
+> This configuration is made by myself, for myself. I've wrote step by step installation manual for people who would like to try replicating it + probably for my future self once Arch something breaks :D.
+>
+> I've used to provide automatic installation script but it's too unstable with ever changing Arch.
 
-### For Arch-based Distros (CachyOS, EndeavourOS, etc.)
-1. Install a minimal version of your distro with no desktop. Installer supports any Arch-based distro but it was only originally created for CachyOS.
+0. Minimal CachyOS installation
+1. Launching Hyprland
+2. Applying dotfiles
+3. Final tweaks
 
-Login to TTY and run:
-```sh
-sudo pacman -Syu git
-git clone https://github.com/amatsagu/dotfiles.git
-cd ./dotfiles
-./scripts/install.sh
-```
-![fullscreen view](.github/script.png)
-
-2. Restart machine (highly recommended)
-
-> [!CAUTION] 
-> Download this script on a directory where you have write permissions. ie. HOME. Or any directory within your home directory (otherwise script will fail). Due to how some apps and scripts are made - part of them are global and other local, so make sure to run it from user account you wish to use.
+### Bonus instructions
+4. Security patches
 
 ## Usage
 
 ### Keybinds
+Most of the keybinds are from i3/Sway, core keybinds:
+
 - **Mod key**: Windows/Super logo [Mod4].
+- **Close Window**: `Mod + Shift + Q`
 - **Terminal**: `Mod + Enter`
 - **Launcher**: `Mod + D`
 - **File Manager**: `Mod + B`
-- **Change Wallpaper**: `Mod + Shift + W` (Triggers Matugen color update)
 - **Session Control**: `Mod + Shift + E`
 - **Lock Screen**: `Mod + L`
+- **System Preview:** `Mod + S`
+- **Noctalia Shell Settings:** `Mod + Shift + S`
 
-### Power Profiles
-Click the power icon (next to battery status) on the Waybar to cycle between Performance, Balanced, and Power Saver modes.
-
-## Credit
-- For backgrounds, check `./wallpapers/credits.txt`
+You'll find them in your `~/.config/hypr/module/keybind.lua`
