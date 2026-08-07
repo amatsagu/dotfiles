@@ -44,9 +44,9 @@
 >
 > I've used to provide automatic installation script but it's too unstable with ever changing Arch.
 
-0. Minimal CachyOS installation
-1. Launching Hyprland
-2. Applying dotfiles
+[0. Minimal CachyOS installation](https://github.com/amatsagu/dotfiles/blob/master/manual/0.%20minimal%20os%20install.md)
+[1. Launching Hyprland](https://github.com/amatsagu/dotfiles/blob/master/manual/1.%20launching%20hyprland.md)
+[2. Applying dotfiles](https://github.com/amatsagu/dotfiles/blob/master/manual/2.%20applying%20dotfiles.md)
 3. Final tweaks
 
 ### Bonus instructions
