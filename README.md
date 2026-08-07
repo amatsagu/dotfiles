@@ -71,4 +71,5 @@ You'll find them in your `~/.config/hypr/module/keybind.lua`
 
 - All wallpapers comes from wallhaven, please put their code in url for details.
 - Custom fonts (MD IO) comes from https://mass-driver.com/typefaces/md-io/.
+- Custom fonts (SF Pro Text/Display) comes from official Apple downloads.
 - Every config file was manually prepared by me.
