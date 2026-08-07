@@ -21,7 +21,7 @@
 - Image viewer - **imv**
 - Music player - **spotify-launcher** (with spicetify)
 - Text editor - **vscodium, nano**
-- File manager - **Thunar** (with GVFS & Archive Manager)
+- File manager - **thunar** (with GVFS & Archive Manager)
 - Shell - **noctalia v5.0.0+** (bar, session control, lockscreen, OSD, bluetooth, wifi, notifications, app menu)
 - XDG desktop portals - **wlr, gtk, hyprland**
 - Polkit - **hyprpolkitagent**
@@ -30,11 +30,9 @@
 - Bluetooth - **bluez, bluez-hid2hci, bluez-obex, bluez-utils**
 
 ## Gallery
-![clear view](.github/1.png)
+![clear view](.github/desktop-preview-1.png
 <br><br>
-![floating view](.github/2.png)
-<br><br>
-![fullscreen view](.github/3.png)
+![floating view](.github/desktop-preview-2.png)
 <br><br>
 
 ## Install
@@ -47,10 +45,10 @@
 0. [Minimal CachyOS installation](https://github.com/amatsagu/dotfiles/blob/master/manual/0.%20minimal%20os%20install.md)
 1. [Launching Hyprland](https://github.com/amatsagu/dotfiles/blob/master/manual/1.%20launching%20hyprland.md)
 2. [Applying dotfiles](https://github.com/amatsagu/dotfiles/blob/master/manual/2.%20applying%20dotfiles.md)
-3. Final tweaks
+3. [Final tweaks](https://github.com/amatsagu/dotfiles/blob/master/manual/3.%20final%20tweaks.md)
 
 ### Bonus instructions
-4. Security patches
+4. [Security patches](https://github.com/amatsagu/dotfiles/blob/master/manual/4.%20security%20patches.md)
 
 ## Usage
 
@@ -68,3 +66,9 @@ Most of the keybinds are from i3/Sway, core keybinds:
 - **Noctalia Shell Settings:** `Mod + Shift + S`
 
 You'll find them in your `~/.config/hypr/module/keybind.lua`
+
+## Credit
+
+- All wallpapers comes from wallhaven, please put their code in url for details.
+- Custom fonts (MD IO) comes from https://mass-driver.com/typefaces/md-io/.
+- Every config file was manually prepared by me.
