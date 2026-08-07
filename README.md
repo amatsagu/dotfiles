@@ -17,6 +17,9 @@
 - Colors - **dynamic** (auto themed with Noctalia based on wallpaper)
 - Fonts - **MD IO Trial, Fira Code, Noto Sans, CJK**
 - Terminal - **Foot**
+- Video player - **mpv**
+- Image viewer - **imv**
+- Music player - **spotify-launcher** (with spicetify)
 - Text editor - **vscodium, nano**
 - File manager - **Thunar** (with GVFS & Archive Manager)
 - Shell - **noctalia v5.0.0+** (bar, session control, lockscreen, OSD, bluetooth, wifi, notifications, app menu)
