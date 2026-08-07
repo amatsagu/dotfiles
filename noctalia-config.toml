@@ -1,0 +1,91 @@
+[bar.default]
+end = [ "media", "tray", "notifications", "network", "bluetooth", "volume", "input_volume", "battery" ]
+font_family = "MD IO Trial"
+start = [ "control-center", "workspaces" ]
+widget_spacing = 7
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 768.0
+    cy = 682.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell]
+font_family = "MD IO Trial"
+
+[theme]
+builtin = "Noctalia"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "foot", "gtk3", "gtk4", "hyprland", "qt" ]
+    community_ids = [ "spicetify", "discord", "obsidian", "prismlauncher", "steam", "obs", "papirus-icons" ]
+
+[wallpaper.default]
+path = "/home/amatsagu/Pictures/Wallpapers/wallhaven-jevyyw.jpg"
+
+[wallpaper.last]
+path = "/home/amatsagu/Pictures/Wallpapers/wallhaven-jevyyw.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/amatsagu/Pictures/Wallpapers/wallhaven-jevyyw.jpg"
+
+[widget.media]
+capsule = true
+hide_when_no_media = true
+max_length = 180
+
+[widget.network]
+show_label = false
+
+[widget.tray]
+drawer = true
+
+[widget.workspaces]
+active_pill_size = 2.3999999999999999
+focused_color = "tertiary"
+inactive_pill_size = 1.6000000000000001
