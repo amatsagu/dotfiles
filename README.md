@@ -34,6 +34,8 @@
 <br><br>
 ![floating view](.github/desktop-preview-2.png)
 <br><br>
+![dynamic icons view](.github/desktop-preview-3.png)
+<br><br>
 
 ## Install
 
