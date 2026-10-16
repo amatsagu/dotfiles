@@ -100,7 +100,7 @@
       "type": "command",
       "key": "bat",
       "keyColor": "#A6E3A1",
-      "text": "pmset -g batt | tail -1 | sed -E 's/.*\\t//; s/; */ /g; s/ present.*//' | while read p s t r; do printf \"\\033[38;2;166;227;161m%s\\033[0m %s %s %s\" \"$p\" \"$s\" \"$t\" \"$r\"; done",
+      "text": "acpi -b | sed 's/Battery [0-9]: //'",
       "format": "{}"
     },
     "break",
